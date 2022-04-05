@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_05_122657) do
+ActiveRecord::Schema.define(version: 2022_04_05_134607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,15 +63,9 @@ ActiveRecord::Schema.define(version: 2022_04_05_122657) do
     t.integer "feedback_rating"
     t.bigint "user_id", null: false
     t.bigint "movie_id"
-    t.bigint "restaurant_id"
-    t.bigint "podcast_id"
-    t.bigint "book_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["book_id"], name: "index_recommendations_on_book_id"
     t.index ["movie_id"], name: "index_recommendations_on_movie_id"
-    t.index ["podcast_id"], name: "index_recommendations_on_podcast_id"
-    t.index ["restaurant_id"], name: "index_recommendations_on_restaurant_id"
     t.index ["user_id"], name: "index_recommendations_on_user_id"
   end
 
@@ -97,9 +91,6 @@ ActiveRecord::Schema.define(version: 2022_04_05_122657) do
   add_foreign_key "lists", "users"
   add_foreign_key "movies_lists", "lists"
   add_foreign_key "movies_lists", "movies"
-  add_foreign_key "recommendations", "books"
   add_foreign_key "recommendations", "movies"
-  add_foreign_key "recommendations", "podcasts"
-  add_foreign_key "recommendations", "restaurants"
   add_foreign_key "recommendations", "users"
 end
