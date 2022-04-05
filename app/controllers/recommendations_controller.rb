@@ -33,7 +33,7 @@ class RecommendationsController < ApplicationController
   end
 
   def searched
-    @recomendations = Recommendation.where(searched: true)
+    @recommendations = Recommendation.where(searched: true)
   end
 
   private
