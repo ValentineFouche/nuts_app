@@ -13,7 +13,7 @@ class RecommendationsController < ApplicationController
     @recommendation = Recommendation.new(params_recommendations)
     @recommendation.list = @list
     if @recommendation.save
-      redirect_to recommendations_path
+      redirect_to recommendation_path(@recommendation)
     else
       render :new
     end
