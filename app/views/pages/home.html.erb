@@ -1,9 +1,16 @@
 <div class="container fill-height">
   <div class="row">
     <div class="col-12 col-md-6 col-lg-4">
-      <div class="d-flex justify-content-center" id="logo">
-          <%= image_tag "nuts_notes.png" %>
+      <%= link_to recommendations_path do %>
+      <div class="text-center text-decoration-none" id="logo">
+        <div>
+          <%= image_tag "n-n-logo.png" %>
+        </div>
+        <div>
+          <%# <h2>Nuts-Notes</h2> %>
+        </div>
       </div>
+      <% end %>
     </div>
   </div>
 </div>

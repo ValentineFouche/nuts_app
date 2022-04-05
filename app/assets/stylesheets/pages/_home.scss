@@ -18,10 +18,16 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: black;
+  // h2 {
+  //   font-family: 'Schoolbell', cursive;
+  //   font-weight: bold;
+  //   font-size: 20px;
+  // }
 }
 
 #logo img {
-  width: 200%;
+  width: 100%;
   transition: all 0.2s ease;
   &:hover {
     transform: scale(1.1);
