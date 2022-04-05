@@ -4,15 +4,12 @@ class RecommendationsController < ApplicationController
   end
 
   def new
-    # @list = List.find(params[:list_id])
     @recommendation = Recommendation.new
 
   end
 
   def create
-    # @list = List.find(params[:list_id])
     @recommendation = Recommendation.new(params_recommendations)
-    # @recommendation.list = @list
     if @recommendation.save
       redirect_to recommendation_path(@recommendation)
     else
@@ -41,7 +38,6 @@ class RecommendationsController < ApplicationController
 
   def params_recommendations
     params.require(:recommendation).permit(:friend, :added_on, :comment, :searched, :viewed,
-                                           :feedback_content, :feedback, :rating, :movie_id, :book_id, :restaurant_id,
-                                           :podcast_id, :user_id)
+                                           :feedback_content, :feedback, :rating, :movie_id, :user_id)
   end
 end

@@ -1,6 +1,6 @@
 <h1>Searched Recommendations</h1>
 
 <ul><%@recommendations.each do |recommendation|%>
-  <li><%=recommendation.friend%> - <%=recommendation.added_on%> - <%=recommendation.comment%>
+  <li><%=recommendation.movie.title %> - <%=recommendation.friend%> - <%=recommendation.added_on%> - <%=recommendation.comment%></li>
   <%end%>
 </ul>
