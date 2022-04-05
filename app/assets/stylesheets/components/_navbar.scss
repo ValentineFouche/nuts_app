@@ -1,7 +1,12 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: #293241;
-  opacity: 0.8;
+  background: transparent;
+  width: 100%;
+    h2 {
+      font-family: 'Schoolbell', cursive;
+      font-size: 35px;
+    }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,9 +18,15 @@
 }
 
 .navbar-light .navbar-toggler {
-  background-color: white;
+  background-color: #3A2D27;
 }
 
 .navbar-light .navbar-nav .nav-link {
   color: white;
+}
+
+.btn-main {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }

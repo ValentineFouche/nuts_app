@@ -1,16 +1,36 @@
+<%= render 'shared/banner' %>
 <div class="container fill-height">
   <div class="row">
-    <div class="col-12 col-md-6 col-lg-4">
-      <%= link_to recommendations_path do %>
-      <div class="text-center text-decoration-none" id="logo">
-        <div>
-          <%= image_tag "n-n-logo.png" %>
+    <div class="col-6 col-md-6 col-lg-3">
+      <div class="icons film">
+        <div class="icon-film">
+          <%# put links here %>
+          <i class="fas fa-film icon"></i>
         </div>
-        <div>
-          <%# <h2>Nuts-Notes</h2> %>
+        <div class="header-film">
+          <h4>Films</h4>
         </div>
       </div>
-      <% end %>
     </div>
-  </div>
+    <div class="col-6 col-md-6 col-lg-3">
+      <div class="icons livre">
+          <%# put links here %>
+        <i class="fas fa-book icon"></i>
+        <h4>Livres</h4>
+      </div>
+    </div>
+    <div class="col-6 col-md-6 col-lg-3">
+      <div class="icons podcast">
+          <%# put links here %>
+        <i class="fas fa-podcast icon"></i>
+        <h4>Podcasts</h4>
+      </div>
+    </div>
+    <div class="col-6 col-md-6 col-lg-3">
+      <div class="icons restaurant">
+          <%# put links here      %>
+        <i class="fas fa-utensils icon"></i>
+        <h4>Restaurants</h4>
+      </div>
+    </div>
 </div>
