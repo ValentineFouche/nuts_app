@@ -1,0 +1,10 @@
+<%= simple_form_for @review do |f| %>
+  <%= f.input :friend %>
+  <%= f.input :added_on %>
+  <%= f.input :comment %>
+  <%= f.input :searched %>
+  <%= f.input :viewed %>
+  <%= f.input :feedback_content %>
+  <%= f.input :feedback_rating %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
