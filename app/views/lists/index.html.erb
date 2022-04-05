@@ -1,0 +1,6 @@
+<h1>Index lists</h1>
+<% @lists.each do |list| %>
+  <h2><%= list.name %></h2>
+  <%= link_to "Add", new_list_recommendation_path(list) %>
+  <%= link_to "List", list_path(list) %>
+<% end %>
