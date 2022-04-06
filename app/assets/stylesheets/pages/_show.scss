@@ -1,0 +1,23 @@
+h2 {
+  font-size: 35px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.card-show {
+  background-color: #1F1F1F;
+  color: white;
+  padding: 10px;
+    li {
+      background-color: #1F1F1F;
+      color: white;
+    }
+}
+
+.card-show img {
+  border: solid grey;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-body-show {
+  border: solid grey;
+}

@@ -1,3 +1,18 @@
-<h2><%= @recommendation.movie.title %></h2>
-<p>recommended by : <%= @recommendation.friend %></p>
-<p>mon commentaire : <%= @recommendation.comment %></p>
+<div class="container-fluid p-0">
+  <div class="col-12 col-md-6">
+    <div class="card card-show" style="width: 100%;">
+        <h2><%= @recommendation.movie.title %></h2>
+      <%= image_tag @recommendation.movie.image_url, class: "img-fluid" %>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"> <strong>Recommandé par :</strong> <%= @recommendation.friend.capitalize %></li>
+        <li class="list-group-item"> <strong>Mon commentaire :</strong> <%= @recommendation.comment %></li>
+        <li class="list-group-item"> <strong>Ajouté le :</strong> <%= @recommendation.created_at %></li>
+      </ul>
+      <div class="card-body card-body-show">
+        <p><strong>Regardez sur :</strong></p>
+        <a href="#" class="card-link btn btn-light rounded-pill">myCanal</a>
+        <a href="#" class="card-link btn btn-light rounded-pill">Netflix</a>
+      </div>
+    </div>
+  </div>
+</div>

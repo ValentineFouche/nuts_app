@@ -19,11 +19,11 @@ eva = User.create(nickname: "vavou", email: "eva.lampin@hotmail.fr", password: "
 
 puts "creating movies"
 # je creer des movies
-les_evades = Movie.create(title: "Les évadés", director: "Frank Darabont", image_url: "../assets/images/les-evades.jpeg", stream_options: "Stream")
-le_parrain = Movie.create(title: "Le parrain", director: "Francis Ford Coppola", image_url: "../assets/images/le-parrain.webp", stream_options: "Stream")
-dark_knight = Movie.create(title: "The Dark Knight : Le Chevalier noir", director: "Christopher Nolan", image_url: "..//assets/images/les-evades.jpeg", stream_options: "Stream")
-douze_hommes = Movie.create(title: "12 Hommes en colère", director: "Sidney Lumet", image_url: "../assets/images/douze-homme.jpeg", stream_options: "Stream")
-schindler = Movie.create(title: "La liste de Schindler", director: "Steven Spielberg", image_url: "../assets/images/schindler.jpeg", stream_options: "Stream")
+les_evades = Movie.create(title: "Les évadés", director: "Frank Darabont", image_url: "dark-knight.jpeg", stream_options: "Stream")
+le_parrain = Movie.create(title: "Le parrain", director: "Francis Ford Coppola", image_url: "le-parrain.webp", stream_options: "Stream")
+dark_knight = Movie.create(title: "The Dark Knight : Le Chevalier noir", director: "Christopher Nolan", image_url: "les-evades.jpeg", stream_options: "Stream")
+douze_hommes = Movie.create(title: "12 Hommes en colère", director: "Sidney Lumet", image_url: "douze-hommes.jpeg", stream_options: "Stream")
+schindler = Movie.create(title: "La liste de Schindler", director: "Steven Spielberg", image_url: "schindler.jpeg", stream_options: "Stream")
 
 
 puts "creating recommandations"
