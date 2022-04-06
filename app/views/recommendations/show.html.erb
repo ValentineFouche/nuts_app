@@ -1,13 +1,25 @@
-<h2><%= @recommendation.movie.title %></h2>
-<p>Réalisateur et casting : <%= @recommendation.movie.director %></p>
-  <% if @recommendation.movie.image_url.start_with?("http") %>
-    <%= image_tag @recommendation.movie.image_url, alt: "Poster", width: 200 %>
-  <% elsif @recommendation.movie.image_url.start_with?("..//assets/images/") %>
-    <%= image_tag @recommendation.movie.image_url.gsub("..//assets/images/", ""), alt: "Poster", width: 200 %>
-  <% else %>
-    <%= image_tag @recommendation.movie.image_url.gsub("../assets/images/", ""), alt: "Poster", width: 200 %>
-  <% end %>
-<p>recommended by : <%= @recommendation.friend %></p>
-<p>recommendé le : <%= @recommendation.created_at.strftime("%d/%m/%Y") %></p>
-<p>mon commentaire : <%= @recommendation.comment %></p>
-<p>Voir en streaming : <%= @recommendation.movie.stream_options %></p>
+
+<div class="container-fluid p-0">
+  <div class="col-12 col-md-6">
+    <div class="card card-show" style="width: 100%;">
+        <h2><%= @recommendation.movie.title %></h2>
+        <% if @recommendation.movie.image_url.start_with?("http") %>
+          <%= image_tag @recommendation.movie.image_url, alt: "Poster", class: "img-fluid"  %>
+        <% elsif @recommendation.movie.image_url.start_with?("..//assets/images/") %>
+          <%= image_tag @recommendation.movie.image_url.gsub("..//assets/images/", ""), alt: "Poster", class: "img-fluid" %>
+        <% else %>
+          <%= image_tag @recommendation.movie.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid" %>
+        <% end %>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"> <strong>Recommandé par :</strong> <%= @recommendation.friend.capitalize %></li>
+        <li class="list-group-item"> <strong>Mon commentaire :</strong> <%= @recommendation.comment %></li>
+        <li class="list-group-item"> <strong>Ajouté le :</strong> <%= @recommendation.created_at.strftime("%d/%m/%Y") %></li>
+      </ul>
+      <div class="card-body card-body-show">
+        <p><strong>Regardez sur :</strong></p>
+        <a href="#" class="card-link btn btn-light rounded-pill">myCanal</a>
+        <a href="#" class="card-link btn btn-light rounded-pill">Netflix</a>
+      </div>
+    </div>
+  </div>
+</div>

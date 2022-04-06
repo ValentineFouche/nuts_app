@@ -1,26 +1,28 @@
 // Specific CSS for your home-page
-html {
-  height: 100%;
-}
+// html {
+//   height: 100%;
+// }
 body {
-  height: 100%;
-  margin: 0;
-  background-image: linear-gradient(to right, #F79B26, #f03819);
-  // background-position: center;
-  // background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  // height: 100vh;
+  background-color: #1F1F1F;
 }
 
-// .fill-height {
-//   position: relative;
-//    min-height: 100%;
-//    height:100vh;
-// }
+.home {
+  height: 100vh;
+  background-image: linear-gradient(to right, #F4DFBA, #EEC373);
+  background-repeat: no-repeat;
+}
+
 .icons {
   text-align: center;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+p {
+  font-family: $text-nuts;
+}
+
+li {
+  font-family: $text-nuts;
 }
 
 h4 {
@@ -32,39 +34,56 @@ h4 {
   font-size: 80px;
   padding: 20px;
   color: #3A2D27;
-  padding-bottom: 10px;
+  padding-top: 10px;
 }
-// #logo {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   color: black;
-// }
 
-// #logo img {
-//   width: 100%;
-//   transition: all 0.2s ease;
-//   &:hover {
-//     transform: scale(1.1);
-//     background-color: white;
-//     border-radius: 20px;
-//   }
-// }
+.hide {
+  display: none;
+}
 
-// #logo-signed-in {
-//   position: absolute;
-//   top: 30%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   color: black;
-//   img {
-//     width: 100%;
-//   }
-// }
+.icons:hover + .hide {
+  display: block;
+  color: #3A2D27;
+    li {
+      list-style: none;
+      font-family: $header-nuts-notes;
+    }
+}
 
-// .lists {
-//   position: absolute;
-//   top: 60px;
-//   left: 60px;
-// }
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 95px;
+  left: 20px;
+  background-color: #EEC373;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 15px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: $header-nuts-notes;
+  font-weight: light;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #F4DFBA;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+// .dropdown:hover .dropbtn {background-color: #3e8e41;}
