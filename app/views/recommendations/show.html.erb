@@ -1,12 +1,19 @@
+
 <div class="container-fluid p-0">
   <div class="col-12 col-md-6">
     <div class="card card-show" style="width: 100%;">
         <h2><%= @recommendation.movie.title %></h2>
-      <%= image_tag @recommendation.movie.image_url, class: "img-fluid" %>
+        <% if @recommendation.movie.image_url.start_with?("http") %>
+          <%= image_tag @recommendation.movie.image_url, alt: "Poster", class: "img-fluid"  %>
+        <% elsif @recommendation.movie.image_url.start_with?("..//assets/images/") %>
+          <%= image_tag @recommendation.movie.image_url.gsub("..//assets/images/", ""), alt: "Poster", class: "img-fluid" %>
+        <% else %>
+          <%= image_tag @recommendation.movie.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid" %>
+        <% end %>
       <ul class="list-group list-group-flush">
         <li class="list-group-item"> <strong>Recommandé par :</strong> <%= @recommendation.friend.capitalize %></li>
         <li class="list-group-item"> <strong>Mon commentaire :</strong> <%= @recommendation.comment %></li>
-        <li class="list-group-item"> <strong>Ajouté le :</strong> <%= @recommendation.created_at %></li>
+        <li class="list-group-item"> <strong>Ajouté le :</strong> <%= @recommendation.created_at.strftime("%d/%m/%Y") %></li>
       </ul>
       <div class="card-body card-body-show">
         <p><strong>Regardez sur :</strong></p>
