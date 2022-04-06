@@ -5,7 +5,13 @@
     <%= link_to recommendation_path(recommendation), class:"text-decoration-none" do%>
       <div class="cards g-0 d-flex">
         <div class="images-index">
-        <%= image_tag recommendation.movie.image_url, class: "img-fluid" %>
+        <% if recommendation.movie.image_url.start_with?("http") %>
+          <%= image_tag recommendation.movie.image_url, alt: "Poster", class: "img-fluid" %>
+        <% elsif recommendation.movie.image_url.start_with?("..//assets/images/") %>
+          <%= image_tag recommendation.movie.image_url.gsub("..//assets/images/", ""), alt: "Poster", class: "img-fluid" %>
+        <% else %>
+          <%= image_tag recommendation.movie.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid" %>
+        <% end %>
         </div>
         <div class="card-body d-flex flex-column">
           <div>
@@ -15,14 +21,18 @@
             <p class="card-text">Recommandé par: <%=recommendation.friend%></p>
           </div>
           <div>
-            <p class="card-text">Ajouté le: <%=recommendation.added_on.to_time.strftime("%m/%d/%Y")%></p>
+            <p class="card-text">Ajouté le: <%=recommendation.created_at.strftime("%m/%d/%Y")%></p>
+          </div>
+          <div>
+            <%= simple_form_for recommendation do |f| %>
+              <%= f.input :viewed, label: 'vu?' %>
+            <% end %>
           </div>
         </div>
       </div>
     <% end %>
   </div>
   <%end%>
-
   <div class="d-flex justify-content-around">
     <div>
       <%= link_to "Add a film", new_recommendation_path, class:"text-decoration-none buttons" %>
@@ -31,10 +41,4 @@
       <%= link_to "Back", root_path, class:"text-decoration-none buttons" %>
     </div>
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
 </div>

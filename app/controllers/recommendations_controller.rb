@@ -12,7 +12,6 @@ class RecommendationsController < ApplicationController
     @recommendation = Recommendation.new(params_recommendations)
     @recommendation.user = current_user
     if @recommendation.save
-      @recommendation.update(added_on: Time.now)
       redirect_to recommendation_path(@recommendation)
     else
       render :new
