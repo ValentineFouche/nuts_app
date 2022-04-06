@@ -2,7 +2,7 @@
   <% movies.each do |movie| %>
   <div data-controller="select-movies"        data-select-movies-target="choix"
         data-action="click->select-movies#save" data-value=<%= movie.id %>>
-  <p><%= movie.title %></p>
+  <p id="movie"><%= movie.title %></p>
   </div>
     <% end %>
 </div>
