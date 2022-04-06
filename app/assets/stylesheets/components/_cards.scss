@@ -3,45 +3,53 @@
     font-size: 12px;
   }
 
-  .card-body {
-    width: 50%;
-    background-color:#F1D196;
-    justify-content: space-around;
-    border-radius: 0px 8px 8px 0px;
-  }
-
-  .card {
-    border: none;
-    border-radius: 15px;
-  }
-
-  h1 {
-    color: #F1D196;
-    font-family: $header-nuts-notes;
-    padding: 30px;
-    text-align: center;
-    font-size: 26px;
-  }
-  h5 {
-    color: #1F1F1F;
-    font-family: $headers-font;
-  }
-
-  p {
-    color: #1F1F1F;
-    font-family: $headers-font;
-    font-weight: 400;
-  }
-
-  .images-index {
-    width: 50%;
-  }
-
-  .img-fluid {
-  border-radius: 8px 0px 0px 8px;
-  }
 }
 
 .container {
   background-color: #1F1F1F;
+}
+
+.card-body {
+  width: 50%;
+  background-color:#F1D196;
+  justify-content: space-around;
+  border-radius: 0px 8px 8px 0px;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+}
+
+h1 {
+  color: #F1D196;
+  font-family: $header-nuts-notes;
+  padding: 30px;
+  text-align: center;
+  font-size: 26px;
+}
+h5 {
+  color: #1F1F1F;
+  font-family: $headers-font;
+}
+
+p {
+  color: #1F1F1F;
+  font-family: $headers-font;
+  font-weight: 400;
+}
+
+.images-index {
+  width: 50%;
+}
+
+.img-fluid {
+border-radius: 8px 0px 0px 8px;
+}
+
+.buttons {
+  color: #F1D196;
+  border: solid 1px #F1D196;
+  padding: 10px;
+  border-radius: 10px;
 }
