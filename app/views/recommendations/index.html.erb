@@ -9,6 +9,9 @@
   <% else %>
     <%= image_tag recommendation.movie.image_url.gsub("../assets/images/", ""), alt: "Poster", width: 200 %>
   <% end %>
-  <%=recommendation.movie.title %> - <%=recommendation.friend%> - <%=recommendation.added_on%> - <%=recommendation.comment%></li>
+  <%=recommendation.movie.title %> - <%=recommendation.friend%> - <%=recommendation.created_at%> - <%=recommendation.comment%>
+  <%= simple_form_for recommendation do |f| %>
+  <%= f.input :viewed, label: 'vu?' %>
+  <% end %>
   <%end%>
 </ul>
