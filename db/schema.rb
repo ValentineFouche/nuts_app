@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2022_04_06_101515) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 2022_04_06_101515) do
     t.bigint "movie_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "added_on"
     t.index ["movie_id"], name: "index_recommendations_on_movie_id"
     t.index ["user_id"], name: "index_recommendations_on_user_id"
   end
