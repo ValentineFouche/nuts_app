@@ -1,6 +1,17 @@
 <h1>Recommendations</h1>
 
 <ul><%@recommendations.each do |recommendation|%>
-  <li><%=recommendation.movie.title %> - <%=recommendation.friend%> - <%=recommendation.added_on%> - <%=recommendation.comment%></li>
+  <li>
+  <% if recommendation.movie.image_url.start_with?("http") %>
+    <%= image_tag recommendation.movie.image_url, alt: "Poster", width: 200 %>
+  <% elsif recommendation.movie.image_url.start_with?("..//assets/images/") %>
+    <%= image_tag recommendation.movie.image_url.gsub("..//assets/images/", ""), alt: "Poster", width: 200 %>
+  <% else %>
+    <%= image_tag recommendation.movie.image_url.gsub("../assets/images/", ""), alt: "Poster", width: 200 %>
+  <% end %>
+  <%=recommendation.movie.title %> - <%=recommendation.friend%> - <%=recommendation.created_at%> - <%=recommendation.comment%>
+  <%= simple_form_for recommendation do |f| %>
+  <%= f.input :viewed, label: 'vu?' %>
+  <% end %>
   <%end%>
 </ul>

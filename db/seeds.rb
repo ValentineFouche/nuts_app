@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "json"
+require "open-uri"
+
 Recommendation.destroy_all
 Movie.destroy_all
 User.destroy_all
@@ -25,6 +28,15 @@ dark_knight = Movie.create(title: "The Dark Knight : Le Chevalier noir", directo
 douze_hommes = Movie.create(title: "12 Hommes en colère", director: "Sidney Lumet", image_url: "../assets/images/douze-homme.jpeg", stream_options: "Stream")
 schindler = Movie.create(title: "La liste de Schindler", director: "Steven Spielberg", image_url: "../assets/images/schindler.jpeg", stream_options: "Stream")
 
+puts "creating movies with API"
+# je cree tous les movies présents dans OMDB
+
+url = "https://imdb-api.com/en/API/Top250Movies/k_7bqg1dif"
+movies_serialized = URI.open(url).read
+movies = JSON.parse(movies_serialized)
+movies["items"].each do |movie|
+  Movie.create(title: movie["title"], director: movie["crew"], image_url: movie["image"], stream_options: "pas de stream pour l'instant" )
+end
 
 puts "creating recommandations"
 # je creer des recommandations
