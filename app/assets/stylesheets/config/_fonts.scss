@@ -1,10 +1,11 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Open+Sans:wght@700;800&family=Roboto:wght@400;500;700&family=Schoolbell&display=swap');
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
-
+$headers-font: 'Open Sans', 'sans-serif';
+$header-nuts-notes : "Schoolbell", "cursive";
+$text-nuts: 'Roboto', 'sans-serif';
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";
