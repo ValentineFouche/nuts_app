@@ -40,15 +40,15 @@ end
 
 puts "creating recommandations"
 # je creer des recommandations
-recommandation_val_1 = Recommendation.create(friend: "alex", added_on: Time.now, comment: "film conseillé quand nous avons mangé de la socca à nice, film d'action pleins de suspense", searched: false, viewed: false, user_id: valentine.id, movie_id: dark_knight.id)
+recommandation_val_1 = Recommendation.create(friend: "alex", comment: "film conseillé quand nous avons mangé de la socca à nice, film d'action pleins de suspense", searched: false, viewed: false, user_id: valentine.id, movie_id: dark_knight.id)
 
-recommandation_val_2 = Recommendation.create(friend: "ing", added_on: Time.now, comment: "film sur la seconde guerre mondial, attention un peu triste donc à ne pas regarder en cas de coup de blues", searched: false, viewed: false, user_id: valentine.id, movie_id: schindler.id)
+recommandation_val_2 = Recommendation.create(friend: "ing", comment: "film sur la seconde guerre mondial, attention un peu triste donc à ne pas regarder en cas de coup de blues", searched: false, viewed: false, user_id: valentine.id, movie_id: schindler.id)
 
-recommandation_alex_3 = Recommendation.create(friend: "vavou", added_on: Time.now, comment: "film avec pleins de mafieux, action garantie ! Ne pas regarder avec les enfants", searched: false, viewed: false, user_id: alexandru.id, movie_id: le_parrain.id)
+recommandation_alex_3 = Recommendation.create(friend: "vavou", comment: "film avec pleins de mafieux, action garantie ! Ne pas regarder avec les enfants", searched: false, viewed: false, user_id: alexandru.id, movie_id: le_parrain.id)
 
-recommandation_ing_4 = Recommendation.create(friend: "alex", added_on: Time.now, comment: "Un grand classic qu'Alexandru m'a dit de ne pas louper !!!", searched: false, viewed: false, user_id: ingo.id, movie_id: les_evades.id)
+recommandation_ing_4 = Recommendation.create(friend: "alex", comment: "Un grand classic qu'Alexandru m'a dit de ne pas louper !!!", searched: false, viewed: false, user_id: ingo.id, movie_id: les_evades.id)
 
-recommandation_vavou_5 = Recommendation.create(friend: "valou", added_on: Time.now, comment: "film d'epoque super top", searched: false, viewed: false, user_id: valentine.id, movie_id: douze_hommes.id)
+recommandation_vavou_5 = Recommendation.create(friend: "valou", comment: "film d'epoque super top", searched: false, viewed: false, user_id: valentine.id, movie_id: douze_hommes.id)
 
 
 puts "done"
