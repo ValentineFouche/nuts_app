@@ -1,20 +1,24 @@
 <h1>Ajouter une reco</h1>
 <div data-controller="search-movies">
-  <%= form_with url: new_recommendation_path, method: :get, html: { data: { search_movies_target: 'form' } } do |f| %>
-    <%= f.text_field :query,
-                     class: "form-control",
-                     placeholder: 'Type a movie title',
-                     value: params[:query],
-                     data: {
-                        search_movies_target: 'input',
-                        action: 'keyup->search-movies#update'
-                      } %>
-  <% end %>
-  <%= simple_form_for @recommendation do |f| %>
-  <%= f.input :movie, label: false, input_html: { class: "d-none" } %>
-  <%= f.input :friend %>
-  <%= f.input :comment %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-  <% end %>
-  <%= render 'movie_list', movies: @movies %>
+  <div>
+    <%= form_with url: new_recommendation_path, method: :get, html: { data: { search_movies_target: 'form' } } do |f| %>
+      <%= f.text_field :query,
+                      class: "form-control",
+                      placeholder: 'Type a movie title',
+                      value: params[:query],
+                      data: {
+                          search_movies_target: 'input',
+                          action: 'keyup->search-movies#update'
+                        } %>
+    <% end %>
+  </div>
+  <div data-action="pick-movie@window->search-movies#createmovie">
+    <%= simple_form_for @recommendation do |f| %>
+    <%= f.input :movie_id, label: false, input_html: { class: "d-none", data: { search_movies_target: 'movie' }} %>
+    <%= f.input :friend %>
+    <%= f.input :comment %>
+    <%= f.submit "Submit review", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+    <%= render 'movie_list', movies: @movies %>
 </div>
