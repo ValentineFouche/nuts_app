@@ -3,34 +3,50 @@
   <div class="row">
     <div class="col-6 col-md-6 col-lg-3">
       <div class="icons film">
-        <div class="icon-film">
-          <%# put links here %>
-          <i class="fas fa-film icon"></i>
-        </div>
-        <div class="header-film">
-          <h4>Films</h4>
-        </div>
+        <%= link_to recommendations_path, class: "link-icons text-decoration-none" do %>
+          <div class="icon-film">
+            <i class="fas fa-film icon"></i>
+          </div>
+          <div class="header-icon">
+            <h4>Films</h4>
+          </div>
+        <% end %>
       </div>
     </div>
     <div class="col-6 col-md-6 col-lg-3">
-      <div class="icons livre">
-          <%# put links here %>
-        <i class="fas fa-book icon"></i>
-        <h4>Livres</h4>
+      <div class="icons book">
+        <%= link_to recommendations_path, class: "link-icons text-decoration-none" do %>
+          <div class="icon-book">
+            <i class="fas fa-book icon"></i>
+          </div>
+          <div class="header-icon">
+            <h4>Livres</h4>
+          </div>
+        <% end %>
       </div>
     </div>
     <div class="col-6 col-md-6 col-lg-3">
       <div class="icons podcast">
-          <%# put links here %>
-        <i class="fas fa-podcast icon"></i>
-        <h4>Podcasts</h4>
+        <%= link_to recommendations_path, class: "link-icons text-decoration-none" do %>
+          <div class="icon-podcast">
+            <i class="fas fa-podcast icon"></i>
+          </div>
+          <div class="header-icon">
+          <h4>Podcasts</h4>
+          </div>
+        <% end %>
       </div>
     </div>
     <div class="col-6 col-md-6 col-lg-3">
       <div class="icons restaurant">
-          <%# put links here      %>
-        <i class="fas fa-utensils icon"></i>
-        <h4>Restaurants</h4>
+        <%= link_to recommendations_path, class: "link-icons text-decoration-none" do %>
+          <div class="icon-restaurant">
+            <i class="fas fa-utensils icon"></i>
+          </div>
+          <div class="header-icon">
+            <h4>Restaurants</h4>
+          </div>
+        <% end %>
       </div>
     </div>
 </div>

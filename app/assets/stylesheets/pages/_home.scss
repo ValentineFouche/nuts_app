@@ -20,10 +20,12 @@ body {
 // }
 .icons {
   text-align: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 h4 {
-  font-family: 'Schoolbell', cursive;
+  font-family: $header-nuts-notes;
+  color: #3A2D27;
 }
 
 .icon {
