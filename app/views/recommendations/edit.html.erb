@@ -1,7 +1,8 @@
 <%= simple_form_for @recommendation do |f| %>
+  <%if @recommendation.viewed == false%>
   <%= f.input :friend %>
   <%= f.input :comment %>
-  <% if @recommendation.viewed == true %>
+  <% else%>
     <%= f.input :feedback_content %>
     <%= f.input :feedback_rating %>
   <% end %>
