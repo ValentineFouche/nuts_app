@@ -16,8 +16,7 @@
       </ul>
       <div class="card-body card-body-show">
         <p><strong>Regardez sur :</strong></p>
-        <% moviename = @recommendation.movie.title.gsub(' ','+') %>
-        <a href=<%="https://www.google.fr/search?q=regarder+#{moviename}" %>>Google</a>
+        <%= link_to "Google", recommendation_movies_search_path(@recommendation), class: "btn btn-primary" %>
       </div>
     </div>
     <div class="d-flex justify-content-around my-4">

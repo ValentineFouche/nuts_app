@@ -7,5 +7,6 @@ Rails.application.routes.draw do
       get :searched
       get :viewed
     end
+    get 'movies_search', to: "recommendations#movies_search", as: :movies_search
   end
 end

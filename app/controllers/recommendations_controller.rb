@@ -7,10 +7,12 @@ class RecommendationsController < ApplicationController
 
   def new
     @recommendation = Recommendation.new
-    @movies = Movie.all
+    all_movies = Movie.all
 
-    if params[:query].present?
-      @movies = @movies.where('title ILIKE ?', "%#{params[:query]}%")
+    if params[:query].present? == false
+      @movies = []
+    else
+      @movies = all_movies.where('title ILIKE ?', "%#{params[:query]}%")
     end
 
     respond_to do |format|
@@ -53,6 +55,14 @@ class RecommendationsController < ApplicationController
     reco_not_sorted = Recommendation.where(viewed: true)
     reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.updated_at }
     @recommendations = reco_sorted_asc.reverse
+  end
+  
+  def movies_search
+    @recommendation = Recommendation.find(params[:recommendation_id])
+    @recommendation.searched = true
+    @recommendation.save
+    moviename = @recommendation.movie.title.gsub(' ','+')
+    redirect_to("https://www.google.fr/search?q=regarder+#{moviename}")
   end
 
   private
