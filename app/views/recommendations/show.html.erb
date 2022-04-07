@@ -28,5 +28,9 @@
     <div>
       <%= link_to "Add a film", new_recommendation_path, class:"text-decoration-none buttons" %>
     </div>
-  </div>
+  </div> <%= simple_form_for @recommendation, method: :patch  do |f| %>
+    <%= f.input :viewed  %>
+    <%= f.submit%>
+    <% end %>
+  <%=@recommendation.viewed%>
 </div>
