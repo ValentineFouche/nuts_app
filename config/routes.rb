@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :recommendations, only: [ :show, :index, :edit, :update, :new, :create] do
     collection do
       get :searched
+      get :viewed
     end
   end
 end

@@ -49,6 +49,12 @@ class RecommendationsController < ApplicationController
     @recommendations = reco_sorted_asc.reverse
   end
 
+  def viewed
+    reco_not_sorted = Recommendation.where(viewed: true)
+    reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.updated_at }
+    @recommendations = reco_sorted_asc.reverse
+  end
+
   private
 
   def params_recommendations
