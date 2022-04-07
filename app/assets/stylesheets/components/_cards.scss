@@ -49,7 +49,12 @@ border-radius: 8px 0px 0px 8px;
 
 .buttons {
   color: #F1D196;
-  border: solid 1px #F1D196;
+  border: solid 2px #F1D196;
   padding: 10px;
   border-radius: 10px;
+    &:hover{
+      background-color: #F1D196;
+      color: black;
+      font-weight: bold;
+    }
 }

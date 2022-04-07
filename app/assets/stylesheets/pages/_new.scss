@@ -1,3 +1,25 @@
 #movie {
   color: white;
 }
+
+.btn-submit {
+  color: #F1D196;
+  border: solid 2px #F1D196;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #1f1f1f;
+    &:hover {
+      background-color: #F1D196;
+      color: black;
+      font-weight: bold;
+      border: none;
+    }
+}
+
+.form-label {
+  color: white;
+}
+
+.form-control {
+  border-radius: 20px;
+}
