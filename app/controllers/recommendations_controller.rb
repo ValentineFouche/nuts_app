@@ -1,6 +1,8 @@
 class RecommendationsController < ApplicationController
   def index
-    @recommendations = Recommendation.all
+    reco_not_sorted = Recommendation.all
+    reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.created_at }
+    @recommendations = reco_sorted_asc.reverse
   end
 
   def new
@@ -41,7 +43,9 @@ class RecommendationsController < ApplicationController
   end
 
   def searched
-    @recommendations = Recommendation.where(searched: true)
+    reco_not_sorted = Recommendation.where(searched: true)
+    reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.updated_at }
+    @recommendations = reco_sorted_asc.reverse
   end
 
   private
