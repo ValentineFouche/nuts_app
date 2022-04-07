@@ -18,5 +18,6 @@ export default class extends Controller {
     this.movieTarget.value = movie_id
     const title = event.detail.title
     this.inputTarget.value = title
+    window.scrollTo(0,0)
   }
 }

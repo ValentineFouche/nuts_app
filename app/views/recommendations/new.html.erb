@@ -12,7 +12,6 @@
                             action: 'keyup->search-movies#update'
                           } %>
       <% end %>
-      <%= render 'movie_list', movies: @movies %>
     </div>
     <div data-action="pick-movie@window->search-movies#createmovie form-reco">
       <%= simple_form_for @recommendation do |f| %>
@@ -26,4 +25,5 @@
   <div class="my-4">
     <%= link_to "Retour", recommendations_path, class:"text-decoration-none buttons" %>
   </div>
+  <%= render 'movie_list', movies: @movies %>
 </div>
