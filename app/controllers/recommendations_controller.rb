@@ -51,6 +51,12 @@ class RecommendationsController < ApplicationController
     @recommendations = reco_sorted_asc.reverse
   end
 
+  def viewed
+    reco_not_sorted = Recommendation.where(viewed: true)
+    reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.updated_at }
+    @recommendations = reco_sorted_asc.reverse
+  end
+  
   def movies_search
     @recommendation = Recommendation.find(params[:recommendation_id])
     @recommendation.searched = true
@@ -62,7 +68,7 @@ class RecommendationsController < ApplicationController
   private
 
   def params_recommendations
-    params.require(:recommendation).permit(:friend, :added_on, :comment, :searched, :viewed,
-                                           :feedback_content, :feedback, :rating, :movie_id, :user_id, :query)
+    params.require(:recommendation).permit(:friend, :comment, :searched, :viewed,
+                                           :feedback_content, :feedback, :rating, :movie_id, :user_id)
   end
 end
