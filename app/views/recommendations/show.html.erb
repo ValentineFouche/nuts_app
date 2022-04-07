@@ -16,8 +16,8 @@
       </ul>
       <div class="card-body card-body-show">
         <p><strong>Regardez sur :</strong></p>
-        <%= link_to "??", new_recommendation_path, class:"text-decoration-none buttons-show" %>
-        <%= link_to "??", new_recommendation_path, class:"text-decoration-none buttons-show" %>
+        <% moviename = @recommendation.movie.title.gsub(' ','+') %>
+        <a href=<%="https://www.google.fr/search?q=regarder+#{moviename}" %>>Google</a>
       </div>
     </div>
   </div>
