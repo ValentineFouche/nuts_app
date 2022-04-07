@@ -80,10 +80,16 @@ h4 {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #F4DFBA;}
+.dropdown-content a:hover {
+  background-color: #F4DFBA;
+  border-radius: 15px;
+}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 // .dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropbtn {
+  margin: 0;
+}
