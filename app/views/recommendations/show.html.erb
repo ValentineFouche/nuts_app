@@ -1,16 +1,14 @@
-
 <div class="container-fluid p-0">
   <div class="col-12 col-md-6">
     <div class="card card-show" style="width: 100%;">
-        <h2><%= @recommendation.movie.title %></h2>
-          <% if @recommendation.movie.image_url.start_with?("http") %>
-            <%= image_tag @recommendation.movie.image_url, alt: "Poster", class: "img-fluid" %>
-          <% elsif @recommendation.movie.image_url.start_with?("..//assets/images/") %>
-            <%= image_tag @recommendation.movie.image_url.gsub("..//assets/images/", ""), alt: "Poster", class: "img-fluid" %>
-          <% else %>
-            <%= image_tag @recommendation.movie.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid" %>
-          <% end %>
-          <%# <%= image_tag @recommendation.movie.image_url, alt: "Poster", class: "img-fluid" %>
+      <h2><%= @recommendation.movie.title %></h2>
+      <% if @recommendation.movie.image_url.start_with?("http") %>
+        <%= image_tag @recommendation.movie.image_url, alt: "Poster", class: "img-fluid"  %>
+      <% elsif @recommendation.movie.image_url.start_with?("..//assets/images/") %>
+        <%= image_tag @recommendation.movie.image_url.gsub("..//assets/images/", ""), alt: "Poster", class: "img-fluid" %>
+      <% else %>
+        <%= image_tag @recommendation.movie.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid" %>
+      <% end %>
       <ul class="list-group list-group-flush">
         <li class="list-group-item"> <strong>Recommandé par :</strong> <%= @recommendation.friend.capitalize %></li>
         <li class="list-group-item"> <strong>Mon commentaire :</strong> <%= @recommendation.comment %></li>
@@ -18,9 +16,17 @@
       </ul>
       <div class="card-body card-body-show">
         <p><strong>Regardez sur :</strong></p>
-        <a href="#" class="card-link btn btn-light rounded-pill">myCanal</a>
-        <a href="#" class="card-link btn btn-light rounded-pill">Netflix</a>
+        <%= link_to "??", new_recommendation_path, class:"text-decoration-none buttons-show" %>
+        <%= link_to "??", new_recommendation_path, class:"text-decoration-none buttons-show" %>
       </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-around mt-2">
+    <div>
+      <%= link_to "Back", root_path, class:"text-decoration-none buttons" %>
+    </div>
+    <div>
+      <%= link_to "Add a film", new_recommendation_path, class:"text-decoration-none buttons" %>
     </div>
   </div>
 </div>
