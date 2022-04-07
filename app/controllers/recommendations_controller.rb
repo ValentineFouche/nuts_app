@@ -8,6 +8,7 @@ class RecommendationsController < ApplicationController
   def new
     @recommendation = Recommendation.new
     all_movies = Movie.all
+    @friends = User.all.map {|friend| friend.nickname}
 
     if params[:query].present? == false
       @movies = []
@@ -56,7 +57,7 @@ class RecommendationsController < ApplicationController
     reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.updated_at }
     @recommendations = reco_sorted_asc.reverse
   end
-  
+
   def movies_search
     @recommendation = Recommendation.find(params[:recommendation_id])
     @recommendation.searched = true
