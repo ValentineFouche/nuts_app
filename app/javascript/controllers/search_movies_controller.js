@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["form", "input", "list", "movie"]
+  static targets = ["form", "input", "list", "movie", "query"]
 
   update() {
     const url = `${this.formTarget.action}?query=${this.inputTarget.value}`
@@ -16,5 +16,10 @@ export default class extends Controller {
     event.preventDefault
     const movie_id = event.detail.id
     this.movieTarget.value = movie_id
+    console.log(this.queryTarget)
+  }
+
+  updatesearch() {
+    console.log("coucou")
   }
 }
