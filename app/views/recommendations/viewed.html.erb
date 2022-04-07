@@ -19,6 +19,11 @@
             <h5 class="card-title"><%=recommendation.movie.title %></h5>
           </div>
           <div>
+          <%= @recommendations.each do |recommendation| %>
+            <%= recommendation.feedback_rating * %><i class="fa-solid fa-star"></i>
+          <% end %>
+          </div>
+          <div>
             <p class="card-text">Recommandé par: <%=recommendation.friend%></p>
           </div>
           <div>
