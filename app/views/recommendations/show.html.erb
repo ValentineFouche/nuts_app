@@ -16,8 +16,8 @@
       </ul>
       <div class="card-body card-body-show">
         <p><strong>Regardez sur :</strong></p>
-        <%= link_to "??", new_recommendation_path, class:"text-decoration-none buttons-show" %>
-        <%= link_to "??", new_recommendation_path, class:"text-decoration-none buttons-show" %>
+        <% moviename = @recommendation.movie.title.gsub(' ','+') %>
+        <a href=<%="https://www.google.fr/search?q=regarder+#{moviename}" %>>Google</a>
       </div>
     </div>
     <div class="d-flex justify-content-around my-4">
@@ -28,5 +28,9 @@
         <%= link_to "Modifier", edit_recommendation_path, class:"text-decoration-none buttons" %>
       </div>
     </div>
-  </div>
+  </div> <%= simple_form_for @recommendation, method: :patch  do |f| %>
+    <%= f.input :viewed  %>
+    <%= f.submit%>
+    <% end %>
+  <%=@recommendation.viewed%>
 </div>
