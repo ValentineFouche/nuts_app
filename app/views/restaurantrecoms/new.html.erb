@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Ajouter une reco</h1>
+  <div data-controller="search-restaurants">
+    <div class="search-target">
+      <%= form_with url: new_restaurantrecom_path, method: :get, html: { data: { search_restaurants_target: 'form' } } do |f| %>
+        <%= f.text_field :query1,
+                        class: "form-control",
+                        placeholder: 'Type a restaurant title',
+                        value: params[:query1],
+                        data: {
+                            search_restaurants_target: 'input',
+                            action: 'keyup->search-restaurants#update'
+                          } %>
+      <% end %>
+      <%= render 'restaurant_list', restaurants: @restaurants %>
+    </div>
+    <div data-action="pick-restaurant@window->search-restaurants#createrestaurant form-reco">
+      <%= simple_form_for @restaurantrecom do |f| %>
+      <%= f.input :restaurant_id, label: false, input_html: { class: "d-none", data: { search_restaurants_target: 'restaurant' }} %>
+      <%= f.input :friend %>
+      <%= f.input :comment %>
+      <%= f.submit "Ajouter à ma list", class: "btn-submit" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="my-4">
+    <%= link_to "Retour", restaurantrecoms_path, class:"text-decoration-none buttons" %>
+  </div>
+  <%= render 'restaurant_list', restaurants: @restaurants %>
+</div>

@@ -32,7 +32,7 @@
                 <p class="dropbtn"><i class="fas fa-book icon"></i></p>
                 <div class="dropdown-content">
                   <%= link_to "Voir", bookrecoms_path, class: "link-icons text-decoration-none" %>
-                  <%= link_to "Ajouté", bookrecoms_path, class: "link-icons text-decoration-none" %>
+                  <%= link_to "Ajouté", new_bookrecom_path, class: "link-icons text-decoration-none" %>
                 </div>
               </div>
             </div>
@@ -49,8 +49,8 @@
               <div class="dropdown">
                 <p class="dropbtn"><i class="fas fa-podcast icon"></i></p>
                 <div class="dropdown-content">
-                  <%= link_to "Voir", recommendations_path, class: "link-icons text-decoration-none" %>
-                  <%= link_to "Ajouté", recommendations_path, class: "link-icons text-decoration-none" %>
+                  <%= link_to "Voir", podcastrecoms_path, class: "link-icons text-decoration-none" %>
+                  <%= link_to "Ajouté", new_podcastrecom_path, class: "link-icons text-decoration-none" %>
                 </div>
               </div>
             </div>
@@ -67,8 +67,8 @@
               <div class="dropdown">
                 <p class="dropbtn"><i class="fas fa-utensils icon"></i></p>
                 <div class="dropdown-content">
-                  <%= link_to "Voir", recommendations_path, class: "link-icons text-decoration-none" %>
-                  <%= link_to "Ajouté", new_recommendation_path, class: "link-icons text-decoration-none" %>
+                  <%= link_to "Voir", restaurantrecoms_path, class: "link-icons text-decoration-none" %>
+                  <%= link_to "Ajouté", new_restaurantrecom_path, class: "link-icons text-decoration-none" %>
                 </div>
               </div>
             </div>

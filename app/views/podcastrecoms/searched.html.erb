@@ -1,21 +1,21 @@
 <div class="container">
-  <h1>Livres récemment recherchés</h1>
-  <%@bookrecoms.each do |bookrecom|%>
+  <h1>Podcasts récemment recherchés</h1>
+  <%@podcastrecoms.each do |podcastrecom|%>
   <div class="card shadow mb-5 bg-body" style="max-width: 540px;">
-    <%= link_to bookrecom_path(bookrecom), class:"text-decoration-none" do%>
+    <%= link_to podcastrecom_path(podcastrecom), class:"text-decoration-none" do%>
       <div class="cards g-0 d-flex">
         <div class="card-body d-flex flex-column">
           <div>
-            <h5 class="card-title"><%=bookrecom.book.title %></h5>
+            <h5 class="card-title"><%=podcastrecom.podcast.title %></h5>
           </div>
           <div>
-            <p class="card-text">Recommandé par: <%=bookrecom.friend%></p>
+            <p class="card-text">Recommandé par: <%=podcastrecom.friend%></p>
           </div>
           <div>
-            <p class="card-text">Recherché le: <%=bookrecom.updated_at.strftime("%m/%d/%Y")%></p>
+            <p class="card-text">Recherché le: <%=podcastrecom.updated_at.strftime("%m/%d/%Y")%></p>
           </div>
           <div>
-            <%= simple_form_for bookrecom do |f| %>
+            <%= simple_form_for podcastrecom do |f| %>
               <%= f.input :viewed, label: 'vu?' %>
             <% end %>
           </div>
@@ -26,7 +26,7 @@
   <%end%>
   <div class="d-flex justify-content-around">
     <div>
-      <%= link_to "Ajouter un livre", new_bookrecom_path, class:"text-decoration-none buttons" %>
+      <%= link_to "Ajouter un podcast", new_podcastrecom_path, class:"text-decoration-none buttons" %>
     </div>
     <div>
       <%= link_to "Retour", root_path, class:"text-decoration-none buttons" %>

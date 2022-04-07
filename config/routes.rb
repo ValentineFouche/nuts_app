@@ -17,4 +17,20 @@ Rails.application.routes.draw do
     end
     get 'books_search', to: "bookrecoms#books_search", as: :books_search
   end
+
+  resources :podcastrecoms, only: [ :show, :index, :edit, :update, :new, :create] do
+    collection do
+      get :searched
+      get :viewed
+    end
+    get 'podcasts_search', to: "podcastrecoms#books_search", as: :podcasts_search
+  end
+
+  resources :restaurantrecoms, only: [ :show, :index, :edit, :update, :new, :create] do
+    collection do
+      get :searched
+      get :viewed
+    end
+    get 'restaurant_search', to: "restaurantrecoms#restaurants_search", as: :restaurants_search
+  end
 end
