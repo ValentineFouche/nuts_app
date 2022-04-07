@@ -11,6 +11,8 @@ require "open-uri"
 Recommendation.destroy_all
 Movie.destroy_all
 User.destroy_all
+Book.destroy_all
+Bookrecom.destroy_all
 
 puts "creating users"
 # je creer des users
@@ -38,6 +40,14 @@ movies["items"].each do |movie|
   Movie.create(title: movie["title"], director: movie["crew"], image_url: movie["image"], stream_options: "pas de stream pour l'instant" )
 end
 
+puts "creating books"
+
+book1 = Book.create(title: "Le petit prince")
+Book.create(title: "David Copperfield")
+Book.create(title: "Guerre et paix")
+Book.create(title: "Anna Karenina")
+
+
 puts "creating recommandations"
 # je creer des recommandations
 recommandation_val_1 = Recommendation.create(friend: "alex", comment: "film conseillé quand nous avons mangé de la socca à nice, film d'action pleins de suspense", searched: false, viewed: false, user_id: valentine.id, movie_id: dark_knight.id)
@@ -50,5 +60,8 @@ recommandation_ing_4 = Recommendation.create(friend: "alex", comment: "Un grand 
 
 recommandation_vavou_5 = Recommendation.create(friend: "valou", comment: "film d'epoque super top", searched: false, viewed: false, user_id: valentine.id, movie_id: douze_hommes.id)
 
+puts "creating bookrecoms"
+
+Bookrecom.create(friend: "alex", comment: "Le livre le plus connu de l'ecrivain Antoine de Saint-Exupery", searched: false, viewed: false, user_id: alexandru.id, book_id: book1.id)
 
 puts "done"

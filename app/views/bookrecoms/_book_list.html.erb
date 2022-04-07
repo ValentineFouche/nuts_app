@@ -1,0 +1,8 @@
+<div class="search-book ps-3 py-3" data-search-books-target="list">
+  <% books.each do |book| %>
+  <div data-controller="select-books"        data-select-books-target="choix"
+        data-action="click->select-books#save" data-value=<%= book.id %>>
+  <p id="book"><%= book.title %></p>
+  </div>
+    <% end %>
+</div>

@@ -9,4 +9,12 @@ Rails.application.routes.draw do
     end
     get 'movies_search', to: "recommendations#movies_search", as: :movies_search
   end
+
+  resources :bookrecoms, only: [ :show, :index, :edit, :update, :new, :create] do
+    collection do
+      get :searched
+      get :viewed
+    end
+    get 'books_search', to: "bookrecoms#books_search", as: :books_search
+  end
 end

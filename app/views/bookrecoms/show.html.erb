@@ -1,0 +1,27 @@
+<div class="container-fluid p-0">
+  <div class="col-12 col-md-6">
+    <div class="card card-show" style="width: 100%;">
+      <h2><%= @bookrecom.book.title %></h2>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"> <strong>Recommandé par :</strong> <%= @bookrecom.friend.capitalize %></li>
+        <li class="list-group-item"> <strong>Mon commentaire :</strong> <%= @bookrecom.comment %></li>
+        <li class="list-group-item"> <strong>Ajouté le :</strong> <%= @bookrecom.created_at.strftime("%d/%m/%Y") %></li>
+      </ul>
+      <div class="card-body card-body-show">
+        <p><strong>Regardez sur :</strong></p>
+        <%= link_to "Google", bookrecom_books_search_path(@bookrecom), class: "btn btn-primary" %>
+      </div>
+    </div>
+    <div class="d-flex justify-content-around my-4">
+      <div>
+        <%= link_to "Retour", bookrecoms_path, class:"text-decoration-none buttons" %>
+      </div>
+      <div>
+        <%= link_to "Modifier", edit_bookrecom_path, class:"text-decoration-none buttons" %>
+      </div>
+    </div>
+  </div> <%= simple_form_for @bookrecom, method: :patch  do |f| %>
+    <%= f.input :viewed  %>
+    <%= f.submit%>
+    <% end %>
+</div>
