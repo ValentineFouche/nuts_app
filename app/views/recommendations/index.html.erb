@@ -5,7 +5,14 @@
     <%= link_to recommendation_path(recommendation), class:"text-decoration-none" do%>
       <div class="cards g-0 d-flex">
         <div class="images-index">
+        <% if recommendation.movie.image_url.start_with?("http") %>
           <%= image_tag recommendation.movie.image_url, alt: "Poster", class: "img-fluid" %>
+        <% elsif recommendation.movie.image_url.start_with?("..//assets/images/") %>
+          <%= image_tag recommendation.movie.image_url.gsub("..//assets/images/", ""), alt: "Poster", class: "img-fluid" %>
+         <% else %>
+           <%= image_tag recommendation.movie.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid" %>
+         <% end %>
+          <%# <%= image_tag recommendation.movie.image_url, alt: "Poster", class: "img-fluid" %>
         </div>
         <div class="card-body d-flex flex-column">
           <div>
