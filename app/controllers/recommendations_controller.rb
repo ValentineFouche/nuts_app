@@ -58,7 +58,7 @@ class RecommendationsController < ApplicationController
   private
 
   def params_recommendations
-    params.require(:recommendation).permit(:friend, :added_on, :comment, :searched, :viewed,
+    params.require(:recommendation).permit(:friend, :comment, :searched, :viewed,
                                            :feedback_content, :feedback, :rating, :movie_id, :user_id)
   end
 end
