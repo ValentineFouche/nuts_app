@@ -7,10 +7,12 @@ class RecommendationsController < ApplicationController
 
   def new
     @recommendation = Recommendation.new
-    @movies = Movie.all
+    all_movies = Movie.all
 
-    if params[:query].present?
-      @movies = @movies.where('title ILIKE ?', "%#{params[:query]}%")
+    if params[:query].present? == false
+      @movies = []
+    else
+      @movies = all_movies.where('title ILIKE ?', "%#{params[:query]}%")
     end
 
     respond_to do |format|
@@ -53,6 +55,6 @@ class RecommendationsController < ApplicationController
 
   def params_recommendations
     params.require(:recommendation).permit(:friend, :added_on, :comment, :searched, :viewed,
-                                           :feedback_content, :feedback, :rating, :movie_id, :user_id)
+                                           :feedback_content, :feedback, :rating, :movie_id, :user_id, :query)
   end
 end
