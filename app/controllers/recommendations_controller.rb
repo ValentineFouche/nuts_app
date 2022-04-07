@@ -49,6 +49,14 @@ class RecommendationsController < ApplicationController
     @recommendations = reco_sorted_asc.reverse
   end
 
+  def movies_search
+    @recommendation = Recommendation.find(params[:recommendation_id])
+    @recommendation.searched = true
+    @recommendation.save
+    moviename = @recommendation.movie.title.gsub(' ','+')
+    redirect_to("https://www.google.fr/search?q=regarder+#{moviename}")
+  end
+
   private
 
   def params_recommendations
