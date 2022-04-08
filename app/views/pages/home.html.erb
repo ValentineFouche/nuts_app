@@ -3,25 +3,17 @@
   <div class="container fill-height">
     <div class="row">
       <div class="col-6 col-md-6 col-lg-3">
-        <div class="icons film">
-          <%#= link_to recommendations_path, class: "link-icons text-decoration-none" do %>
-            <div class="icon-film">
-              <div class="dropdown">
-                <p class="dropbtn"><i class="fas fa-film icon"></i></p>
-                <div class="dropdown-content">
-                  <div>
-                    <%= link_to "Voir", recommendations_path, class: "link-icons text-decoration-none" %>
-                  </div>
-                  <div>
-                    <%= link_to "Ajouté", new_recommendation_path, class: "link-icons text-decoration-none" %>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="header-icon">
-              <h4>Films</h4>
-            </div>
-          <%# end %>
+        <div class="icons film d-flex justify-content-center align-items-center" data-controller="film-button">
+          <div class="d-none" data-film-button-target="buttonView">
+              <%= link_to "Voir", recommendations_path, class: "button-home text-decoration-none" %>
+          </div>
+          <i class="fas fa-film icon" data-film-button-target="icon" data-action="click->film-button#hide"></i>
+          <div class="d-none" data-film-button-target="buttonAdd">
+              <%= link_to "Voir", new_recommendation_path, class: "button-home text-decoration-none" %>
+          </div>
+        </div>
+        <div class="header-icon text-center">
+          <h4>Films</h4>
         </div>
       </div>
       <div class="col-6 col-md-6 col-lg-3">

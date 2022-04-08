@@ -1,7 +1,4 @@
 // Specific CSS for your home-page
-// html {
-//   height: 100%;
-// }
 body {
   background-color: #1F1F1F;
 }
@@ -35,11 +32,12 @@ h4 {
   padding: 20px;
   color: #3A2D27;
   padding-top: 10px;
+  text-shadow:3px 3px 3px rgba(0, 0, 0, 0.40)
 }
 
-.hide {
-  display: none;
-}
+// .hide {
+//   display: none;
+// }
 
 .icons:hover + .hide {
   display: block;
@@ -50,46 +48,21 @@ h4 {
     }
 }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 95px;
-  left: 20px;
-  background-color: #EEC373;
-  min-width: 80px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  border-radius: 15px;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
+.button-home {
+  // border: solid 2px #F1D196;
   color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  font-family: $header-nuts-notes;
-  font-weight: light;
+  background-color: #F1D196;
+  padding: 10px;
+  border-radius: 10px;
+  border: solid 2px #1f1f1f;
+  &:hover{
+    background-color: #1f1f1f;
+    color: #F1D196;
+    font-weight: bold;
+    }
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #F4DFBA;
-  border-radius: 15px;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-// .dropdown:hover .dropbtn {background-color: #3e8e41;}
-.dropbtn {
-  margin: 0;
+.links-icon {
+  border-radius: 10px;
+  border: solid;
 }

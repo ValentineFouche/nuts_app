@@ -13,12 +13,9 @@
         <li class="list-group-item"> <strong>Recommandé par :</strong> <%= @recommendation.friend.capitalize %></li>
         <li class="list-group-item"> <strong>Mon commentaire :</strong> <%= @recommendation.comment %></li>
         <li class="list-group-item"> <strong>Ajouté le :</strong> <%= @recommendation.created_at.strftime("%d/%m/%Y") %></li>
+        <li class="list-group-item"><% moviename = @recommendation.movie.title.gsub(' ','+') %>
+        <%= link_to "Regarder sur", "https://www.google.fr/search?q=regarder+#{moviename}", class: "buttons text-decoration-none", target: "_blank" %></li>
       </ul>
-      <div class="card-body card-body-show">
-        <p><strong>Regardez sur :</strong></p>
-        <% moviename = @recommendation.movie.title.gsub(' ','+') %>
-        <a href=<%="https://www.google.fr/search?q=regarder+#{moviename}" %>>Google</a>
-      </div>
     </div>
     <div class="d-flex justify-content-around my-4">
       <div>
@@ -28,9 +25,10 @@
         <%= link_to "Modifier", edit_recommendation_path, class:"text-decoration-none buttons" %>
       </div>
     </div>
-  </div> <%= simple_form_for @recommendation, method: :patch  do |f| %>
-    <%= f.input :viewed  %>
-    <%= f.submit%>
+  </div>
+    <%= simple_form_for @recommendation, method: :patch  do |f| %>
+      <%= f.input :viewed  %>
+      <%= f.submit%>
     <% end %>
-  <%=@recommendation.viewed%>
+    <%=@recommendation.viewed%>
 </div>
