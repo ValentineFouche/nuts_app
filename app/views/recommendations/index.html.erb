@@ -3,37 +3,34 @@
   <h2 class="titre-index">Films à voir</h2>
     <%= link_to "Ajouter un film", new_recommendation_path, class:"text-decoration-none buttons" %>
   </div>
-
-  <%@recommendations.select do |recommendation| if recommendation.viewed == false%>
-  <div class="card shadow mb-5 bg-body" style="max-width: 540px;">
-    <%= link_to recommendation_path(recommendation), class:"text-decoration-none" do%>
-      <div class="cards g-0 d-flex">
-        <div class="images-index">
+  <div class="wrapper">
+    <%@recommendations.select do |recommendation| if recommendation.viewed == false%>
+    <div class="cards" style="max-width: 540px;">
+      <%= link_to recommendation_path(recommendation), class:"text-decoration-none" do%>
+        <div class="image-card">
         <% if recommendation.movie.image_url.start_with?("http") %>
           <%= image_tag recommendation.movie.image_url, alt: "Poster", class: "img-fluid img-index" %>
         <% elsif recommendation.movie.image_url.start_with?("..//assets/images/") %>
           <%= image_tag recommendation.movie.image_url.gsub("..//assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
-         <% else %>
-           <%= image_tag recommendation.movie.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
-         <% end %>
+        <% else %>
+          <%= image_tag recommendation.movie.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
+        <% end %>
+      <%end %>
           <%# <%= image_tag recommendation.movie.image_url, alt: "Poster", class: "img-fluid" %>
         </div>
-        <div class="card-body card-body-index d-flex flex-column">
-          <div>
-            <h5 class="card-title"><%=recommendation.movie.title %></h5>
-          </div>
-          <div>
-            <p class="card-text">Recommandé par: <%=recommendation.friend%></p>
-          </div>
-          <div>
-            <p class="card-text">Ajouté le: <%=recommendation.created_at.strftime("%d/%m/%Y")%></p>
-          </div>
+        <div>
+          <h5 class="card-title"><%=recommendation.movie.title %></h5>
         </div>
-      </div>
-    <% end %>
+        <div>
+          <p class="card-text">Recommandé par: <%=recommendation.friend%></p>
+        </div>
+        <div>
+          <p class="card-text">Ajouté le: <%=recommendation.created_at.strftime("%d/%m/%Y")%></p>
+        </div>
+      <% end %>
+    </div>
+    <%end%>
   </div>
-  <%end%>
-  <%end%>
   <div class="d-flex justify-content-around my-4">
     <div>
       <%= link_to "Retour", root_path, class:"text-decoration-none buttons" %>

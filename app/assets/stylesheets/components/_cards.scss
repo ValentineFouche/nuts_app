@@ -1,32 +1,38 @@
-@media(max-width: 500px) {
-  .cards {
-    font-size: 12px;
-  }
+// @media(max-width: 500px) {
+//   .cards {
+//     font-size: 12px;
+//   }
+// }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
 }
 
-  .card-body-index {
-    width: 50%;
-    background-color:#F1D196;
-    justify-content: space-around;
-    border-radius: 0px 8px 8px 0px;
-  }
+//   .card-body-index {
+//     width: 50%;
+//     background-color:#F1D196;
+//     justify-content: space-around;
+//     border-radius: 0px 8px 8px 0px;
+//   }
 
-  .card {
-    border: none;
-    border-radius: 15px;
-  }
+//   .card {
+//     border: none;
+//     border-radius: 15px;
+//   }
 
-.card-body-index {
-  width: 50%;
-  background-color:#F1D196;
-  justify-content: space-around;
-  border-radius: 0px 8px 8px 0px;
-}
+// .card-body-index {
+//   width: 50%;
+//   background-color:#F1D196;
+//   justify-content: space-around;
+//   border-radius: 0px 8px 8px 0px;
+// }
 
-.card {
-  border: none;
-  border-radius: 15px;
-}
+// .card {
+//   border: none;
+//   border-radius: 15px;
+// }
 
 h1 {
   color: #F1D196;
@@ -37,23 +43,23 @@ h1 {
 }
 
 h5 {
-  color: #1F1F1F;
+  color: blue;
   font-family: $headers-font;
 }
 
 p {
-  color: #1F1F1F;
+  color: blue;
   font-family: $headers-font;
   font-weight: 400;
 }
 
-// .images-index {
-//   // width: 50%;
-// }
+// // .images-index {
+// //   // width: 50%;
+// // }
 
-.img-index {
-border-radius: 8px 0px 0px 8px;
-}
+// .img-index {
+// border-radius: 8px 0px 0px 8px;
+// }
 
 .buttons {
   color: #F1D196;
@@ -79,4 +85,8 @@ border-radius: 8px 0px 0px 8px;
   font-family: $header-nuts-notes;
   text-align: center;
   font-size: 26px;
+}
+
+.img-fluid {
+  width: 100%;
 }
