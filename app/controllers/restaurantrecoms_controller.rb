@@ -62,7 +62,7 @@ class RestaurantrecomsController < ApplicationController
     @restaurantrecom.searched = true
     @restaurantrecom.save
     restaurantname = @restaurantrecom.restaurant.title.gsub(' ','+')
-    redirect_to("https://www.google.fr/search?q=regarder+#{restaurantname}")
+    redirect_to("https://www.google.fr/search?q=restaurants+#{restaurantname}")
   end
 
   private
