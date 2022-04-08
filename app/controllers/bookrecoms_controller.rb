@@ -62,7 +62,7 @@ class BookrecomsController < ApplicationController
     @bookrecom.searched = true
     @bookrecom.save
     bookname = @bookrecom.book.title.gsub(' ','+')
-    redirect_to("https://www.google.fr/search?q=regarder+#{bookname}")
+    redirect_to("https://www.google.fr/search?q=lire+#{bookname}")
   end
 
   private

@@ -62,7 +62,7 @@ class PodcastrecomsController < ApplicationController
     @podcastrecom.searched = true
     @podcastrecom.save
     podcastname = @podcastrecom.podcast.title.gsub(' ','+')
-    redirect_to("https://www.google.fr/search?q=regarder+#{podcastname}")
+    redirect_to("https://www.google.fr/search?q=ecouter+des+podcasts+#{podcastname}")
   end
 
   private

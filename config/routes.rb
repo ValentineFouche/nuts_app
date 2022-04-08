@@ -23,7 +23,7 @@ Rails.application.routes.draw do
       get :searched
       get :viewed
     end
-    get 'podcasts_search', to: "podcastrecoms#books_search", as: :podcasts_search
+    get 'podcasts_search', to: "podcastrecoms#podcasts_search", as: :podcasts_search
   end
 
   resources :restaurantrecoms, only: [ :show, :index, :edit, :update, :new, :create] do
