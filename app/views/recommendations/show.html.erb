@@ -19,14 +19,12 @@
           <%= f.input :viewed, label: 'Vu'  %>
           <%= f.submit "Sauvegarder", class: "buttons submit-button-form" %>
         <% end %>
+        <% if @recommendation.viewed ==true && @recommendation.feedback_content == nil && @recommendation.feedback_rating == nil %>
+        <%= link_to "Ajouter un feedback", edit_recommendation_path(@recommendation), class:"text-decoration-none link-modify ms-3" %>
+        <% end %>
       </div>
       <div class="d-flex">
-        <% if @recommendation.viewed ==true && @recommendation.feedback_content == nil && @recommendation.feedback_rating != nil %>
-        <%= link_to "Ajouter un feedback", edit_recommendation_path(@recommendation), class:"text-decoration-none link-modify" %>
-        <% end %>
-        <% if @recommendation.feedback_content != nil || @recommendation.feedback_rating != nil %>
-        <%= link_to "Modifier mon feedback", edit_recommendation_path(@recommendation), class:"text-decoration-none link-modify" %>
-        <% end %>
+
       </div>
       <div class="d-flex">
         <% if @recommendation.feedback_content != nil || @recommendation.feedback_rating != nil %>
@@ -34,8 +32,8 @@
           <li class="list-group-item">
           <strong>Mon feedback :</strong>
           <% @recommendation.feedback_rating.times do %>
-              <i class="fa-solid fa-star"></i>
-              <% end %> <%= @recommendation.feedback_content %>
+          <i class="fa-solid fa-star"></i>
+          <% end %> <%= @recommendation.feedback_content %><%= link_to "- Modifier -", edit_recommendation_path(@recommendation), class:"text-decoration-none link-modify ms-2" %>
           </li>
         </ul>
         <% end %>
