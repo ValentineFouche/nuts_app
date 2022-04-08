@@ -8,6 +8,8 @@ class RecommendationsController < ApplicationController
   def new
     @recommendation = Recommendation.new
     all_movies = Movie.all
+    # pour développer le modèle friends :
+    # @friends = User.all.map {|friend| friend.nickname}
 
     if params[:query].present? == false
       @movies = []
