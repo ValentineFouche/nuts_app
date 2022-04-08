@@ -2,12 +2,19 @@
   .cards {
     font-size: 12px;
   }
-
 }
 
-// .container {
-//   background-color: #1F1F1F;
-// }
+  .card-body-index {
+    width: 50%;
+    background-color:#F1D196;
+    justify-content: space-around;
+    border-radius: 0px 8px 8px 0px;
+  }
+
+  .card {
+    border: none;
+    border-radius: 15px;
+  }
 
 .card-body-index {
   width: 50%;
@@ -28,6 +35,7 @@ h1 {
   text-align: center;
   font-size: 26px;
 }
+
 h5 {
   color: #1F1F1F;
   font-family: $headers-font;
@@ -39,9 +47,9 @@ p {
   font-weight: 400;
 }
 
-.images-index {
-  width: 50%;
-}
+// .images-index {
+//   // width: 50%;
+// }
 
 .img-index {
 border-radius: 8px 0px 0px 8px;
@@ -59,14 +67,12 @@ border-radius: 8px 0px 0px 8px;
     }
 }
 
-
 .link-modify {
   color: #edc57b;
     &:hover {
       color: white;
     }
 }
-
 
 .titre-index {
   color: #F1D196;
