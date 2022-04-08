@@ -58,3 +58,23 @@ border-radius: 8px 0px 0px 8px;
       font-weight: bold;
     }
 }
+
+form {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+    .button-form {
+      background-color: #1f1f1f;
+    }
+}
+
+.link-modify {
+  color: #edc57b;
+    &:hover {
+      color: white;
+    }
+}
+
+.fieldset {
+  margin-bottom: 0 !important;
+}
