@@ -1,0 +1,27 @@
+<div class="container-fluid p-0">
+  <div class="col-12 col-md-6">
+    <div class="card card-show" style="width: 100%;">
+      <h2><%= @podcastrecom.podcast.title %></h2>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"> <strong>Recommandé par :</strong> <%= @podcastrecom.friend.capitalize %></li>
+        <li class="list-group-item"> <strong>Mon commentaire :</strong> <%= @podcastrecom.comment %></li>
+        <li class="list-group-item"> <strong>Ajouté le :</strong> <%= @podcastrecom.created_at.strftime("%d/%m/%Y") %></li>
+      </ul>
+      <div class="card-body card-body-show">
+        <p><strong>Regardez sur :</strong></p>
+        <%= link_to "Google", podcastrecom_podcasts_search_path(@podcastrecom), class: "btn btn-primary" %>
+      </div>
+    </div>
+    <div class="d-flex justify-content-around my-4">
+      <div>
+        <%= link_to "Retour", podcastrecoms_path, class:"text-decoration-none buttons" %>
+      </div>
+      <div>
+        <%= link_to "Modifier", edit_podcastrecom_path, class:"text-decoration-none buttons" %>
+      </div>
+    </div>
+  </div> <%= simple_form_for @podcastrecom, method: :patch  do |f| %>
+    <%= f.input :viewed  %>
+    <%= f.submit%>
+    <% end %>
+</div>

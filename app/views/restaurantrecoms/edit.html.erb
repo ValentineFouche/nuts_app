@@ -1,0 +1,15 @@
+<div class="container">
+  <%= simple_form_for @restaurantrecom do |f| %>
+    <%if @restaurantrecom.viewed == false%>
+      <%= f.input :friend %>
+      <%= f.input :comment %>
+    <% else%>
+      <%= f.input :feedback_content %>
+      <%= f.input :feedback_rating %>
+    <% end %>
+      <%= f.submit "Enregistrer", class: "btn-submit" %>
+  <% end %>
+  <div class="my-4">
+    <%= link_to "Retour", restaurantrecoms_path, class:"text-decoration-none buttons" %>
+  </div>
+</div>

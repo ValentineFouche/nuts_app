@@ -10,10 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_06_101515) do
+ActiveRecord::Schema.define(version: 2022_04_07_212410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "book_recoms", force: :cascade do |t|
+    t.string "friend"
+    t.text "comment"
+    t.boolean "searched"
+    t.boolean "viewed"
+    t.text "feedback_content"
+    t.integer "feedback_rating"
+    t.bigint "book_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_book_recoms_on_book_id"
+    t.index ["user_id"], name: "index_book_recoms_on_user_id"
+  end
+
+  create_table "bookrecoms", force: :cascade do |t|
+    t.string "friend"
+    t.text "comment"
+    t.boolean "searched"
+    t.boolean "viewed"
+    t.text "feedback_content"
+    t.integer "feedback_rating"
+    t.bigint "user_id", null: false
+    t.bigint "book_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_bookrecoms_on_book_id"
+    t.index ["user_id"], name: "index_bookrecoms_on_user_id"
+  end
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -28,6 +58,35 @@ ActiveRecord::Schema.define(version: 2022_04_06_101515) do
     t.string "stream_options"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "podcast_recoms", force: :cascade do |t|
+    t.string "friend"
+    t.text "comment"
+    t.boolean "searched"
+    t.boolean "viewed"
+    t.text "feedback_content"
+    t.integer "feedback_rating"
+    t.bigint "podcast_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["podcast_id"], name: "index_podcast_recoms_on_podcast_id"
+    t.index ["user_id"], name: "index_podcast_recoms_on_user_id"
+  end
+
+  create_table "podcastrecoms", force: :cascade do |t|
+    t.string "friend"
+    t.text "comment"
+    t.boolean "searched"
+    t.boolean "viewed"
+    t.text "feedback_content"
+    t.integer "feedback_rating"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "podcast_id"
+    t.index ["user_id"], name: "index_podcastrecoms_on_user_id"
   end
 
   create_table "podcasts", force: :cascade do |t|
@@ -51,6 +110,36 @@ ActiveRecord::Schema.define(version: 2022_04_06_101515) do
     t.index ["user_id"], name: "index_recommendations_on_user_id"
   end
 
+  create_table "restaurant_recoms", force: :cascade do |t|
+    t.string "friend"
+    t.text "comment"
+    t.boolean "searched"
+    t.boolean "viewed"
+    t.text "feedback_content"
+    t.integer "feedback_rating"
+    t.bigint "restaurant_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["restaurant_id"], name: "index_restaurant_recoms_on_restaurant_id"
+    t.index ["user_id"], name: "index_restaurant_recoms_on_user_id"
+  end
+
+  create_table "restaurantrecoms", force: :cascade do |t|
+    t.string "friend"
+    t.text "comment"
+    t.boolean "searched"
+    t.boolean "viewed"
+    t.text "feedback_content"
+    t.integer "feedback_rating"
+    t.bigint "user_id", null: false
+    t.bigint "restaurant_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["restaurant_id"], name: "index_restaurantrecoms_on_restaurant_id"
+    t.index ["user_id"], name: "index_restaurantrecoms_on_user_id"
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
@@ -70,6 +159,17 @@ ActiveRecord::Schema.define(version: 2022_04_06_101515) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "book_recoms", "books"
+  add_foreign_key "book_recoms", "users"
+  add_foreign_key "bookrecoms", "books"
+  add_foreign_key "bookrecoms", "users"
+  add_foreign_key "podcast_recoms", "podcasts"
+  add_foreign_key "podcast_recoms", "users"
+  add_foreign_key "podcastrecoms", "users"
   add_foreign_key "recommendations", "movies"
   add_foreign_key "recommendations", "users"
+  add_foreign_key "restaurant_recoms", "restaurants"
+  add_foreign_key "restaurant_recoms", "users"
+  add_foreign_key "restaurantrecoms", "restaurants"
+  add_foreign_key "restaurantrecoms", "users"
 end

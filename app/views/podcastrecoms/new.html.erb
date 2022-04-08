@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Ajouter une reco</h1>
+  <div data-controller="search-podcasts">
+    <div class="search-target">
+      <%= form_with url: new_podcastrecom_path, method: :get, html: { data: { search_podcasts_target: 'form' } } do |f| %>
+        <%= f.text_field :query1,
+                        class: "form-control",
+                        placeholder: 'Type a podcast title',
+                        value: params[:query1],
+                        data: {
+                            search_podcasts_target: 'input',
+                            action: 'keyup->search-podcasts#update'
+                          } %>
+      <% end %>
+      <%= render 'podcast_list', podcasts: @podcasts %>
+    </div>
+    <div data-action="pick-podcast@window->search-podcasts#createpodcast form-reco">
+      <%= simple_form_for @podcastrecom do |f| %>
+      <%= f.input :podcast_id, label: false, input_html: { class: "d-none", data: { search_podcasts_target: 'podcast' }} %>
+      <%= f.input :friend %>
+      <%= f.input :comment %>
+      <%= f.submit "Ajouter à ma list", class: "btn-submit" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="my-4">
+    <%= link_to "Retour", podcastrecoms_path, class:"text-decoration-none buttons" %>
+  </div>
+  <%= render 'podcast_list', podcasts: @podcasts %>
+</div>

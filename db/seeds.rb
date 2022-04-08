@@ -11,6 +11,10 @@ require "open-uri"
 Recommendation.destroy_all
 Movie.destroy_all
 User.destroy_all
+Book.destroy_all
+Bookrecom.destroy_all
+Podcast.destroy_all
+Restaurant.destroy_all
 
 puts "creating users"
 # je creer des users
@@ -38,6 +42,23 @@ movies["items"].each do |movie|
   Movie.create(title: movie["title"], director: movie["crew"], image_url: movie["image"], stream_options: "pas de stream pour l'instant" )
 end
 
+puts "creating books"
+
+book1 = Book.create(title: "Le petit prince")
+book2 = Book.create(title: "David Copperfield")
+book3 = Book.create(title: "Guerre et paix")
+book4 = Book.create(title: "Anna Karenina")
+
+podcast1 = Podcast.create(title: "La cuisine italienne")
+podcast2 = Podcast.create(title: "Une histoire de la France")
+podcast3 = Podcast.create(title: "La musique des jeunes")
+podcast4 = Podcast.create(title: "La mode et les temps")
+
+restaurant1 = Restaurant.create(title: "Linguini")
+restaurant2 = Restaurant.create(title: "Ratatouille")
+restaurant3 = Restaurant.create(title: "La petite maison")
+restaurant4 = Restaurant.create(title: "La table ronde")
+
 puts "creating recommandations"
 # je creer des recommandations
 recommandation_val_1 = Recommendation.create(friend: "alex", comment: "film conseillé quand nous avons mangé de la socca à nice, film d'action pleins de suspense", searched: false, viewed: false, user_id: valentine.id, movie_id: dark_knight.id)
@@ -50,5 +71,21 @@ recommandation_ing_4 = Recommendation.create(friend: "alex", comment: "Un grand 
 
 recommandation_vavou_5 = Recommendation.create(friend: "valou", comment: "film d'epoque super top", searched: false, viewed: false, user_id: valentine.id, movie_id: douze_hommes.id)
 
+puts "creating bookrecoms"
+
+Bookrecom.create(friend: "alex", comment: "Le livre le plus connu de l'ecrivain Antoine de Saint-Exupery", searched: false, viewed: false, user_id: alexandru.id, book_id: book1.id)
+Bookrecom.create(friend: "valentine", comment: "Un roman qui raconte une enfance dure", searched: false, viewed: false, user_id: alexandru.id, book_id: book2.id)
+Bookrecom.create(friend: "eva", comment: "Un livre classic russe", searched: false, viewed: false, user_id: alexandru.id, book_id: book3.id)
+Bookrecom.create(friend: "ingo", comment: "Une histoire d'amour avec une fin tragique", searched: false, viewed: false, user_id: alexandru.id, book_id: book4.id)
+
+Podcastrecom.create(friend: "alex", comment: "Des plats classics et modernes", searched: false, viewed: false, user_id: alexandru.id, podcast_id: podcast1.id)
+Podcastrecom.create(friend: "valentine", comment: "Des nouvelles perspectives sur des evenements anciens", searched: false, viewed: false, user_id: alexandru.id, podcast_id: podcast2.id)
+Podcastrecom.create(friend: "eva", comment: "Du bruits ou de la vrai musique", searched: false, viewed: false, user_id: alexandru.id, podcast_id: podcast3.id)
+Podcastrecom.create(friend: "ingo", comment: "Les gens sont influences vraiment par les vetements portes", searched: false, viewed: false, user_id: alexandru.id, podcast_id: podcast4.id)
+
+Restaurantrecom.create(friend: "alex", comment: "Tres bon cuisine, des plats diverses", searched: false, viewed: false, user_id: alexandru.id, restaurant_id: restaurant1.id)
+Restaurantrecom.create(friend: "valentine", comment: "Restaurant etoile qui est digne de son nom", searched: false, viewed: false, user_id: alexandru.id, restaurant_id: restaurant2.id)
+Restaurantrecom.create(friend: "eva", comment: "Un petit etablissement de famille", searched: false, viewed: false, user_id: alexandru.id, restaurant_id: restaurant3.id)
+Restaurantrecom.create(friend: "ingo", comment: "Restaurant bon pour une zone touristique", searched: false, viewed: false, user_id: alexandru.id, restaurant_id: restaurant4.id)
 
 puts "done"

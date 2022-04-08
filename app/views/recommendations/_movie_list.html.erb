@@ -1,4 +1,4 @@
-<div class="serach-movie ps-3 py-3" data-search-movies-target="list">
+<div class="search-movie ps-3 py-3" data-search-movies-target="list">
   <% movies.each do |movie| %>
   <div data-controller="select-movies"        data-select-movies-target="choix"
         data-action="click->select-movies#save" data-value=<%= movie.id %>>
