@@ -19,7 +19,6 @@ alexandru = User.create(nickname: "alex", email: "alexandru.rebenciuc@hotmail.fr
 ingo = User.create(nickname: "ing", email: "ingo.knorr@hotmail.fr", password: "qwerty")
 eva = User.create(nickname: "vavou", email: "eva.lampin@hotmail.fr", password: "qwerty")
 
-
 puts "creating movies"
 # je creer des movies
 les_evades = Movie.create(title: "Les évadés", director: "Frank Darabont", image_url: "les-evades.jpg", stream_options: "Stream")

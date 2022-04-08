@@ -17,7 +17,7 @@
     <div data-action="pick-movie@window->search-movies#createmovie form-reco">
       <%= simple_form_for @recommendation do |f| %>
       <%= f.input :movie_id, label: false, input_html: { class: "d-none", data: { search_movies_target: 'movie' }} %>
-      <%= f.input :friend, collection: @friends %>
+      <%= f.input :friend %>
       <%= f.input :comment %>
       <%= f.submit "Ajouter à ma list", class: "btn-submit" %>
       <% end %>
