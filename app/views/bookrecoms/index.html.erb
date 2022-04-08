@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Ma liste de livres</h1>
+  <h1>Livres à lire</h1>
   <%@bookrecoms.select do |bookrecom| if bookrecom.viewed == false%>
   <div class="card shadow mb-5 bg-body" style="max-width: 540px;">
     <%= link_to bookrecom_path(bookrecom), class:"text-decoration-none" do%>
