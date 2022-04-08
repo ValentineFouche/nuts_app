@@ -29,6 +29,8 @@ class RecommendationsController < ApplicationController
     if @recommendation.save
       redirect_to recommendation_path(@recommendation)
     else
+      @movies = Movie.where(id: @recommendation.movie_id)
+      flash[:notice] = "Vous avez déja ce film dans votre liste"
       render :new
     end
   end

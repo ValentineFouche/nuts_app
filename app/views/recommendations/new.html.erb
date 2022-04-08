@@ -2,6 +2,7 @@
   <h1>Ajouter une reco</h1>
   <div data-controller="search-movies">
     <div class="search-target">
+      <p style="color: red"><%= flash.notice %><p>
       <%= form_with url: new_recommendation_path, method: :get, html: { data: { search_movies_target: 'form' } } do |f| %>
         <%= f.text_field :query,
                         class: "form-control",
