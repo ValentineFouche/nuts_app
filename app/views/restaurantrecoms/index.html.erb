@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Restaurants à tester</h1>
-  <%@restaurantrecoms.select do |restaurantrecom| if restaurantrecom.viewed == false%>
+  <%@restaurantrecoms.select do |restaurantrecom| if restaurantrecom.viewed != true%>
   <div class="card shadow mb-5 bg-body" style="max-width: 540px;">
     <%= link_to restaurantrecom_path(restaurantrecom), class:"text-decoration-none" do%>
       <div class="cards g-0 d-flex">

@@ -9,10 +9,10 @@ class RestaurantrecomsController < ApplicationController
     @restaurantrecom = Restaurantrecom.new
     all_restaurants = Restaurant.all
 
-    if params[:query1].present? == false
+    if params[:query].present? == false
       @restaurants = []
     else
-      @restaurants = all_restaurants.where('title ILIKE ?', "%#{params[:query1]}%")
+      @restaurants = all_restaurants.where('title ILIKE ?', "%#{params[:query]}%")
     end
 
     respond_to do |format|
