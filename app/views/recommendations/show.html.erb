@@ -13,11 +13,13 @@
         <li class="list-group-item"> <strong>Mon commentaire :</strong> <%= @recommendation.comment %>  <%= link_to "- Modifier -", edit_recommendation_path, class:"text-decoration-none link-modify ms-2" %></li>
         <li class="list-group-item"> <strong>Ajouté le :</strong> <%= @recommendation.created_at.strftime("%d/%m/%Y") %></li>
       </ul>
-        <%= simple_form_for @recommendation, method: :patch  do |f| %>
-          <%= f.input :viewed, class: "input-button"  %>
-          <%= f.submit "Sauvegarder", class: "" %>
+        <%= link_to "Regarder le film", recommendation_movies_search_path(@recommendation), class: "buttons button-watch text-decoration-none text-center" %>
+      <div class="ms-3">
+        <%= simple_form_for @recommendation, html: { class: "form-show" }, method: :patch  do |f| %>
+          <%= f.input :viewed, label: 'Vu'  %>
+          <%= f.submit "Sauvegarder", class: "buttons submit-button-form" %>
         <% end %>
-        <%= link_to "Regarder le film", recommendation_movies_search_path(@recommendation), class: "buttons text-decoration-none text-center" %>
+      </div>
     </div>
     <div class="d-flex justify-content-around my-4">
       <%= link_to "Retour", recommendations_path, class:"text-decoration-none buttons" %>

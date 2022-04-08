@@ -35,3 +35,23 @@ h2 {
       font-weight: bold;
     }
 }
+
+.submit-button-form {
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  padding: 5px;
+  background-color: #1f1f1f;
+}
+
+.button-watch {
+  margin-bottom: 1rem;
+}
+
+.form-show {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+    .button-form {
+      background-color: #1f1f1f;
+    }
+}
