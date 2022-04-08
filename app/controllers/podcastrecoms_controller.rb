@@ -9,10 +9,10 @@ class PodcastrecomsController < ApplicationController
     @podcastrecom = Podcastrecom.new
     all_podcasts = Podcast.all
 
-    if params[:query1].present? == false
+    if params[:query].present? == false
       @podcasts = []
     else
-      @podcasts = all_podcasts.where('title ILIKE ?', "%#{params[:query1]}%")
+      @podcasts = all_podcasts.where('title ILIKE ?', "%#{params[:query]}%")
     end
 
     respond_to do |format|

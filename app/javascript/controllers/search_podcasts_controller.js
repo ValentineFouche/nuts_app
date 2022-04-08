@@ -1,10 +1,10 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["form", "input", "list", "podcast", "query1"]
+  static targets = ["form", "input", "list", "podcast", "query"]
 
   update(event) {
-    const url = `${this.formTarget.action}?query1=${this.inputTarget.value}`
+    const url = `${this.formTarget.action}?query=${this.inputTarget.value}`
     fetch(url, { headers: { "Accept": "text/plain" } })
       .then(response => response.text())
       .then((data) => {

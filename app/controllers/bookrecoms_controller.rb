@@ -9,10 +9,10 @@ class BookrecomsController < ApplicationController
     @bookrecom = Bookrecom.new
     all_books = Book.all
 
-    if params[:query1].present? == false
+    if params[:query].present? == false
       @books = []
     else
-      @books = all_books.where('title ILIKE ?', "%#{params[:query1]}%")
+      @books = all_books.where('title ILIKE ?', "%#{params[:query]}%")
     end
 
     respond_to do |format|

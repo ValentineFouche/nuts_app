@@ -3,10 +3,10 @@
   <div data-controller="search-restaurants">
     <div class="search-target">
       <%= form_with url: new_restaurantrecom_path, method: :get, html: { data: { search_restaurants_target: 'form' } } do |f| %>
-        <%= f.text_field :query1,
+        <%= f.text_field :query,
                         class: "form-control",
                         placeholder: 'Type a restaurant title',
-                        value: params[:query1],
+                        value: params[:query],
                         data: {
                             search_restaurants_target: 'input',
                             action: 'keyup->search-restaurants#update'

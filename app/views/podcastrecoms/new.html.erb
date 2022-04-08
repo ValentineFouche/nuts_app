@@ -3,10 +3,10 @@
   <div data-controller="search-podcasts">
     <div class="search-target">
       <%= form_with url: new_podcastrecom_path, method: :get, html: { data: { search_podcasts_target: 'form' } } do |f| %>
-        <%= f.text_field :query1,
+        <%= f.text_field :query,
                         class: "form-control",
                         placeholder: 'Type a podcast title',
-                        value: params[:query1],
+                        value: params[:query],
                         data: {
                             search_podcasts_target: 'input',
                             action: 'keyup->search-podcasts#update'
