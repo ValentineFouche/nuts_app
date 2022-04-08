@@ -2,82 +2,81 @@
   .cards {
     font-size: 12px;
   }
-
-  .card-body-index {
-    width: 50%;
-    background-color:#F1D196;
-    justify-content: space-around;
-    border-radius: 0px 8px 8px 0px;
-  }
-
-  .card {
-    border: none;
-    border-radius: 15px;
-  }
-
-  h1 {
-    color: #F1D196;
-    font-family: $header-nuts-notes;
-    padding: 30px;
-    text-align: center;
-    font-size: 26px;
-  }
-  h5 {
-    color: #1F1F1F;
-    font-family: $headers-font;
-  }
-
-  p {
-    color: #1F1F1F;
-    font-family: $headers-font;
-    font-weight: 400;
-  }
-
-  // .images-index {
-  //   width: 50%;
-  // }
-
-  .img-index {
-  border-radius: 8px 0px 0px 8px;
-  }
-
-  .buttons {
-    color: #F1D196;
-    border: solid 2px #F1D196;
-    padding: 10px;
-    border-radius: 10px;
-      &:hover{
-        background-color: #F1D196;
-        color: black;
-        font-weight: bold;
-      }
-  }
-
-  #viewed-form {
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-      .button-form {
-        background-color: #1f1f1f;
-      }
-  }
-
-  .link-modify {
-    color: #edc57b;
-      &:hover {
-        color: white;
-      }
-  }
-
-  .titre-index {
-    color: #F1D196;
-    font-family: $header-nuts-notes;
-    text-align: center;
-    font-size: 26px;
-  }
-
 }
 
 // .container {
 //   background-color: #1F1F1F;
 // }
+
+.card-body-index {
+  width: 50%;
+  background-color:#F1D196;
+  justify-content: space-around;
+  border-radius: 0px 8px 8px 0px;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+}
+
+h1 {
+  color: #F1D196;
+  font-family: $header-nuts-notes;
+  padding: 30px;
+  text-align: center;
+  font-size: 26px;
+}
+h5 {
+  color: #1F1F1F;
+  font-family: $headers-font;
+}
+
+p {
+  color: #1F1F1F;
+  font-family: $headers-font;
+  font-weight: 400;
+}
+
+// .images-index {
+//   width: 50%;
+// }
+
+.img-index {
+border-radius: 8px 0px 0px 8px;
+}
+
+.buttons {
+  color: #F1D196;
+  border: solid 2px #F1D196;
+  padding: 10px;
+  border-radius: 10px;
+    &:hover{
+      background-color: #F1D196;
+      color: black;
+      font-weight: bold;
+    }
+}
+
+#viewed-form {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+    .button-form {
+      background-color: #1f1f1f;
+    }
+}
+
+.link-modify {
+  color: #edc57b;
+    &:hover {
+      color: white;
+    }
+}
+
+.titre-index {
+  color: #F1D196;
+  font-family: $header-nuts-notes;
+  text-align: center;
+  font-size: 26px;
+}
