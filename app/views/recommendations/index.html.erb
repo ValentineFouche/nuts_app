@@ -1,5 +1,9 @@
 <div class="container">
-  <h1>Ma liste de films</h1>
+  <div class="d-flex justify-content-evenly align-items-center my-4">
+  <h2 class="titre-index">Films à voir</h2>
+    <%= link_to "Ajouter un film", new_recommendation_path, class:"text-decoration-none buttons" %>
+  </div>
+
   <%@recommendations.select do |recommendation| if recommendation.viewed == false%>
   <div class="card shadow mb-5 bg-body" style="max-width: 540px;">
     <%= link_to recommendation_path(recommendation), class:"text-decoration-none" do%>
@@ -35,10 +39,10 @@
       <%= link_to "Retour", root_path, class:"text-decoration-none buttons" %>
     </div>
     <div>
-      <%= link_to "Ajoutez un film", new_recommendation_path, class:"text-decoration-none buttons" %>
+      <%= link_to "Recherchés", searched_recommendations_path, class:"text-decoration-none buttons" %>
     </div>
-    <div>
-      <%= link_to "Films déjà vus", viewed_recommendations_path, class:"text-decoration-none buttons" %>
+        <div>
+      <%= link_to "Films vus", viewed_recommendations_path, class:"text-decoration-none buttons" %>
     </div>
   </div>
 </div>
