@@ -44,7 +44,7 @@ class RecommendationsController < ApplicationController
   def update
     @recommendation = Recommendation.find(params[:id])
     @recommendation.update(params_recommendations)
-    redirect_to edit_recommendation_path(@recommendation)
+    redirect_to recommendation_path(@recommendation)
   end
 
   def searched
