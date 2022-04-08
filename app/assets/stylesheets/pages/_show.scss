@@ -24,29 +24,6 @@ h2 {
   color: black;
 }
 
-.buttons-show {
-  color: #1f1f1f;
-  border: solid 1px #1f1f1f;
-  padding: 10px;
-  border-radius: 10px;
-    &:hover{
-      background-color: #F1D196;
-      color: black;
-      font-weight: bold;
-    }
-}
-
-.submit-button-form {
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  padding: 5px;
-  background-color: #1f1f1f;
-}
-
-.button-watch {
-  margin-bottom: 1rem;
-}
-
 .form-show {
   margin-bottom: 15px;
   display: flex;
@@ -54,4 +31,9 @@ h2 {
     .button-form {
       background-color: #1f1f1f;
     }
+}
+
+.navbar-index {
+  background-color: #1F1F1F;
+  padding: 1rem;
 }
