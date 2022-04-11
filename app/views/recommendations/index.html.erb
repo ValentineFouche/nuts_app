@@ -14,13 +14,13 @@
           </div>
             <%# <%= image_tag recommendation.movie.image_url, alt: "Poster", class: "img-fluid" %>
           <div>
-            <h5 class="card-title"><%=recommendation.movie.title %></h5>
+            <h5 class="movies-card-text"><%=recommendation.movie.title %></h5>
           </div>
           <div>
-            <p class="card-text">Recommandé par: <%=recommendation.friend%></p>
+            <p class="movies-card-text">Recommandé par: <%=recommendation.friend%></p>
           </div>
           <div>
-            <p class="card-text">Ajouté le: <%=recommendation.created_at.strftime("%d/%m/%Y")%></p>
+            <p class="movies-card-text">Ajouté le: <%=recommendation.created_at.strftime("%d/%m/%Y")%></p>
           </div>
         <%end %>
       </div>
