@@ -19,7 +19,11 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+    <% if params[:controller] == 'pages' && params[:action] == 'home' %>
+      <%= render 'shared/navbar' %>
+    <% else %>
+      <%= render 'shared/navbar_pages' %>
+    <% end %>
     <%= render 'shared/flashes' %>
 
     <%= yield %>

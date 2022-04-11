@@ -17,7 +17,9 @@
         <%= link_to "Retour", podcastrecoms_path, class:"text-decoration-none buttons" %>
       </div>
       <div>
-        <%= link_to "Modifier", edit_podcastrecom_path, class:"text-decoration-none buttons" %>
+        <%= link_to edit_podcastrecom_path, class:"text-decoration-none buttons" %>
+          <i class="fa-solid fa-pencil"></i>
+        <% end %>
       </div>
     </div>
   </div> <%= simple_form_for @podcastrecom, method: :patch  do |f| %>
