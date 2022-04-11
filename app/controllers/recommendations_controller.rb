@@ -61,6 +61,12 @@ class RecommendationsController < ApplicationController
     @recommendations = reco_sorted_asc.reverse
   end
 
+  def to_view
+    reco_not_sorted = Recommendation.where(viewed: false)
+    reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.updated_at }
+    @recommendations = reco_sorted_asc.reverse
+  end
+
   def movies_search
     @recommendation = Recommendation.find(params[:recommendation_id])
     @recommendation.searched = true

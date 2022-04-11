@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     collection do
       get :searched
       get :viewed
+      get :to_view
     end
     get 'movies_search', to: "recommendations#movies_search", as: :movies_search
   end
