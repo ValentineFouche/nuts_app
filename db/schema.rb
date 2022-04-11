@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(version: 2022_04_07_205700) do
 
   create_table "recommendations", force: :cascade do |t|
     t.string "friend"
-    t.time "added_on"
     t.text "comment"
     t.boolean "searched", default: false
     t.boolean "viewed", default: false

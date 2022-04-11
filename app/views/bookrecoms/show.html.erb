@@ -17,8 +17,9 @@
         <%= link_to "Retour", bookrecoms_path, class:"text-decoration-none buttons" %>
       </div>
       <div>
-        <%= link_to "Modifier", edit_bookrecom_path, class:"text-decoration-none buttons" %>
-      </div>
+        <%= link_to edit_bookrecom_path, class:"text-decoration-none link-modify ms-2" do %>
+          <i class="fa-solid fa-pencil"></i>
+        <% end %>      </div>
     </div>
   </div> <%= simple_form_for @bookrecom, method: :patch  do |f| %>
     <%= f.input :viewed  %>
