@@ -8,8 +8,6 @@ class RecommendationsController < ApplicationController
   def new
     @recommendation = Recommendation.new
     all_movies = Movie.all
-    # pour développer le modèle friends :
-    # @friends = User.all.map {|friend| friend.nickname}
 
     if params[:query].present? == false
       @movies = []
@@ -31,6 +29,19 @@ class RecommendationsController < ApplicationController
     else
       @movies = Movie.where(id: @recommendation.movie_id)
       flash[:notice] = "Vous avez déja ce film dans votre liste"
+      render :new
+    end
+  end
+
+  def add_friend_reco
+    friend_reco = Recommendation.find(params[:id])
+    @recommendation = Recommendation.new
+    @recommendation.user = current_user
+    @recommendation.movie = friend_reco.movie
+    @recommendation.friend = friend_reco.friend # changer ensuite pour mettre le nickname du user
+    if @recommendation.save
+      redirect_to recommendations_path
+    else
       render :new
     end
   end
@@ -73,12 +84,6 @@ class RecommendationsController < ApplicationController
     @recommendation.save
     moviename = @recommendation.movie.title.gsub(' ','+')
     redirect_to("https://www.google.fr/search?q=regarder+#{moviename}")
-  end
-
-  def add_friend_reco
-    @recommendation = Recommendation.find(params[:id])
-    @friend = @recommendation.friend
-    @movie = @recommendation.movie
   end
 
   private
