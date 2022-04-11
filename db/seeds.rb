@@ -36,7 +36,7 @@ schindler = Movie.create(title: "La liste de Schindler", director: "Steven Spiel
 puts "creating movies with API"
 # je cree tous les movies présents dans OMDB
 
-url = "https://imdb-api.com/en/API/Top250Movies/k_7bqg1dif"
+url = "https://imdb-api.com/en/API/Top250Movies/#{ENV['IMDB_API_KEY']}"
 movies_serialized = URI.open(url).read
 movies = JSON.parse(movies_serialized)
 movies["items"].each do |movie|

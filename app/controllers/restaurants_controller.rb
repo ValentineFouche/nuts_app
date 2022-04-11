@@ -1,13 +1,11 @@
 class RestaurantsController < ApplicationController
   def index
-    @user_location = Geocoder.search('109.96.240.190')
     @restaurants = Restaurant.all
-
-    # the `geocoded` scope filters only restaurants with coordinates (latitude & longitude)
     @markers = @restaurants.geocoded.map do |restaurant|
       {
         lat: restaurant.latitude,
-        lng: restaurant.longitude
+        lng: restaurant.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { restaurant: restaurant })
       }
     end
   end
