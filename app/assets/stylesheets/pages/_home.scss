@@ -8,8 +8,9 @@ body {
 
 .home {
   height: 100vh;
-  background-image: linear-gradient(to right, #F4DFBA, #EEC373);
+  background-image: linear-gradient(to right, $home_nuts_light, $home_nuts_dark);
   background-repeat: no-repeat;
+  padding-bottom: 150px;
 }
 
 .icons {

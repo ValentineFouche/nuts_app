@@ -5,8 +5,8 @@
         <%= f.input :friend %>
         <%= f.input :comment %>
       <% else%>
-        <%= f.input :feedback_content %>
-        <%= f.input :feedback_rating, collection: (1..5).to_a, label: "Rate your experience" %>
+        <%= f.input :feedback_content, label: "Feedback" %>
+        <%= f.input :feedback_rating, collection: (1..5).to_a, label: "Évaluer votre expérience" %>
       <% end %>
         <%= f.submit "Enregistrer", class: "btn-submit" %>
     <% end %>

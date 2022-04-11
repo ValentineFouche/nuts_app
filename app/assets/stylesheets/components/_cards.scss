@@ -16,7 +16,7 @@
 
 //   .card-body-index {
 //     width: 50%;
-//     background-color:#F1D196;
+//     background-color:$brown_nuts;
 //     justify-content: space-around;
 //     border-radius: 0px 8px 8px 0px;
 //   }
@@ -28,7 +28,7 @@
 
 // .card-body-index {
 //   width: 50%;
-//   background-color:#F1D196;
+//   background-color:$brown_nuts;
 //   justify-content: space-around;
 //   border-radius: 0px 8px 8px 0px;
 // }
@@ -39,7 +39,7 @@
 }
 
 h1 {
-  color: #F1D196;
+  color: $brown_nuts;
   font-family: $header-nuts-notes;
   padding: 30px;
   text-align: center;
@@ -73,7 +73,7 @@ p {
 }
 
 .titre-index {
-  color: #F1D196;
+  color: $brown_nuts;
   font-family: $header-nuts-notes;
   text-align: center;
   font-size: 26px;
