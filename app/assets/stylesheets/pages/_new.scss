@@ -3,13 +3,13 @@
 }
 
 .btn-submit {
-  color: #F1D196;
-  border: solid 2px #F1D196;
+  color: $brown_nuts;
+  border: solid 2px $brown_nuts;
   padding: 10px;
   border-radius: 10px;
   background-color: #1f1f1f;
     &:hover {
-      background-color: #F1D196;
+      background-color: $brown_nuts;
       color: black;
       font-weight: bold;
       border: none;
