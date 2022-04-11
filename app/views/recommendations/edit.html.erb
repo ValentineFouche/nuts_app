@@ -14,14 +14,16 @@
       <i class="fas fa-plus"></i>
     <% end %>
   </div>
-  <%= simple_form_for @recommendation do |f| %>
-    <%if @recommendation.viewed == false%>
-      <%= f.input :friend %>
-      <%= f.input :comment %>
-    <% else%>
-      <%= f.input :feedback_content %>
-      <%= f.input :feedback_rating, collection: (1..5).to_a, label: "Rate your experience" %>
+  <div>
+    <%= simple_form_for @recommendation do |f| %>
+      <%if @recommendation.viewed == false%>
+        <%= f.input :friend %>
+        <%= f.input :comment %>
+      <% else%>
+        <%= f.input :feedback_content %>
+        <%= f.input :feedback_rating, collection: (1..5).to_a, label: "Rate your experience" %>
+      <% end %>
+        <%= f.submit "Enregistrer", class: "btn-submit" %>
     <% end %>
-      <%= f.submit "Enregistrer", class: "btn-submit" %>
-  <% end %>
+  </div>
 </div>
