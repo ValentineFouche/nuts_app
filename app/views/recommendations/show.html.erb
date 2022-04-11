@@ -1,6 +1,21 @@
+<div class="container">
+  <div class="navbar-index sticky-top d-flex justify-content-between align-items-center px-1">
+    <%= link_to :back, class:"text-decoration-none button-navigation me-1" do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+    <h2 class="titre-index me-auto m-0 mx-1">Details du film</h2>
+    <%= link_to root_path, class:"text-decoration-none button-navigation mx-1" do %>
+      <i class="fas fa-home"></i>
+    <% end %>
+    <%= link_to new_recommendation_path, class:"text-decoration-none button-navigation mx-1" do %>
+      <i class="fas fa-search"></i>
+    <% end %>
+    <%= link_to new_recommendation_path, class:"text-decoration-none button-navigation mx-1" do %>
+      <i class="fas fa-plus"></i>
+    <% end %>
+  </div>
   <div class="col-12 col-md-6">
     <div class="card card-show" style="width: 100%;">
-      <h2><%= @recommendation.movie.title %></h2>
       <% if @recommendation.movie.image_url.start_with?("http") %>
         <%= image_tag @recommendation.movie.image_url, alt: "Poster", class: "img-fluid"  %>
       <% elsif @recommendation.movie.image_url.start_with?("..//assets/images/") %>
@@ -8,21 +23,37 @@
       <% else %>
         <%= image_tag @recommendation.movie.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid" %>
       <% end %>
+      <h2><%= @recommendation.movie.title %></h2>
       <ul class="list-group list-group-flush">
         <li class="list-group-item"> <strong>Recommandé par :</strong> <%= @recommendation.friend.capitalize %></li>
         <li class="list-group-item"> <strong>Mon commentaire :</strong> <%= @recommendation.comment %>  <%= link_to "- Modifier -", edit_recommendation_path, class:"text-decoration-none link-modify ms-2" %></li>
         <li class="list-group-item"> <strong>Ajouté le :</strong> <%= @recommendation.created_at.strftime("%d/%m/%Y") %></li>
       </ul>
         <%= link_to "Regarder le film", recommendation_movies_search_path(@recommendation), class: "buttons button-watch text-decoration-none text-center" %>
-      <div class="ms-3">
+      <div class="d-flex justify-content-around ms-3">
         <%= simple_form_for @recommendation, html: { class: "form-show" }, method: :patch  do |f| %>
           <%= f.input :viewed, label: 'Vu'  %>
           <%= f.submit "Sauvegarder", class: "buttons submit-button-form" %>
         <% end %>
+        <% if @recommendation.viewed ==true && @recommendation.feedback_content == nil && @recommendation.feedback_rating == nil %>
+        <%= link_to "Ajouter un feedback", edit_recommendation_path(@recommendation), class:"text-decoration-none link-modify ms-3" %>
+        <% end %>
       </div>
-    </div>
-    <div class="d-flex justify-content-around my-4">
-      <%= link_to "Retour", recommendations_path, class:"text-decoration-none buttons" %>
+      <div class="d-flex">
+
+      </div>
+      <div class="d-flex">
+        <% if @recommendation.feedback_content != nil || @recommendation.feedback_rating != nil %>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+          <strong>Mon feedback :</strong>
+          <% @recommendation.feedback_rating.times do %>
+          <i class="fa-solid fa-star"></i>
+          <% end %> <%= @recommendation.feedback_content %><%= link_to "- Modifier -", edit_recommendation_path(@recommendation), class:"text-decoration-none link-modify ms-2" %>
+          </li>
+        </ul>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

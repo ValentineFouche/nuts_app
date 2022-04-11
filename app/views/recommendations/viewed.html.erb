@@ -1,5 +1,19 @@
 <div class="container">
-  <h1>Films vus</h1>
+  <div class="navbar-index sticky-top d-flex justify-content-between align-items-center px-1">
+    <%= link_to :back, class:"text-decoration-none button-navigation me-1" do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+    <h2 class="titre-index me-auto m-0 mx-1">Films vus</h2>
+    <%= link_to root_path, class:"text-decoration-none button-navigation mx-1" do %>
+      <i class="fas fa-home"></i>
+    <% end %>
+    <%= link_to new_recommendation_path, class:"text-decoration-none button-navigation mx-1" do %>
+      <i class="fas fa-search"></i>
+    <% end %>
+    <%= link_to new_recommendation_path, class:"text-decoration-none button-navigation mx-1" do %>
+      <i class="fas fa-plus"></i>
+    <% end %>
+  </div>
   <%@recommendations.select do |recommendation| %>
   <div class="card shadow mb-5 bg-body" style="max-width: 540px;">
     <%= link_to recommendation_path(recommendation), class:"text-decoration-none" do%>
@@ -19,7 +33,9 @@
             <h5 class="card-title"><%=recommendation.movie.title %></h5>
           </div>
           <div>
+          <% if recommendation.feedback_rating != nil %>
             <% recommendation.feedback_rating.times do %>
+          <% end %>
             <i class="fa-solid fa-star"></i>
             <% end %>
           </div>

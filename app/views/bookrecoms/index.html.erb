@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Livres à lire</h1>
-  <%@bookrecoms.select do |bookrecom| if bookrecom.viewed == false%>
+  <%@bookrecoms.select do |bookrecom| if bookrecom.viewed != true%>
   <div class="card shadow mb-5 bg-body" style="max-width: 540px;">
     <%= link_to bookrecom_path(bookrecom), class:"text-decoration-none" do%>
       <div class="cards g-0 d-flex">

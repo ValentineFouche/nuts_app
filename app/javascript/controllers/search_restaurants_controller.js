@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["form", "input", "list", "book", "query"]
+  static targets = ["form", "input", "list", "restaurant", "query"]
 
   update(event) {
     const url = `${this.formTarget.action}?query=${this.inputTarget.value}`
@@ -12,10 +12,10 @@ export default class extends Controller {
       })
   }
 
-  createbook(event) {
+  createrestaurant(event) {
     event.preventDefault
-    const book_id = event.detail.id
-    this.bookTarget.value = book_id
+    const restaurant_id = event.detail.id
+    this.restaurantTarget.value = restaurant_id
     const title = event.detail.title
     this.inputTarget.value = title
     this.listTarget.classList.add("d-none")
