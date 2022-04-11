@@ -19,7 +19,9 @@
             <h5 class="card-title"><%=recommendation.movie.title %></h5>
           </div>
           <div>
+          <% if recommendation.feedback_rating != nil %>
             <% recommendation.feedback_rating.times do %>
+          <% end %>
             <i class="fa-solid fa-star"></i>
             <% end %>
           </div>

@@ -14,10 +14,28 @@
         <li class="list-group-item"> <strong>Ajouté le :</strong> <%= @recommendation.created_at.strftime("%d/%m/%Y") %></li>
       </ul>
         <%= link_to "Regarder le film", recommendation_movies_search_path(@recommendation), class: "buttons button-watch text-decoration-none text-center" %>
-      <div class="ms-3">
+      <div class="d-flex justify-content-around ms-3">
         <%= simple_form_for @recommendation, html: { class: "form-show" }, method: :patch  do |f| %>
           <%= f.input :viewed, label: 'Vu'  %>
           <%= f.submit "Sauvegarder", class: "buttons submit-button-form" %>
+        <% end %>
+        <% if @recommendation.viewed ==true && @recommendation.feedback_content == nil && @recommendation.feedback_rating == nil %>
+        <%= link_to "Ajouter un feedback", edit_recommendation_path(@recommendation), class:"text-decoration-none link-modify ms-3" %>
+        <% end %>
+      </div>
+      <div class="d-flex">
+
+      </div>
+      <div class="d-flex">
+        <% if @recommendation.feedback_content != nil || @recommendation.feedback_rating != nil %>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+          <strong>Mon feedback :</strong>
+          <% @recommendation.feedback_rating.times do %>
+          <i class="fa-solid fa-star"></i>
+          <% end %> <%= @recommendation.feedback_content %><%= link_to "- Modifier -", edit_recommendation_path(@recommendation), class:"text-decoration-none link-modify ms-2" %>
+          </li>
+        </ul>
         <% end %>
       </div>
     </div>
