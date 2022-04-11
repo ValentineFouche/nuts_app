@@ -1,31 +1,29 @@
 <div class="container">
   <div class="wrapper">
     <%@recommendations.select do |recommendation|%>
-    <% if recommendation.viewed == false %>
-    <div class="cards" style="max-width: 540px;">
-      <%= link_to recommendation_path(recommendation), class:"text-decoration-none" do%>
-        <div class="image-card">
-        <% if recommendation.movie.image_url.start_with?("http") %>
-          <%= image_tag recommendation.movie.image_url, alt: "Poster", class: "img-fluid img-index" %>
-        <% elsif recommendation.movie.image_url.start_with?("..//assets/images/") %>
-          <%= image_tag recommendation.movie.image_url.gsub("..//assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
-        <% else %>
-          <%= image_tag recommendation.movie.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
-        <% end %>
-        </div>
-      <%end %>
-          <%# <%= image_tag recommendation.movie.image_url, alt: "Poster", class: "img-fluid" %>
-        <div>
-          <h5 class="card-title"><%=recommendation.movie.title %></h5>
-        </div>
-        <div>
-          <p class="card-text">Recommandé par: <%=recommendation.friend%></p>
-        </div>
-        <div>
-          <p class="card-text">Ajouté le: <%=recommendation.created_at.strftime("%d/%m/%Y")%></p>
-        </div>
-    </div>
-    <%end%>
+      <div class="movies-cards" style="max-width: 540px;">
+        <%= link_to recommendation_path(recommendation), class:"text-decoration-none" do%>
+          <div class="movies-image-card">
+          <% if recommendation.movie.image_url.start_with?("http") %>
+            <%= image_tag recommendation.movie.image_url, alt: "Poster", class: "img-fluid img-index" %>
+          <% elsif recommendation.movie.image_url.start_with?("..//assets/images/") %>
+            <%= image_tag recommendation.movie.image_url.gsub("..//assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
+          <% else %>
+            <%= image_tag recommendation.movie.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
+          <% end %>
+          </div>
+            <%# <%= image_tag recommendation.movie.image_url, alt: "Poster", class: "img-fluid" %>
+          <div>
+            <h5 class="card-title"><%=recommendation.movie.title %></h5>
+          </div>
+          <div>
+            <p class="card-text">Recommandé par: <%=recommendation.friend%></p>
+          </div>
+          <div>
+            <p class="card-text">Ajouté le: <%=recommendation.created_at.strftime("%d/%m/%Y")%></p>
+          </div>
+        <%end %>
+      </div>
     <%end%>
   </div>
 </div>

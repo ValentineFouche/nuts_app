@@ -10,6 +10,10 @@
   grid-gap: 10px;
 }
 
+.movies-image-card {
+  border-radius: 30px;
+}
+
 //   .card-body-index {
 //     width: 50%;
 //     background-color:#F1D196;
@@ -29,10 +33,10 @@
 //   border-radius: 0px 8px 8px 0px;
 // }
 
-// .card {
-//   border: none;
-//   border-radius: 15px;
-// }
+.movies-cards {
+  border-radius: 30px;
+  margin-top: 4px;
+}
 
 h1 {
   color: #F1D196;
@@ -77,4 +81,5 @@ p {
 
 .img-fluid {
   width: 100%;
+  border-radius: 8px 8px 0px 0px;
 }
