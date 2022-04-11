@@ -1,0 +1,28 @@
+<div class="container">
+  <% if @user.podcastrecoms == [] %>
+    <p><%= @user.nickname %> n'a pas encore de podcasts dans sa liste.</p>
+  <% else %>
+    <%@user.podcastrecoms.each do |podcastrecom| %>
+    <div class="card shadow mb-5 bg-body" style="max-width: 540px;">
+      <%= link_to podcastrecom_path(podcastrecom), class:"text-decoration-none" do%>
+        <div class="cards g-0 d-flex">
+          <div class="card-body card-body-index d-flex flex-column">
+            <div>
+              <h5 class="card-title"><%=podcastrecom.podcast.title %></h5>
+            </div>
+            <div>
+              <p class="card-text">Recommandé par: <%=podcastrecom.friend%></p>
+            </div>
+            <div>
+              <p class="card-text">Recommandé par: <%=podcastrecom.comment%></p>
+            </div>
+            <div>
+              <p class="card-text">Ajouté le: <%=podcastrecom.created_at.strftime("%d/%m/%Y")%></p>
+            </div>
+          </div>
+        </div>
+      <%end%>
+    </div>
+    <%end%>
+  <% end %>
+</div>

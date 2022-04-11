@@ -39,11 +39,17 @@
         </ul>
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="films" role="tabpanel" aria-labelledby="films-tab">
-            <%= render 'movie_recommendations' %>
+            <%= render 'movies_recommendations' %>
           </div>
-          <div class="tab-pane fade" id="livres" role="tabpanel" aria-labelledby="livres-tab">les livres</div>
-          <div class="tab-pane fade" id="podcasts" role="tabpanel" aria-labelledby="podcasts-tab">les podcasts</div>
-          <div class="tab-pane fade" id="restaurants" role="tabpanel" aria-labelledby="restaurants-tab">les restaurants</div>
+          <div class="tab-pane fade" id="livres" role="tabpanel" aria-labelledby="livres-tab">
+            <%= render 'books_recommendations' %>
+          </div>
+          <div class="tab-pane fade" id="podcasts" role="tabpanel" aria-labelledby="podcasts-tab">
+            <%= render 'podcasts_recommendations' %>
+          </div>
+          <div class="tab-pane fade" id="restaurants" role="tabpanel" aria-labelledby="restaurants-tab">
+            <%= render 'restaurants_recommendations' %>
+          </div>
         </div>
       <% end %>
     </div>

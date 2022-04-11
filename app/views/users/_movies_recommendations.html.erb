@@ -1,4 +1,7 @@
 <div class="wrapper">
+  <% if @user.recommendations == [] %>
+    <p><%= @user.nickname %> n'a pas encore de films dans sa liste.</p>
+  <% else %>
     <% @user.recommendations.each do |recommendation|%>
       <div class="movies-cards" style="max-width: 540px;">
         <%= link_to recommendation_path(recommendation), class:"text-decoration-none" do%>
@@ -23,5 +26,6 @@
           </div>
         <%end %>
       </div>
-    <%end%>
-  </div>
+        <%end%>
+  <% end %>
+</div>
