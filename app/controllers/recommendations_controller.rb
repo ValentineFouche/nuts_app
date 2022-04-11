@@ -38,7 +38,9 @@ class RecommendationsController < ApplicationController
     @recommendation = Recommendation.new
     @recommendation.user = current_user
     @recommendation.movie = friend_reco.movie
-    @recommendation.friend = User.find(friend_reco.user_id).nickname
+    friend_nickname = User.find(friend_reco.user_id).nickname
+    @recommendation.comment = "Trouvé sur la liste de #{friend_nickname} avec ce commentaire : #{friend_reco.comment}"
+    @recommendation.friend = friend_nickname
     if @recommendation.save
       redirect_to recommendations_path
     else
