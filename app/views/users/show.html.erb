@@ -1,19 +1,4 @@
 <div class="container">
-  <div class="navbar-index sticky-top d-flex justify-content-between align-items-center px-1">
-    <%= link_to :back, class:"text-decoration-none button-navigation me-1" do %>
-      <i class="fas fa-arrow-left"></i>
-    <% end %>
-    <h2 class="titre-index me-auto m-0 mx-1">Details du film</h2>
-    <%= link_to root_path, class:"text-decoration-none button-navigation mx-1" do %>
-      <i class="fas fa-home"></i>
-    <% end %>
-    <%= link_to new_recommendation_path, class:"text-decoration-none button-navigation mx-1" do %>
-      <i class="fas fa-search"></i>
-    <% end %>
-    <%= link_to new_recommendation_path, class:"text-decoration-none button-navigation mx-1" do %>
-      <i class="fas fa-plus"></i>
-    <% end %>
-  </div>
   <div class="col-12 col-md-6">
     <div class="card card-show" style="width: 100%;">
       <% if current_user.id == params[:id].to_i %>
@@ -38,7 +23,6 @@
         </ul>
       <% else %>
         <h2>Les listes de <%= @user.nickname %> :</h2>
-
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link active" id="films-tab" data-bs-toggle="tab" data-bs-target="#films" type="button" role="tab" aria-controls="films" aria-selected="true">Films</button>
@@ -55,9 +39,8 @@
         </ul>
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="films" role="tabpanel" aria-labelledby="films-tab">
-            <% @user.recommendations.each do |reco| %>
-            <%= reco.movie.title %>
-            <% end %></div>
+            <%= render 'movie_recommendations' %>
+          </div>
           <div class="tab-pane fade" id="livres" role="tabpanel" aria-labelledby="livres-tab">les livres</div>
           <div class="tab-pane fade" id="podcasts" role="tabpanel" aria-labelledby="podcasts-tab">les podcasts</div>
           <div class="tab-pane fade" id="restaurants" role="tabpanel" aria-labelledby="restaurants-tab">les restaurants</div>

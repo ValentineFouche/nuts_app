@@ -10,6 +10,8 @@
       <h2 class="titre-index me-auto m-0 mx-1">Films vus</h2>
     <% elsif params[:controller] == 'recommendations' && params[:action] == 'searched' %>
       <h2 class="titre-index me-auto m-0 mx-1">Recherchés</h2>
+    <% elsif params[:controller] == 'users' && params[:action] == 'show' %>
+      <h2 class="titre-index me-auto m-0 mx-1">Profil</h2>
     <% end %>
     <%= link_to root_path, class:"text-decoration-none button-navigation mx-1" do %>
       <i class="fas fa-home"></i>
