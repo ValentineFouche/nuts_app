@@ -23,10 +23,17 @@ h1 {
   font-size: 26px;
 }
 
+.movies-card-header {
+  padding-top: 9px;
+  font-size: 14px;
+  // font-family: $text-cards;
+}
+
 .movies-card-text {
-  color:white;
-  font-family: $headers-font;
+  color: lightgrey;
   font-weight: 400;
+  font-size: 12px;
+  // font-family: $text-cards;
 }
 
 .link-modify {
