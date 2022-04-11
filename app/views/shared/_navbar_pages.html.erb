@@ -14,6 +14,8 @@
       <h2 class="titre-index me-auto m-0 mx-1">Films à voir</h2>
     <% elsif params[:controller] == 'recommendations' && params[:action] == 'edit' %>
       <h2 class="titre-index me-auto m-0 mx-1">Edit</h2>
+    <% elsif params[:controller] == 'users' && params[:action] == 'show' %>
+      <h2 class="titre-index me-auto m-0 mx-1">Profil</h2>
     <% end %>
     <%= link_to root_path, class:"text-decoration-none button-navigation mx-1" do %>
       <i class="fas fa-home py-2"></i>

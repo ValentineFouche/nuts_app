@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :recommendations
   has_many :bookrecoms
+  has_many :restaurantrecoms
+  has_many :podcastrecoms
 end
