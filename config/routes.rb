@@ -9,6 +9,11 @@ Rails.application.routes.draw do
       get :viewed
       get :to_view
     end
+
+    member do
+      get :add_friend_reco
+    end
+
     get 'movies_search', to: "recommendations#movies_search", as: :movies_search
   end
 

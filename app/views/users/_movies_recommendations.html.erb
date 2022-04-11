@@ -24,6 +24,9 @@
           <div>
             <p class="card-text">Ajouté le: <%=recommendation.created_at.strftime("%d/%m/%Y")%></p>
           </div>
+          <div>
+            <%= link_to "Ajouter à ma liste", add_friend_reco_recommendation_path(recommendation) %>
+          </div>
         <%end %>
       </div>
         <%end%>

@@ -1,6 +1,6 @@
 class RecommendationsController < ApplicationController
   def index
-    reco_not_sorted = Recommendation.all
+    reco_not_sorted = Recommendation.where(user_id: current_user.id)
     reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.created_at }
     @recommendations = reco_sorted_asc.reverse
   end
@@ -8,8 +8,6 @@ class RecommendationsController < ApplicationController
   def new
     @recommendation = Recommendation.new
     all_movies = Movie.all
-    # pour développer le modèle friends :
-    # @friends = User.all.map {|friend| friend.nickname}
 
     if params[:query].present? == false
       @movies = []
@@ -35,6 +33,21 @@ class RecommendationsController < ApplicationController
     end
   end
 
+  def add_friend_reco
+    friend_reco = Recommendation.find(params[:id])
+    @recommendation = Recommendation.new
+    @recommendation.user = current_user
+    @recommendation.movie = friend_reco.movie
+    friend_nickname = User.find(friend_reco.user_id).nickname
+    @recommendation.comment = "Trouvé sur la liste de #{friend_nickname} avec ce commentaire : #{friend_reco.comment}"
+    @recommendation.friend = friend_nickname
+    if @recommendation.save
+      redirect_to recommendations_path
+    else
+      render :new
+    end
+  end
+
   def show
     @recommendation = Recommendation.find(params[:id])
   end
@@ -50,19 +63,19 @@ class RecommendationsController < ApplicationController
   end
 
   def searched
-    reco_not_sorted = Recommendation.where(searched: true)
+    reco_not_sorted = Recommendation.where(searched: true, user_id: current_user.id)
     reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.updated_at }
     @recommendations = reco_sorted_asc.reverse
   end
 
   def viewed
-    reco_not_sorted = Recommendation.where(viewed: true)
+    reco_not_sorted = Recommendation.where(viewed: true, user_id: current_user.id )
     reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.updated_at }
     @recommendations = reco_sorted_asc.reverse
   end
 
   def to_view
-    reco_not_sorted = Recommendation.where(viewed: false)
+    reco_not_sorted = Recommendation.where(viewed: false, user_id: current_user.id)
     reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.updated_at }
     @recommendations = reco_sorted_asc.reverse
   end
