@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="navbar-index sticky-top d-flex justify-content-between align-items-center px-1">
+    <%= link_to :back, class:"text-decoration-none button-navigation me-1" do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+    <h2 class="titre-index me-auto m-0 mx-1">Details du film</h2>
+    <%= link_to root_path, class:"text-decoration-none button-navigation mx-1" do %>
+      <i class="fas fa-home"></i>
+    <% end %>
+    <%= link_to new_recommendation_path, class:"text-decoration-none button-navigation mx-1" do %>
+      <i class="fas fa-search"></i>
+    <% end %>
+    <%= link_to new_recommendation_path, class:"text-decoration-none button-navigation mx-1" do %>
+      <i class="fas fa-plus"></i>
+    <% end %>
+  </div>
+  <div class="col-12 col-md-6">
+    <div class="card card-show" style="width: 100%;">
+      <% if current_user.id == params[:id].to_i %>
+        <h1>Salut <%= current_user.nickname %> !</h1>
+        <h2>Mes listes :</h2>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><%= link_to "mes films", recommendations_path, class:"text-decoration-none link-modify"%></li>
+          <li class="list-group-item"><%= link_to "mes livres", bookrecoms_path, class:"text-decoration-none link-modify" %></li>
+          <li class="list-group-item"><%= link_to "mes podcasts", podcastrecoms_path, class:"text-decoration-none link-modify" %></li>
+          <li class="list-group-item"><%= link_to "mes restaus", restaurantrecoms_path, class:"text-decoration-none link-modify" %></li>
+        </ul>
+        <h2>Mes amis :</h2>
+        <ul class="list-group list-group-flush">
+          <% @friends.each do |friend| %>
+          <% friend_user = User.where(nickname: friend).first %>
+            <% if friend_user != nil %>
+            <li class="list-group-item"> <%= friend_user.nickname %> <%= link_to "- Voir profil -", user_path(friend_user), class:"text-decoration-none link-modify ms-2" %> </li>
+            <% else %>
+            <li class="list-group-item"> <%= Recommendation.where(friend: friend).first.friend %> (l'ami n'a pas l'app)</li>
+            <% end %>
+          <% end %>
+        </ul>
+      <% else %>
+        <h2>Les listes de <%= @user.nickname %> :</h2>
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="films-tab" data-bs-toggle="tab" data-bs-target="#films" type="button" role="tab" aria-controls="films" aria-selected="true">Films</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="livres-tab" data-bs-toggle="tab" data-bs-target="#livres" type="button" role="tab" aria-controls="livres" aria-selected="false">Livres</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="podcasts-tab" data-bs-toggle="tab" data-bs-target="#podcasts" type="button" role="tab" aria-controls="podcasts" aria-selected="false">Podcasts</button>
+          </li>
+          <li class="nav-item" role="presentation">
+          <button class="nav-link" id="restaurants-tab" data-bs-toggle="tab" data-bs-target="#restaurants" type="button" role="tab" aria-controls="restaurants" aria-selected="false">Restaurants</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="films" role="tabpanel" aria-labelledby="films-tab">
+            <% @user.recommendations.each do |reco| %>
+            <%= reco.movie.title %>
+            <% end %></div>
+          <div class="tab-pane fade" id="livres" role="tabpanel" aria-labelledby="livres-tab">les livres</div>
+          <div class="tab-pane fade" id="podcasts" role="tabpanel" aria-labelledby="podcasts-tab">les podcasts</div>
+          <div class="tab-pane fade" id="restaurants" role="tabpanel" aria-labelledby="restaurants-tab">les restaurants</div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
