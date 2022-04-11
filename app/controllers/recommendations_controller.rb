@@ -38,7 +38,7 @@ class RecommendationsController < ApplicationController
     @recommendation = Recommendation.new
     @recommendation.user = current_user
     @recommendation.movie = friend_reco.movie
-    @recommendation.friend = friend_reco.friend # changer ensuite pour mettre le nickname du user
+    @recommendation.friend = User.find(friend_reco.user_id).nickname
     if @recommendation.save
       redirect_to recommendations_path
     else
