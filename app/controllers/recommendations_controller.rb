@@ -1,6 +1,6 @@
 class RecommendationsController < ApplicationController
   def index
-    reco_not_sorted = Recommendation.all
+    reco_not_sorted = Recommendation.where(user_id: current_user.id)
     reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.created_at }
     @recommendations = reco_sorted_asc.reverse
   end
@@ -50,19 +50,19 @@ class RecommendationsController < ApplicationController
   end
 
   def searched
-    reco_not_sorted = Recommendation.where(searched: true)
+    reco_not_sorted = Recommendation.where(searched: true, user_id: current_user.id)
     reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.updated_at }
     @recommendations = reco_sorted_asc.reverse
   end
 
   def viewed
-    reco_not_sorted = Recommendation.where(viewed: true)
+    reco_not_sorted = Recommendation.where(viewed: true, user_id: current_user.id )
     reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.updated_at }
     @recommendations = reco_sorted_asc.reverse
   end
 
   def to_view
-    reco_not_sorted = Recommendation.where(viewed: false)
+    reco_not_sorted = Recommendation.where(viewed: false, user_id: current_user.id)
     reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.updated_at }
     @recommendations = reco_sorted_asc.reverse
   end
@@ -73,6 +73,12 @@ class RecommendationsController < ApplicationController
     @recommendation.save
     moviename = @recommendation.movie.title.gsub(' ','+')
     redirect_to("https://www.google.fr/search?q=regarder+#{moviename}")
+  end
+
+  def add_friend_reco
+    @recommendation = Recommendation.find(params[:id])
+    @friend = @recommendation.friend
+    @movie = @recommendation.movie
   end
 
   private
