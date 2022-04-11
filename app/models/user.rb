@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :bookrecoms
   has_many :restaurantrecoms
   has_many :podcastrecoms
+  validates :nickname, uniqueness: true
 end
