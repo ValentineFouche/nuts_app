@@ -54,3 +54,21 @@ h1 {
   width: 100%;
   border-radius: 5px;
 }
+
+.card-profil {
+  color: $white_nuts;
+}
+
+.card-profil a {
+  color: $white_nuts;
+  text-decoration: none;
+    &:hover {
+      color: $black_nuts;
+    }
+}
+
+.card-body-reco {
+  color: $black_nuts;
+  background-color: $brown_nuts;
+  border: none;
+}

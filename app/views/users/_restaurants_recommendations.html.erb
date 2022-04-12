@@ -3,23 +3,15 @@
     <p><%= @user.nickname %> n'a pas encore de restaurants dans sa liste.</p>
   <% else %>
     <%@user.restaurantrecoms.each do |restaurantrecom| %>
-    <div class="card shadow mb-5 bg-body" style="max-width: 540px;">
+    <div class="movies-cards" style="max-width: 540px;">
       <%= link_to restaurantrecom_path(restaurantrecom), class:"text-decoration-none" do%>
-        <div class="cards g-0 d-flex">
-          <div class="card-body card-body-index d-flex flex-column">
-            <div>
-              <h5 class="card-title"><%=restaurantrecom.restaurant.title %></h5>
-            </div>
-            <div>
-              <p class="card-text">Recommandé par: <%=restaurantrecom.friend%></p>
-            </div>
-            <div>
-              <p class="card-text">Recommandé par: <%=restaurantrecom.comment%></p>
-            </div>
-            <div>
-              <p class="card-text">Ajouté le: <%=restaurantrecom.created_at.strftime("%d/%m/%Y")%></p>
-            </div>
-          </div>
+        <div class="movie-images-card">
+        </div>
+        <div>
+          <h5 class="card-title card-profil"><%=restaurantrecom.restaurant.title %></h5>
+        </div>
+        <div class="card-profil my-4">
+          <%= link_to "Ajouter à ma liste", "#", class: 'buttons' %>
         </div>
       <%end%>
     </div>
