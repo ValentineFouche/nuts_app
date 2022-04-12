@@ -24,6 +24,30 @@
     <h2 class="titre-index me-auto m-0 mx-1">Edit</h2>
   <% elsif params[:controller] == 'users' && params[:action] == 'show' %>
     <h2 class="titre-index me-auto m-0 mx-1">Profil</h2>
+  <% elsif params[:controller] == 'podcastrecoms' && params[:action] == 'index' %>
+    <h2 class="titre-index me-auto m-0 mx-1">Tous mes Podcasts</h2>
+  <% elsif params[:controller] == 'podcastrecoms' && params[:action] == 'show' %>
+    <h2 class="titre-index me-auto m-0 mx-1">Details du podcast</h2>
+  <% elsif params[:controller] == 'podcastrecoms' && params[:action] == 'viewed' %>
+    <h2 class="titre-index me-auto m-0 mx-1">Podcasts écoutés</h2>
+  <% elsif params[:controller] == 'podcastrecoms' && params[:action] == 'edit' %>
+    <h2 class="titre-index me-auto m-0 mx-1">Edit</h2>
+  <% elsif params[:controller] == 'bookrecoms' && params[:action] == 'index' %>
+    <h2 class="titre-index me-auto m-0 mx-1">Tous mes Livres</h2>
+  <% elsif params[:controller] == 'bookrecoms' && params[:action] == 'show' %>
+    <h2 class="titre-index me-auto m-0 mx-1">Details du livre</h2>
+  <% elsif params[:controller] == 'bookrecoms' && params[:action] == 'viewed' %>
+    <h2 class="titre-index me-auto m-0 mx-1">Livres lus</h2>
+  <% elsif params[:controller] == 'bookrecoms' && params[:action] == 'edit' %>
+    <h2 class="titre-index me-auto m-0 mx-1">Edit</h2>
+  <% elsif params[:controller] == 'restaurants' && params[:action] == 'index' %>
+    <h2 class="titre-index me-auto m-0 mx-1">Tous mes Restaurants</h2>
+  <% elsif params[:controller] == 'restaurantrecoms' && params[:action] == 'show' %>
+    <h2 class="titre-index me-auto m-0 mx-1">Details du restaurant</h2>
+  <% elsif params[:controller] == 'restaurantrecoms' && params[:action] == 'viewed' %>
+    <h2 class="titre-index me-auto m-0 mx-1">Restaurants visités</h2>
+  <% elsif params[:controller] == 'restaurantrecoms' && params[:action] == 'edit' %>
+    <h2 class="titre-index me-auto m-0 mx-1">Edit</h2>
   <% end %>
   <!-- button home --->
   <%= link_to root_path, class:"text-decoration-none button-navigation mx-1" do %>
@@ -46,9 +70,20 @@
   <div class="dropdown">
     <i class="fa-solid fa-eye text-decoration-none button-navigation mx-1 py-3"></i>
     <div class="dropdown-content">
+    <% if params[:controller] == 'recommendations'%>
       <%= link_to 'À voir', to_view_recommendations_path, class:"text-decoration-none button-navigation mx-1" %>
       <%= link_to 'Film vus', viewed_recommendations_path, class:"text-decoration-none button-navigation mx-1" %>
       <%= link_to 'Tous mes films', recommendations_path, class:"text-decoration-none button-navigation mx-1" %>
+    <% elsif params[:controller] == 'podcastrecoms'%>
+      <%= link_to 'Podcast écoutés', viewed_podcastrecoms_path, class:"text-decoration-none button-navigation mx-1" %>
+      <%= link_to 'Tous mes podcasts', podcastrecoms_path, class:"text-decoration-none button-navigation mx-1" %>
+    <% elsif params[:controller] == 'bookrecoms'%>
+      <%= link_to 'Livres lus', viewed_bookrecoms_path, class:"text-decoration-none button-navigation mx-1" %>
+      <%= link_to 'Tous mes livres', bookrecoms_path, class:"text-decoration-none button-navigation mx-1" %>
+    <% elsif params[:controller] == 'restaurants'%>
+      <%= link_to 'Restaurant visités', viewed_restaurantrecoms_path, class:"text-decoration-none button-navigation mx-1" %>
+      <%= link_to 'Tous mes restaurants', restaurants_path, class:"text-decoration-none button-navigation mx-1" %>
+    <%end%>
     </div>
   </div>
   <div class="dropdown">
