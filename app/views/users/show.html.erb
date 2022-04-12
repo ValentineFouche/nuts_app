@@ -5,6 +5,8 @@
         <h1>Salut <%= current_user.nickname %> !</h1>
         <h2>Mes listes :</h2>
         <% if @recommendations == [] && @bookrecoms == [] && @podcastrecoms == [] && @restaurantrecoms == [] %>
+          <p>Vous n'avez pas encore de listes !</p>
+        <% end %>
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><%= link_to "mes films", recommendations_path, class:"text-decoration-none link-modify"%></li>
           <li class="list-group-item"><%= link_to "mes livres", bookrecoms_path, class:"text-decoration-none link-modify" %></li>
