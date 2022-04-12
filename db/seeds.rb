@@ -15,6 +15,7 @@ Bookrecom.destroy_all
 Book.destroy_all
 Podcastrecom.destroy_all
 Podcast.destroy_all
+Restaurantrecom.destroy_all
 User.destroy_all
 Restaurant.destroy_all
 

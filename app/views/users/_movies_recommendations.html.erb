@@ -14,7 +14,6 @@
             <%= image_tag recommendation.movie.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
           <% end %>
           </div>
-            <%# <%= image_tag recommendation.movie.image_url, alt: "Poster", class: "img-fluid" %>
           <div>
             <h5 class="card-title"><%=recommendation.movie.title %></h5>
           </div>
@@ -24,11 +23,15 @@
           <div>
             <p class="card-text">Ajouté le: <%=recommendation.created_at.strftime("%d/%m/%Y")%></p>
           </div>
-          <div>
+          <% if @movies.include?(recommendation.movie) == true %>
+            <p>Ce film fait déjà partie de votre liste.</p>
+          <% else %>
+            <div>
             <%= link_to "Ajouter à ma liste", add_friend_reco_recommendation_path(recommendation) %>
-          </div>
+            </div>
+          <% end %>
         <%end %>
       </div>
-        <%end%>
+    <%end%>
   <% end %>
 </div>

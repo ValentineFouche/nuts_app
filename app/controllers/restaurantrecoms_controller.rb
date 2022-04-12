@@ -1,6 +1,6 @@
 class RestaurantrecomsController < ApplicationController
   def index
-    reco_not_sorted = Restaurantrecom.all
+    reco_not_sorted = Restaurantrecom.where(user_id: current_user.id)
     reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.created_at }
     @restaurantrecoms = reco_sorted_asc.reverse
   end
@@ -46,13 +46,13 @@ class RestaurantrecomsController < ApplicationController
   end
 
   def searched
-    reco_not_sorted = Restaurantrecom.where(searched: true)
+    reco_not_sorted = Restaurantrecom.where(searched: true, user_id: current_user.id)
     reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.updated_at }
     @restaurantrecoms = reco_sorted_asc.reverse
   end
 
   def viewed
-    reco_not_sorted = Restaurantrecom.where(viewed: true)
+    reco_not_sorted = Restaurantrecom.where(viewed: true, user_id: current_user.id )
     reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.updated_at }
     @restaurantrecoms = reco_sorted_asc.reverse
   end
