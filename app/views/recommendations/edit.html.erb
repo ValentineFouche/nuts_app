@@ -1,27 +1,14 @@
 <div class="container">
-  <div class="navbar-index sticky-top d-flex justify-content-between align-items-center px-1">
-    <%= link_to :back, class:"text-decoration-none button-navigation me-1" do %>
-      <i class="fas fa-arrow-left"></i>
-    <% end %>
-    <h2 class="titre-index me-auto m-0 mx-1">Modifier</h2>
-    <%= link_to root_path, class:"text-decoration-none button-navigation mx-1" do %>
-      <i class="fas fa-home"></i>
-    <% end %>
-    <%= link_to new_recommendation_path, class:"text-decoration-none button-navigation mx-1" do %>
-      <i class="fas fa-search"></i>
-    <% end %>
-    <%= link_to new_recommendation_path, class:"text-decoration-none button-navigation mx-1" do %>
-      <i class="fas fa-plus"></i>
+  <div>
+    <%= simple_form_for @recommendation do |f| %>
+      <%if @recommendation.viewed == false%>
+        <%= f.input :friend %>
+        <%= f.input :comment %>
+      <% else%>
+        <%= f.input :feedback_content, label: "Feedback" %>
+        <%= f.input :feedback_rating, collection: (1..5).to_a, label: "Évaluer votre expérience" %>
+      <% end %>
+        <%= f.submit "Enregistrer", class: "btn-submit" %>
     <% end %>
   </div>
-  <%= simple_form_for @recommendation do |f| %>
-    <%if @recommendation.viewed == false%>
-      <%= f.input :friend %>
-      <%= f.input :comment %>
-    <% else%>
-      <%= f.input :feedback_content %>
-      <%= f.input :feedback_rating, collection: (1..5).to_a, label: "Rate your experience" %>
-    <% end %>
-      <%= f.submit "Enregistrer", class: "btn-submit" %>
-  <% end %>
 </div>

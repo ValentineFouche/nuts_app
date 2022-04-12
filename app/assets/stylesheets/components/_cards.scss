@@ -1,58 +1,39 @@
-@media(max-width: 500px) {
-  .cards {
-    font-size: 12px;
-  }
+// @media(max-width: 500px) {
+//   .cards {
+//     font-size: 12px;
+//   }
+// }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
 }
 
-  .card-body-index {
-    width: 50%;
-    background-color:#F1D196;
-    justify-content: space-around;
-    border-radius: 0px 8px 8px 0px;
-  }
-
-  .card {
-    border: none;
-    border-radius: 15px;
-  }
-
-.card-body-index {
-  width: 50%;
-  background-color:#F1D196;
-  justify-content: space-around;
-  border-radius: 0px 8px 8px 0px;
-}
-
-.card {
-  border: none;
-  border-radius: 15px;
+.movies-cards {
+  border-radius: 30px;
+  margin-top: 4px;
 }
 
 h1 {
-  color: #F1D196;
+  color: $brown_nuts;
   font-family: $header-nuts-notes;
   padding: 30px;
   text-align: center;
   font-size: 26px;
 }
 
-h5 {
-  color: #1F1F1F;
-  font-family: $headers-font;
+.movies-card-header {
+  padding-top: 9px;
+  font-size: 14px;
+  // font-family: $text-cards;
 }
 
-p {
-  color: #1F1F1F;
-  font-family: $headers-font;
+.movies-card-text {
+  color: lightgrey;
   font-weight: 400;
-}
-
-// .images-index {
-//   // width: 50%;
-// }
-
-.img-index {
-border-radius: 8px 0px 0px 8px;
+  font-size: 12px;
+  // font-family: $text-cards;
 }
 
 .link-modify {
@@ -63,8 +44,13 @@ border-radius: 8px 0px 0px 8px;
 }
 
 .titre-index {
-  color: #F1D196;
+  color: $brown_nuts;
   font-family: $header-nuts-notes;
   text-align: center;
   font-size: 26px;
+}
+
+.img-fluid {
+  width: 100%;
+  border-radius: 5px;
 }

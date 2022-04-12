@@ -1,6 +1,8 @@
-<div class="container">
-  <div class="wrapper">
-    <%@recommendations.select do |recommendation|%>
+<div class="wrapper">
+  <% if @user.recommendations == [] %>
+    <p><%= @user.nickname %> n'a pas encore de films dans sa liste.</p>
+  <% else %>
+    <% @user.recommendations.each do |recommendation|%>
       <div class="movies-cards" style="max-width: 540px;">
         <%= link_to recommendation_path(recommendation), class:"text-decoration-none" do%>
           <div class="movies-image-card">
@@ -14,15 +16,19 @@
           </div>
             <%# <%= image_tag recommendation.movie.image_url, alt: "Poster", class: "img-fluid" %>
           <div>
-            <h5 class="movies-card-text movies-card-header"><%=recommendation.movie.title %></h5>
+            <h5 class="card-title"><%=recommendation.movie.title %></h5>
           </div>
           <div>
-          <% if recommendation.friend != nil %>
-            <p class="movies-card-text"><i class="fa-solid fa-user"></i>  <%=recommendation.friend%></p>
-          <% end %>
+            <p class="card-text">Recommandé par: <%=recommendation.friend%></p>
+          </div>
+          <div>
+            <p class="card-text">Ajouté le: <%=recommendation.created_at.strftime("%d/%m/%Y")%></p>
+          </div>
+          <div>
+            <%= link_to "Ajouter à ma liste", add_friend_reco_recommendation_path(recommendation) %>
           </div>
         <%end %>
       </div>
-    <%end%>
-  </div>
+        <%end%>
+  <% end %>
 </div>

@@ -64,7 +64,7 @@ recommandation_alex_3 = Recommendation.create(friend: "vavou", comment: "film av
 
 recommandation_ing_4 = Recommendation.create(friend: "alex", comment: "Un grand classic qu'Alexandru m'a dit de ne pas louper !!!", searched: false, viewed: false, user_id: ingo.id, movie_id: les_evades.id)
 
-recommandation_vavou_5 = Recommendation.create(friend: "valou", comment: "film d'epoque super top", searched: false, viewed: false, user_id: valentine.id, movie_id: douze_hommes.id)
+recommandation_vavou_5 = Recommendation.create(friend: "valou", comment: "film d'epoque super top", searched: false, viewed: false, user_id: ingo.id, movie_id: douze_hommes.id)
 
 puts "creating bookrecoms"
 
