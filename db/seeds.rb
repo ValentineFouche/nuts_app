@@ -35,6 +35,8 @@ dark_knight = Movie.create(title: "The Dark Knight : Le Chevalier noir", directo
 douze_hommes = Movie.create(title: "12 Hommes en colère", director: "Sidney Lumet", image_url: "douze-hommes.jpg", stream_options: "Stream")
 schindler = Movie.create(title: "La liste de Schindler", director: "Steven Spielberg", image_url: "schindler.jpg", stream_options: "Stream")
 
+puts "creating new movies"
+
 peril_jeune = Movie.create(title: "Le Péril jeune", image_url: "peril-jeune.jpg")
 les_oiseaux = Movie.create(title: "Les Oiseaux", image_url: "les-oiseaux.jpg")
 le_sens_de_la_fete = Movie.create(title: "Le Sens de la fête", image_url: "le-sens-de-la-fete.jpg")
@@ -76,7 +78,7 @@ podcast3 = Podcast.create(title: "La musique des jeunes")
 podcast4 = Podcast.create(title: "La mode et les temps")
 
 
-puts "creating recommandations"
+puts "creating recommandations de valou"
 # Les reco de valou
 Recommendation.create(friend: "alex", comment: "film conseillé quand nous avons mangé de la socca à nice, film d'action pleins de suspense", searched: false, viewed: false, user_id: valentine.id, movie_id: dark_knight.id)
 
@@ -88,6 +90,7 @@ Recommendation.create(friend: "alex", comment: "Un grand classic qu'Alexandru m'
 
 Recommendation.create(friend: "valou", comment: "film d'epoque super top", searched: false, viewed: false, user_id: valentine.id, movie_id: douze_hommes.id)
 
+puts "creating recommandations de ingo"
 # Les reco de ing
 Recommendation.create(friend: "valou", comment: "blablabla", searched: false, viewed: false, user_id: ingo.id, movie_id: peril_jeune.id)
 
