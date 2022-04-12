@@ -1,11 +1,12 @@
-<div class="container">
+<div class="wrapper">
   <% if @user.bookrecoms == [] %>
     <p><%= @user.nickname %> n'a pas encore de livres dans sa liste.</p>
   <% else %>
     <%@user.bookrecoms.each do |bookrecom| %>
     <div class="movies-cards" style="max-width: 540px;">
       <%= link_to bookrecom_path(bookrecom), class:"text-decoration-none" do%>
-      <div class="movie-images-card">
+      <div class="movies-image-card">
+        <%= image_tag bookrecom.book.image_url, class: "img-fluid img-index" %>
       </div>
       <div>
         <h5 class="card-title card-profil"><%=bookrecom.book.title %></h5>

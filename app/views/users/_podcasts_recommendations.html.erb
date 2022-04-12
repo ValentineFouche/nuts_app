@@ -1,11 +1,12 @@
-<div class="container">
+<div class="wrapper">
   <% if @user.podcastrecoms == [] %>
     <p><%= @user.nickname %> n'a pas encore de podcasts dans sa liste.</p>
   <% else %>
     <%@user.podcastrecoms.each do |podcastrecom| %>
       <div class="movies-cards" style="max-width: 540px;">
         <%= link_to podcastrecom_path(podcastrecom), class:"text-decoration-none" do%>
-        <div class="movie-images-card">
+        <div class="movies-image-card">
+          <%= image_tag podcastrecom.podcast.image_url, class: "img-fluid img-index" %>
         </div>
         <div>
           <h5 class="card-title card-profil"> <%= podcastrecom.podcast.title %> </h5>
