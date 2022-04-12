@@ -25,9 +25,9 @@ puts "creating users"
 valentine = User.create(nickname: "valou", email: "valentine.fouche@hotmail.fr", password: "qwerty")
 alexandru = User.create(nickname: "alex", email: "alexandru.rebenciuc@hotmail.fr", password: "qwerty")
 ingo = User.create(nickname: "ing", email: "ingo.knorr@hotmail.fr", password: "qwerty")
-eva = User.create(nickname: "lulu", email: "eva.lampin@hotmail.fr", password: "qwerty")
+lulu = User.create(nickname: "lulu", email: "eva.lampin@hotmail.fr", password: "qwerty")
 
-puts "creating movies"
+puts "creating 5 movies"
 # je crée des movies
 les_evades = Movie.create(title: "Les évadés", director: "Frank Darabont", image_url: "les-evades.jpg", stream_options: "Stream")
 le_parrain = Movie.create(title: "Le parrain", director: "Francis Ford Coppola", image_url: "le-parrain.webp", stream_options: "Stream")
@@ -35,20 +35,21 @@ dark_knight = Movie.create(title: "The Dark Knight : Le Chevalier noir", directo
 douze_hommes = Movie.create(title: "12 Hommes en colère", director: "Sidney Lumet", image_url: "douze-hommes.jpg", stream_options: "Stream")
 schindler = Movie.create(title: "La liste de Schindler", director: "Steven Spielberg", image_url: "schindler.jpg", stream_options: "Stream")
 
-puts "creating new movies"
-
+puts "creating 10 new movies"
 peril_jeune = Movie.create(title: "Le Péril jeune", image_url: "peril-jeune.jpg")
 les_oiseaux = Movie.create(title: "Les Oiseaux", image_url: "les-oiseaux.jpg")
 le_sens_de_la_fete = Movie.create(title: "Le Sens de la fête", image_url: "le-sens-de-la-fete.jpg")
 nos_jours_heureux = Movie.create(title: "Nos jours heureux", image_url: "nos-jours-heureux.jpg")
 la_belle_verte = Movie.create(title: "La Belle Verte", image_url: "la-belle-verte.jpg")
 
-# peril_jeune = Movie.create(title: "Le Péril jeune", image_url: "peril-jeune.jpg")
-# peril_jeune = Movie.create(title: "Le Péril jeune", image_url: "peril-jeune.jpg")
-# peril_jeune = Movie.create(title: "Le Péril jeune", image_url: "peril-jeune.jpg")
-# peril_jeune = Movie.create(title: "Le Péril jeune", image_url: "peril-jeune.jpg")
-# peril_jeune = Movie.create(title: "Le Péril jeune", image_url: "peril-jeune.jpg")
+puts "creating 15 movies"
+intouchables = Movie.create(title: "Intouchables", image_url: "intouchables.jpg")
+avatar = Movie.create(title: "Avatar", image_url: "avatar.jpg")
+ensemble_cest_tout = Movie.create(title: "Ensemble c'est tout", image_url: "ensemble-cest-tout.jpg")
+la_panthere_des_neiges = Movie.create(title: "La Panthère des Neiges", image_url: "la-panthere-des-neiges.jpg")
+les_infiltres = Movie.create(title: "Les Inflitrés", image_url: "les-infiltres.jpg")
 
+puts "creating 20 movies"
 # peril_jeune = Movie.create(title: "Le Péril jeune", image_url: "peril-jeune.jpg")
 # peril_jeune = Movie.create(title: "Le Péril jeune", image_url: "peril-jeune.jpg")
 # peril_jeune = Movie.create(title: "Le Péril jeune", image_url: "peril-jeune.jpg")
@@ -81,26 +82,27 @@ podcast4 = Podcast.create(title: "La mode et les temps")
 puts "creating recommandations de valou"
 # Les reco de valou
 Recommendation.create(friend: "alex", comment: "film conseillé quand nous avons mangé de la socca à nice, film d'action pleins de suspense", searched: false, viewed: false, user_id: valentine.id, movie_id: dark_knight.id)
-
 Recommendation.create(friend: "ing", comment: "film sur la seconde guerre mondial, attention un peu triste donc à ne pas regarder en cas de coup de blues", searched: false, viewed: false, user_id: valentine.id, movie_id: schindler.id)
-
 Recommendation.create(friend: "lulu", comment: "film avec pleins de mafieux, action garantie ! Ne pas regarder avec les enfants", searched: false, viewed: false, user_id: valentine.id, movie_id: le_parrain.id)
-
 Recommendation.create(friend: "alex", comment: "Un grand classic qu'Alexandru m'a dit de ne pas louper !!!", searched: false, viewed: false, user_id: valentine.id, movie_id: les_evades.id)
-
 Recommendation.create(friend: "valou", comment: "film d'epoque super top", searched: false, viewed: false, user_id: valentine.id, movie_id: douze_hommes.id)
 
 puts "creating recommandations de ingo"
 # Les reco de ing
 Recommendation.create(friend: "valou", comment: "blablabla", searched: false, viewed: false, user_id: ingo.id, movie_id: peril_jeune.id)
-
 Recommendation.create(friend: "alex", comment: "blablabla", searched: false, viewed: false, user_id: ingo.id, movie_id: les_oiseaux.id)
-
 Recommendation.create(friend: "alicechou", comment: "blablabla", searched: false, viewed: false, user_id: ingo.id, movie_id: le_sens_de_la_fete.id)
-
 Recommendation.create(friend: "alex", comment: "blablabla", searched: false, viewed: false, user_id: ingo.id, movie_id: nos_jours_heureux.id)
-
 Recommendation.create(friend: "lulu", comment: "blablabla", searched: false, viewed: false, user_id: ingo.id, movie_id: la_belle_verte.id)
+
+puts "creating recommandations de lulu"
+# Les reco de lulu
+Recommendation.create(friend: "ing", comment: "blablabla", searched: false, viewed: false, user_id: lulu.id, movie_id: intouchables.id)
+Recommendation.create(friend: "ing", comment: "blablabla", searched: false, viewed: false, user_id: lulu.id, movie_id: avatar.id)
+Recommendation.create(friend: "doudou", comment: "blablabla", searched: false, viewed: false, user_id: lulu.id, movie_id: ensemble_cest_tout.id)
+Recommendation.create(friend: "alex", comment: "blablabla", searched: false, viewed: false, user_id: lulu.id, movie_id: la_panthere_des_neiges.id)
+Recommendation.create(friend: "clem", comment: "blablabla", searched: false, viewed: false, user_id: lulu.id, movie_id: les_infiltres.id)
+
 
 puts "creating bookrecoms"
 
