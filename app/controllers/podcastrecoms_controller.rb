@@ -1,6 +1,6 @@
 class PodcastrecomsController < ApplicationController
   def index
-    reco_not_sorted = Podcastrecom.all
+    reco_not_sorted = Podcastrecom.where(user_id: current_user.id)
     reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.created_at }
     @podcastrecoms = reco_sorted_asc.reverse
   end
@@ -46,13 +46,13 @@ class PodcastrecomsController < ApplicationController
   end
 
   def searched
-    reco_not_sorted = Podcastrecom.where(searched: true)
+    reco_not_sorted = Podcastrecom.where(searched: true, user_id: current_user.id)
     reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.updated_at }
     @podcastrecoms = reco_sorted_asc.reverse
   end
 
   def viewed
-    reco_not_sorted = Podcastrecom.where(viewed: true)
+    reco_not_sorted = Podcastrecom.where(viewed: true, user_id: current_user.id )
     reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.updated_at }
     @podcastrecoms = reco_sorted_asc.reverse
   end
