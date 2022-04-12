@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@recommendation.movie.title} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @recommendation.comment %>
+<% content_for :meta_image, cl_image_path(@recommendation.image_url) %>
+
 <div class="container">
   <div class="col-12 col-md-6">
     <div class="card card-show" style="width: 100%;">
