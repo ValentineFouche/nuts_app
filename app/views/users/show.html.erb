@@ -4,6 +4,7 @@
       <% if current_user.id == params[:id].to_i %>
         <h1>Salut <%= current_user.nickname %> !</h1>
         <h2>Mes listes :</h2>
+        <% if @recommendations == [] && @bookrecoms == [] && @podcastrecoms == [] && @restaurantrecoms == [] %>
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><%= link_to "mes films", recommendations_path, class:"text-decoration-none link-modify"%></li>
           <li class="list-group-item"><%= link_to "mes livres", bookrecoms_path, class:"text-decoration-none link-modify" %></li>
@@ -11,6 +12,9 @@
           <li class="list-group-item"><%= link_to "mes restaus", restaurantrecoms_path, class:"text-decoration-none link-modify" %></li>
         </ul>
         <h2>Mes amis :</h2>
+        <% if @friends == [] %>
+          <p>Vous n'avez pas encore d'amis !</p>
+        <% end %>
         <ul class="list-group list-group-flush">
           <% @friends.each do |friend| %>
           <% friend_user = User.where(nickname: friend).first %>
