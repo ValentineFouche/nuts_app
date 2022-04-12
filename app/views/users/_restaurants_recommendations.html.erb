@@ -1,11 +1,12 @@
-<div class="container">
+<div class="wrapper">
   <% if @user.restaurantrecoms == [] %>
     <p><%= @user.nickname %> n'a pas encore de restaurants dans sa liste.</p>
   <% else %>
     <%@user.restaurantrecoms.each do |restaurantrecom| %>
     <div class="movies-cards" style="max-width: 540px;">
       <%= link_to restaurantrecom_path(restaurantrecom), class:"text-decoration-none" do%>
-        <div class="movie-images-card">
+        <div class="movies-image-card">
+          <%#= image_tag restaurantrecoms.restaurant.image_url, class: "img-fluid img-index" %>
         </div>
         <div>
           <h5 class="card-title card-profil"><%=restaurantrecom.restaurant.title %></h5>

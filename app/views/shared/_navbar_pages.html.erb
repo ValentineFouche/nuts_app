@@ -1,14 +1,14 @@
 <div class="navbar-index sticky-top d-flex justify-content-between align-items-center px-1">
   <!-- condition to come back always to index page when in show --->
-  <%# if params[:controller] == 'recommendations' && params[:action] == 'show' %>
-    <%#= link_to recommendations_path, class:"text-decoration-none button-navigation me-1" do %>
-      <%# <i class="fas fa-arrow-left"></i> %>
-    <%# end %>
-  <%# else %>
+  <% if params[:controller] == 'recommendations' && params[:action] == 'show' %>
+    <%= link_to recommendations_path, class:"text-decoration-none button-navigation me-1" do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+  <% else %>
     <%= link_to :back, class:"text-decoration-none button-navigation me-1" do %>
       <i class="fas fa-arrow-left"></i>
     <% end %>
-  <%# end %>
+  <% end %>
   <!-- changes header on sites --->
   <% if params[:controller] == 'recommendations' && params[:action] == 'index' %>
     <h2 class="titre-index me-auto m-0 mx-1">Tous mes Films</h2>
