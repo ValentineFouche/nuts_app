@@ -9,4 +9,23 @@ class RestaurantsController < ApplicationController
       }
     end
   end
+
+  def new
+    @restaurant = Restaurant.new
+  end
+
+  def create
+    @restaurant = Restaurant.new(params_restaurants)
+    if @restaurant.save
+      redirect_to new_restaurantrecom_path
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def params_restaurants
+    params.require(:restaurant).permit(:title, :address)
+  end
 end
