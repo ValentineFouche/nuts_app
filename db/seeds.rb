@@ -50,11 +50,11 @@ la_panthere_des_neiges = Movie.create(title: "La Panthère des Neiges", image_ur
 les_infiltres = Movie.create(title: "Les Inflitrés", image_url: "les-infiltres.jpg")
 
 puts "creating 20 movies"
-# peril_jeune = Movie.create(title: "Le Péril jeune", image_url: "peril-jeune.jpg")
-# peril_jeune = Movie.create(title: "Le Péril jeune", image_url: "peril-jeune.jpg")
-# peril_jeune = Movie.create(title: "Le Péril jeune", image_url: "peril-jeune.jpg")
-# peril_jeune = Movie.create(title: "Le Péril jeune", image_url: "peril-jeune.jpg")
-# peril_jeune = Movie.create(title: "Le Péril jeune", image_url: "peril-jeune.jpg")
+mr_nobody = Movie.create(title: "Mr Nobody", image_url: "mr-nobody.jpg")
+orgueil_prejuges = Movie.create(title: "Orgueil et Préjugés", image_url: "orgueil-prejuges.jpg")
+lol = Movie.create(title: "LOL", image_url: "lol.jpg")
+peau_d_ane = Movie.create(title: "Peau d'Âne", image_url: "peau-d-ane.jpg")
+parapluies_cherbourg = Movie.create(title: "Les Parapluies de Cherbourg", image_url: "parapluies-cherbourg.jpg")
 
 puts "creating movies with API"
 # je cree tous les movies présents dans OMDB
@@ -103,6 +103,13 @@ Recommendation.create(friend: "doudou", comment: "blablabla", searched: false, v
 Recommendation.create(friend: "alex", comment: "blablabla", searched: false, viewed: false, user_id: lulu.id, movie_id: la_panthere_des_neiges.id)
 Recommendation.create(friend: "clem", comment: "blablabla", searched: false, viewed: false, user_id: lulu.id, movie_id: les_infiltres.id)
 
+puts "creating recommandations d'alex"
+# Les reco d'alex'
+Recommendation.create(friend: "ing", comment: "blablabla", searched: false, viewed: false, user_id: alexandru.id, movie_id: mr_nobody.id)
+Recommendation.create(friend: "ing", comment: "blablabla", searched: false, viewed: false, user_id: alexandru.id, movie_id: orgueil_prejuges.id)
+Recommendation.create(friend: "doudou", comment: "blablabla", searched: false, viewed: false, user_id: alexandru.id, movie_id: lol.id)
+Recommendation.create(friend: "alex", comment: "blablabla", searched: false, viewed: false, user_id: alexandru.id, movie_id: peau_d_ane.id)
+Recommendation.create(friend: "clem", comment: "blablabla", searched: false, viewed: false, user_id: alexandru.id, movie_id: parapluies_cherbourg.id)
 
 puts "creating bookrecoms"
 
