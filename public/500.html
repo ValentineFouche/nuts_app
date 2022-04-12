@@ -4,39 +4,52 @@
   <title>The page you were looking for doesn't exist (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-.hit-the-floor {
-  color: #fff;
-  font-size: 50vw;
-  font-weight: bold;
-  font-family: Helvetica;
-  text-shadow:
-    0 .005em 0 #ccc,
-    0 .01em 0 #c9c9c9,
-    0 .015em 0 #bbb,
-    0 .02em 0 #b9b9b9,
-    0 .025em 0 #aaa,
-    0 .03em .005em rgba(0,0,0,.1),
-    0 0 .025em rgba(0,0,0,.1),
-    0 .005em .015em rgba(0,0,0,.3),
-    0 .015em .025em rgba(0,0,0,.2),
-    0 .025em .05em rgba(0,0,0,.25),
-    0 .05em .05em rgba(0,0,0,.2),
-    0 .1em .1em rgba(0,0,0,.15);
-}
+    *{
+        transition: all 0.6s;
+    }
 
-body {
-  background-color: #f1f1f1;
-  min-height: 100vh;
+    html {
+        height: 100%;
+    }
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    body{
+        font-family: 'Lato', sans-serif;
+        color: white;
+        margin: 0;
+        background-color: #888;
+    }
+
+    #main{
+        display: table;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+    }
+
+    .fof{
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .fof h1{
+        font-size: 50px;
+        display: inline-block;
+        padding-right: 12px;
+        animation: type .5s alternate infinite;
+    }
+
+    @keyframes type{
+        from{box-shadow: inset -3px 0px 0px white;}
+        to{box-shadow: inset -3px 0px 0px transparent;}
+    }
   </style>
 </head>
 
 <body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-  <div class="hit-the-floor">Error 500</div>
+  <div id="main">
+    <div class="fof">
+      <h1>Error 500</h1>
+    </div>
+  </div>
 </body>
 </html>
