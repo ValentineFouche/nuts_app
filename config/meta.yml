@@ -1,5 +1,5 @@
 meta_product_name: "Nuts Notes"
 meta_title: "Nuts Notes - Ajoute les recommendations de tes amis"
 meta_description: "Fini le temps perdu à chercher des films, prodcasts, livres et restaurants de qualités !"
-meta_image: "nuts_notes.png" # should exist in `app/assets/images/`
+meta_image: "nuts_notes_1200_630.png" # should exist in `app/assets/images/`
 twitter_account: "@nuts_notesc_twitter_account"   # required for Twitter Cards
