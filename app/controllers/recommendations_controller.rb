@@ -24,13 +24,23 @@ class RecommendationsController < ApplicationController
   def create
     @recommendation = Recommendation.new(params_recommendations)
     @recommendation.user = current_user
-    if @recommendation.save
-      redirect_to recommendation_path(@recommendation)
-    else
-      @movies = Movie.where(id: @recommendation.movie_id)
+    # trying to code différemment l'impossibilité de doublons :
+    @movies = Movie.where(id: @recommendation.movie_id)
+    if @movies  != []
       flash[:notice] = "Vous avez déja ce film dans votre liste"
       render :new
+    else
+      @recommendation.save
+      redirect_to recommendation_path(@recommendation)
     end
+    # code de départ :
+    # if @recommendation.save
+    #   redirect_to recommendation_path(@recommendation)
+    # else
+    #   @movies = Movie.where(id: @recommendation.movie_id)
+    #   flash[:notice] = "Vous avez déja ce film dans votre liste"
+    #   render :new
+    # end
   end
 
   def add_friend_reco
