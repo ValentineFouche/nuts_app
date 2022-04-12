@@ -14,8 +14,6 @@ Bookrecom.destroy_all
 Book.destroy_all
 Podcastrecom.destroy_all
 Podcast.destroy_all
-Restaurantrecom.destroy_all
-Restaurant.destroy_all
 User.destroy_all
 
 puts "creating users"
@@ -36,7 +34,7 @@ schindler = Movie.create(title: "La liste de Schindler", director: "Steven Spiel
 puts "creating movies with API"
 # je cree tous les movies présents dans OMDB
 
-url = "https://imdb-api.com/en/API/Top250Movies/k_7bqg1dif"
+url = "https://imdb-api.com/en/API/Top250Movies/#{ENV['IMDB_API_KEY']}"
 movies_serialized = URI.open(url).read
 movies = JSON.parse(movies_serialized)
 movies["items"].each do |movie|
@@ -55,10 +53,6 @@ podcast2 = Podcast.create(title: "Une histoire de la France")
 podcast3 = Podcast.create(title: "La musique des jeunes")
 podcast4 = Podcast.create(title: "La mode et les temps")
 
-restaurant1 = Restaurant.create(title: "Linguini")
-restaurant2 = Restaurant.create(title: "Ratatouille")
-restaurant3 = Restaurant.create(title: "La petite maison")
-restaurant4 = Restaurant.create(title: "La table ronde")
 
 puts "creating recommandations"
 # je creer des recommandations
@@ -84,9 +78,5 @@ Podcastrecom.create(friend: "valentine", comment: "Des nouvelles perspectives su
 Podcastrecom.create(friend: "eva", comment: "Du bruits ou de la vrai musique", searched: false, viewed: false, user_id: alexandru.id, podcast_id: podcast3.id)
 Podcastrecom.create(friend: "ingo", comment: "Les gens sont influences vraiment par les vetements portes", searched: false, viewed: false, user_id: alexandru.id, podcast_id: podcast4.id)
 
-Restaurantrecom.create(friend: "alex", comment: "Tres bon cuisine, des plats diverses", searched: false, viewed: false, user_id: alexandru.id, restaurant_id: restaurant1.id)
-Restaurantrecom.create(friend: "valentine", comment: "Restaurant etoile qui est digne de son nom", searched: false, viewed: false, user_id: alexandru.id, restaurant_id: restaurant2.id)
-Restaurantrecom.create(friend: "eva", comment: "Un petit etablissement de famille", searched: false, viewed: false, user_id: alexandru.id, restaurant_id: restaurant3.id)
-Restaurantrecom.create(friend: "ingo", comment: "Restaurant bon pour une zone touristique", searched: false, viewed: false, user_id: alexandru.id, restaurant_id: restaurant4.id)
 
 puts "done"

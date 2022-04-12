@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Ajouter un resto</h1>
+    <div data-action="pick-restaurant@window->search-restaurants#createrestaurant form-reco">
+      <%= simple_form_for @restaurant do |f| %>
+      <%= f.input :title %>
+      <%= f.input :address %>
+      <%= f.submit "Ajouter à ma list", class: "btn-submit" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="my-4">
+  </div>
+</div>

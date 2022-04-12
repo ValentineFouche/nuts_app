@@ -40,4 +40,6 @@ Rails.application.routes.draw do
     end
     get 'restaurant_search', to: "restaurantrecoms#restaurants_search", as: :restaurants_search
   end
+
+  resources :restaurants, only: [:index, :create, :new]
 end

@@ -2,6 +2,7 @@
   <div class="col-12 col-md-6">
     <div class="card card-show" style="width: 100%;">
       <h2><%= @restaurantrecom.restaurant.title %></h2>
+      <h3><%=@restaurantrecom.restaurant.address%></h3>
       <ul class="list-group list-group-flush">
         <li class="list-group-item"> <strong>Recommandé par :</strong> <%= @restaurantrecom.friend.capitalize %></li>
         <li class="list-group-item"> <strong>Mon commentaire :</strong> <%= @restaurantrecom.comment %></li>

@@ -17,7 +17,7 @@ class RestaurantrecomsController < ApplicationController
 
     respond_to do |format|
       format.html # Follow regular flow of Rails
-      format.text { render partial: 'restaurantrecoms/restaurant_list', locals: { restaurants: @restaurants }, formats: [:html] }
+      format.text { render partial: 'restaurant_list', locals: { restaurants: @restaurants }, formats: [:html] }
     end
   end
 
