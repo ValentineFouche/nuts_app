@@ -6,28 +6,22 @@
       <div class="movies-cards" style="max-width: 540px;">
         <%= link_to recommendation_path(recommendation), class:"text-decoration-none" do%>
           <div class="movies-image-card">
-          <% if recommendation.movie.image_url.start_with?("http") %>
-            <%= image_tag recommendation.movie.image_url, alt: "Poster", class: "img-fluid img-index" %>
-          <% elsif recommendation.movie.image_url.start_with?("..//assets/images/") %>
-            <%= image_tag recommendation.movie.image_url.gsub("..//assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
-          <% else %>
-            <%= image_tag recommendation.movie.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
-          <% end %>
+            <% if recommendation.movie.image_url.start_with?("http") %>
+              <%= image_tag recommendation.movie.image_url, alt: "Poster", class: "img-fluid img-index" %>
+            <% elsif recommendation.movie.image_url.start_with?("..//assets/images/") %>
+              <%= image_tag recommendation.movie.image_url.gsub("..//assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
+            <% else %>
+              <%= image_tag recommendation.movie.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
+            <% end %>
           </div>
           <div>
-            <h5 class="card-title"><%=recommendation.movie.title %></h5>
-          </div>
-          <div>
-            <p class="card-text">Recommandé par: <%=recommendation.friend%></p>
-          </div>
-          <div>
-            <p class="card-text">Ajouté le: <%=recommendation.created_at.strftime("%d/%m/%Y")%></p>
+            <h5 class="card-title card-profil"><%=recommendation.movie.title %></h5>
           </div>
           <% if @movies.include?(recommendation.movie) == true %>
             <p>Ce film fait déjà partie de votre liste.</p>
           <% else %>
-            <div>
-            <%= link_to "Ajouter à ma liste", add_friend_reco_recommendation_path(recommendation) %>
+            <div class="card-profil my-4">
+              <%= link_to "Ajouter à ma liste", add_friend_reco_recommendation_path(recommendation), class: 'buttons' %>
             </div>
           <% end %>
         <%end %>
