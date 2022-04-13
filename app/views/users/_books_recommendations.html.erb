@@ -8,14 +8,14 @@
         <%= image_tag bookrecom.book.image_url, class: "img-fluid img-index" %>
       </div>
       <div>
-        <h5 class="card-title card-profil"><%=bookrecom.book.title %></h5>
-      </div>
-      <div>
         <% if bookrecom.feedback_rating != nil %>
           <% bookrecom.feedback_rating.times do %>
             <i class="fa-solid fa-star"></i>
           <% end %>
         <% end %>
+      </div>
+      <div>
+        <h5 class="card-title card-profil"><%=bookrecom.book.title %></h5>
       </div>
       <div class="card-profil my-4">
         <%= link_to "Ajouter à ma liste", "#", class: 'buttons' %>
