@@ -5,6 +5,7 @@ const initStarRating = () => {
   $('#recommendation_feedback_rating').barrating({
     theme: 'css-stars'
   });
+  $('#restaurant_feedback_rating').barrating({
   $('#bookrecom_feedback_rating').barrating({
     theme: 'css-stars'
   });

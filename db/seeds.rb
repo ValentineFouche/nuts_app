@@ -16,8 +16,9 @@ Book.destroy_all
 Podcastrecom.destroy_all
 Podcast.destroy_all
 Restaurantrecom.destroy_all
-User.destroy_all
 Restaurant.destroy_all
+User.destroy_all
+
 
 puts "creating users"
 valentine = User.create(nickname: "valou", email: "valentine.fouche@hotmail.fr", password: "qwerty")
@@ -145,42 +146,18 @@ puts "creating podcastrecoms lulu"
 Podcastrecom.create(friend: "alex", comment: "Philo", searched: false, viewed: false, user_id: lulu.id, podcast_id: podcast7.id)
 Podcastrecom.create(friend: "ing", comment: "Trop bien pour voyager juste avec ses écouteurs", searched: false, viewed: false, user_id: lulu.id, podcast_id: podcast8.id)
 
-puts "creating 11 restaurants"
-dipiu = Restaurant.create(title: "Di Piu", address: "87 quai des États-Unis, Nice, Alpes-Maritimes 06300, France")
-lavoglia = Restaurant.create(title: "La Voglia", address: "2 rue Saint-François de Paule, Nice, Alpes-Maritimes 06300, France")
-loupistou = Restaurant.create(title: "Lou Pistou", address: "4 Rue Raoul Bosio, Nice, Alpes-Maritimes 06300, France")
-lesafari = Restaurant.create(title: "Le Safari", address: "1 cours Saleya, Nice, Alpes-Maritimes 06300, France")
-lapetitemaison = Restaurant.create(title: "La Petite Maison", address: "11 rue Saint-Francois de Paule, Nice, Alpes-Maritimes 06300, France")
-socca = Restaurant.create(title: "La Socca d'Or", address: "45 Rue Bonaparte, 06300 Nice")
-chabrol = Restaurant.create(title: "Le Chabrol", address: "12 Rue Bavastro, 06300 Nice")
-espuma = Restaurant.create(title: "Espuma", address: "17 Prom. des Marinières, 06230 Villefranche-sur-Mer")
-cave_papa = Restaurant.create(title: "La Cave de Papa", address: "9 Rue Bonaparte, 06300 Nice")
-moulin = Restaurant.create(title: "Le Moulin Enchanté", address: "1 Rue Barberis, 06300 Nice")
-dimanche = Restaurant.create(title: "Comme un dimanche", address: "10 Rue Lascaris, 06300 Nice")
+puts "creating 5 restaurants"
+Restaurant.create(title: "Di Piu", address: "87 quai des États-Unis, Nice, Alpes-Maritimes 06300, France", friend: "Ingo", comment: "Menu tres varie, il faut essayer", latitude: 43.6951577, longitude: 7.2727178, searched: false, viewed: false, user_id: valentine.id)
+Restaurant.create(title: "La Voglia", address: "2 rue Saint-François de Paule, Nice, Alpes-Maritimes 06300, France", friend: "Alex", comment: "Tres bonne cuisine, il ne faut pas rater", latitude: 43.6956094, longitude: 7.2733957, searched: false, viewed: false, user_id: valentine.id)
+Restaurant.create(title: "Lou Pistou", address: "4 Rue Raoul Bosio, Nice, Alpes-Maritimes 06300, France", friend: "Eva", comment: "Prix eleves mais le menu merite", latitude: 43.6965503, longitude: 7.273115, searched: false, viewed: false, user_id: valentine.id)
+Restaurant.create(title: "Le Safari", address: "1 cours Saleya, Nice, Alpes-Maritimes 06300, France", friend: "George", comment: "Menu interessant et exotique", latitude: 43.6956889, longitude: 7.2760526, searched: false, viewed: false, user_id: ingo.id)
+Restaurant.create(title: "La Petite Maison", address: "11 rue Saint-Francois de Paule, Nice, Alpes-Maritimes 06300, France", friend: "Ingo", comment: "Restaurant tres connu dans le coeur de Nice", latitude: 43.6957805, longitude: 7.2705091, searched: false, viewed: false, user_id: ingo.id)
 
-# puts "creating restaus à Paris"
-# mikuna = Restaurant.create(title: "Villa Mikuna", address: "2 Rue Frochot, 75009 Paris")
-# mamashelter = Restaurant.create(title: "Mama Shelter", address: "20 Av. de la Prte de la Plaine, 75015 Paris")
-# do_et_riz = Restaurant.create(title: "Do et riz", address: "31 Rue de Cotte, 75012 Paris, France")
-
-puts "creating restaurantrecoms alex"
-Restaurantrecom.create(friend: "Ingo", comment: "Menu tres varie, il faut essayer", searched: false, viewed: false, user_id: alexandru.id, restaurant_id: dipiu.id)
-Restaurantrecom.create(friend: "Alex", comment: "Tres bonne cuisine, il ne faut pas rater", searched: false, viewed: false, user_id: alexandru.id, restaurant_id: lavoglia.id)
-Restaurantrecom.create(friend: "Eva", comment: "Prix eleves mais le menu merite", searched: false, viewed: false, user_id: alexandru.id, restaurant_id: loupistou.id)
-Restaurantrecom.create(friend: "George", comment: "Menu interessant et exotique", searched: false, viewed: false, user_id: alexandru.id, restaurant_id: lesafari.id)
-Restaurantrecom.create(friend: "Ingo", comment: "Restaurant tres connu dans le coeur de Nice", searched: false, viewed: false, user_id: alexandru.id, restaurant_id: lapetitemaison.id)
-
-puts "creating restaurantrecoms valou"
-Restaurantrecom.create(friend: "ing", comment: "meilleure socca de Nice, mieux que chez Pipo", searched: false, viewed: false, user_id: valentine.id, restaurant_id: socca.id)
-Restaurantrecom.create(friend: "alex", comment: "un peu cher mais super cadre", searched: false, viewed: false, user_id: valentine.id, restaurant_id: espuma.id)
-Restaurantrecom.create(friend: "lulu", comment: "top pour un restau en amoureux", searched: false, viewed: false, user_id: valentine.id, restaurant_id: chabrol.id)
-Restaurantrecom.create(friend: "George", comment: "tapas à partager et bon vin", searched: false, viewed: false, user_id: valentine.id, restaurant_id: cave_papa.id)
-Restaurantrecom.create(friend: "ing", comment: "super brunch", searched: false, viewed: false, user_id: valentine.id, restaurant_id: dimanche.id)
-Restaurantrecom.create(friend: "Ingo", comment: "bon menu de midi, serveur rigolo", searched: false, viewed: false, user_id: valentine.id, restaurant_id: moulin.id)
-
-# puts "creating restaurantrecoms lulu"
-# Restaurantrecom.create(friend: "Ingo", comment: "Super resto péruvien, ceviches incroyables", searched: false, viewed: false, user_id: lulu.id, restaurant_id: mikuna.id)
-# Restaurantrecom.create(friend: "Alex", comment: "Resto vietnamien super bon", searched: false, viewed: false, user_id: lulu.id, restaurant_id: do_et_riz.id)
-# Restaurantrecom.create(friend: "Alex", comment: "italien, bonne ambiance", searched: false, viewed: false, user_id: lulu.id, restaurant_id: mamashelter.id)
+#puts "creating restaurantrecoms alex"
+#Restaurantrecom.create(friend: "Ingo", comment: "Menu tres varie, il faut essayer", searched: false, viewed: false, user_id: valentine.id, restaurant_id: dipiu.id)
+#Restaurantrecom.create(friend: "Alex", comment: "Tres bonne cuisine, il ne faut pas rater", searched: false, viewed: false, user_id: valentine.id, restaurant_id: lavoglia.id)
+#Restaurantrecom.create(friend: "Eva", comment: "Prix eleves mais le menu merite", searched: false, viewed: false, user_id: valentine.id, restaurant_id: loupistou.id)
+#Restaurantrecom.create(friend: "George", comment: "Menu interessant et exotique", searched: false, viewed: false, user_id: ingo.id, restaurant_id: lesafari.id)
+#Restaurantrecom.create(friend: "Ingo", comment: "Restaurant tres connu dans le coeur de Nice", searched: false, viewed: false, user_id: ingo.id, restaurant_id: lapetitemaison.id)
 
 puts "done"

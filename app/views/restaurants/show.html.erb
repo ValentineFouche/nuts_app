@@ -1,0 +1,48 @@
+<% content_for :meta_title, "#{@restaurant.title} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @restaurant.comment %>
+<%# <% content_for :meta_image, cl_image_path(@restaurant.image_url) %>
+
+<div class="container">
+  <div class="col-12 col-md-6">
+    <div class="card card-show" style="width: 100%;">
+      <h2><%= @restaurant.title %></h2>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"> <strong>Recommandé par :</strong> <%= @restaurant.friend %></li>
+        <li class="list-group-item"> <strong>Mon commentaire :</strong> <%= @restaurant.comment %>  <%= link_to edit_restaurant_path, class:"text-decoration-none link-modify ms-2" do %>
+          <i class="fa-solid fa-pencil"></i>
+        <% end %>
+        </li>
+        <li class="list-group-item"> <strong>Ajouté le :</strong> <%= @restaurant.created_at.strftime("%d/%m/%Y") %></li>
+      </ul>
+        <%= link_to "Chercher sur internet", "https://www.google.fr/search?q=restaurants+#{@restaurant.title}", class: "buttons button-watch text-decoration-none text-center" %>
+      <div class="d-flex justify-content-around ms-3">
+        <%= simple_form_for @restaurant, html: { class: "form-show" }, method: :patch  do |f| %>
+          <%= f.input :viewed, label: 'Vu'  %>
+          <%= f.submit "Sauvegarder", class: "buttons submit-button-form" %>
+        <% end %>
+        <% if @restaurant.viewed ==true && @restaurant.feedback_content == nil && @restaurant.feedback_rating == nil %>
+        <%= link_to "Ajouter un feedback", edit_restaurant_path(@restaurant), class:"text-decoration-none link-modify ms-3" %>
+        <% end %>
+      </div>
+      <div class="d-flex">
+
+      </div>
+      <div class="d-flex">
+        <% if @restaurant.feedback_content != nil || @restaurant.feedback_rating != nil %>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+          <strong>Mon feedback :</strong>
+          <% @restaurant.feedback_rating.times do %>
+          <i class="fa-solid fa-star"></i>
+          <% end %> <%= @restaurant.feedback_content %>
+          <%= link_to edit_restaurant_path, class:"text-decoration-none link-modify ms-2" do %>
+            <i class="fa-solid fa-pencil"></i>
+          <% end %>
+
+          </li>
+        </ul>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -42,11 +42,11 @@
     <h2 class="titre-index me-auto m-0 mx-1">Edit</h2>
   <% elsif params[:controller] == 'restaurants' && params[:action] == 'index' %>
     <h2 class="titre-index me-auto m-0 mx-1">Tous mes Restaurants</h2>
-  <% elsif params[:controller] == 'restaurantrecoms' && params[:action] == 'show' %>
+  <% elsif params[:controller] == 'restaurants' && params[:action] == 'show' %>
     <h2 class="titre-index me-auto m-0 mx-1">Details du restaurant</h2>
-  <% elsif params[:controller] == 'restaurantrecoms' && params[:action] == 'viewed' %>
+  <% elsif params[:controller] == 'restaurants' && params[:action] == 'viewed' %>
     <h2 class="titre-index me-auto m-0 mx-1">Restaurants visités</h2>
-  <% elsif params[:controller] == 'restaurantrecoms' && params[:action] == 'edit' %>
+  <% elsif params[:controller] == 'restaurants' && params[:action] == 'edit' %>
     <h2 class="titre-index me-auto m-0 mx-1">Edit</h2>
   <% end %>
   <!-- button home --->
@@ -81,7 +81,7 @@
       <%= link_to 'Livres lus', viewed_bookrecoms_path, class:"text-decoration-none button-navigation mx-1" %>
       <%= link_to 'Tous mes livres', bookrecoms_path, class:"text-decoration-none button-navigation mx-1" %>
     <% elsif params[:controller] == 'restaurants'%>
-      <%= link_to 'Restaurant visités', viewed_restaurantrecoms_path, class:"text-decoration-none button-navigation mx-1" %>
+      <%= link_to 'Restaurant visités', viewed_restaurants_path, class:"text-decoration-none button-navigation mx-1" %>
       <%= link_to 'Tous mes restaurants', restaurants_path, class:"text-decoration-none button-navigation mx-1" %>
     <%end%>
     </div>

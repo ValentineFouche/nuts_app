@@ -51,5 +51,13 @@ Rails.application.routes.draw do
     get 'restaurant_search', to: "restaurantrecoms#restaurants_search", as: :restaurants_search
   end
 
-  resources :restaurants, only: [:index, :create, :new]
+  resources :restaurants, only: [:show, :index, :edit, :update, :new, :create] do
+    collection do
+      get :searched
+      get :viewed
+    end
+    member do
+      get :add_friend_reco
+    end
+  end
 end

@@ -1,12 +1,12 @@
 <div class="container">
   <div class="wrapper">
     <%@restaurants.select do |restaurant|%>
-      <div class="movies-cards" style="max-width: 200px;">
+      <div class="movies-cards" style="max-width: 540px;">
         <%= link_to restaurant_path(restaurant), class:"text-decoration-none" do%>
           <div class="movies-image-card">
           </div>
           <div>
-            <h1><%=restaurant.title %></h1>
+            <h1 class="movies-card-text movies-card-header"><%=restaurant.title %></h1>
           </div>
           <div>
           <% if restaurant.friend != nil %>
@@ -17,8 +17,4 @@
       </div>
     <%end%>
   </div>
-  <div id="map" style="width: 100%; height: 600px;"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
