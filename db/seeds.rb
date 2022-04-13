@@ -158,7 +158,7 @@ cave_papa = Restaurant.create(title: "La Cave de Papa", address: "9 Rue Bonapart
 moulin = Restaurant.create(title: "Le Moulin Enchanté", address: "1 Rue Barberis, 06300 Nice")
 dimanche = Restaurant.create(title: "Comme un dimanche", address: "10 Rue Lascaris, 06300 Nice")
 
-# puts "creating restaus à Paris"
+# puts "creating restos à Paris"
 # mikuna = Restaurant.create(title: "Villa Mikuna", address: "2 Rue Frochot, 75009 Paris")
 # mamashelter = Restaurant.create(title: "Mama Shelter", address: "20 Av. de la Prte de la Plaine, 75015 Paris")
 # do_et_riz = Restaurant.create(title: "Do et riz", address: "31 Rue de Cotte, 75012 Paris, France")
