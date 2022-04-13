@@ -42,7 +42,7 @@ class BookrecomsController < ApplicationController
   def update
     @bookrecom = Bookrecom.find(params[:id])
     @bookrecom.update(params_bookrecoms)
-    redirect_to edit_bookrecom_path(@bookrecom)
+    redirect_to bookrecom_path(@bookrecom)
   end
 
   def searched
