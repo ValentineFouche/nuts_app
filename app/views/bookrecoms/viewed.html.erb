@@ -12,7 +12,13 @@
             <%= image_tag bookrecom.book.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
           <% end %>
           </div>
-            <%# <%= image_tag bookrecom.book.image_url, alt: "Poster", class: "img-fluid" %>
+          <div>
+            <% if bookrecom.feedback_rating != nil %>
+              <% bookrecom.feedback_rating.times do %>
+                <i class="fa-solid fa-star"></i>
+              <% end %>
+            <% end %>
+          </div>
           <div>
             <h5 class="movies-card-text movies-card-header"><%=bookrecom.book.title %></h5>
           </div>

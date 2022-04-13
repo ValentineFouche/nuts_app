@@ -12,7 +12,6 @@
             <%= image_tag recommendation.movie.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
           <% end %>
           </div>
-            <%# <%= image_tag recommendation.movie.image_url, alt: "Poster", class: "img-fluid" %>
           <div>
             <% if recommendation.feedback_rating != nil %>
               <% recommendation.feedback_rating.times do %>

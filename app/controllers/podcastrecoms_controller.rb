@@ -42,7 +42,7 @@ class PodcastrecomsController < ApplicationController
   def update
     @podcastrecom = Podcastrecom.find(params[:id])
     @podcastrecom.update(params_podcastrecoms)
-    redirect_to edit_podcastrecom_path(@podcastrecom)
+    redirect_to podcastrecom_path(@podcastrecom)
   end
 
   def searched
