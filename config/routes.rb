@@ -60,5 +60,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: :show
+  get "friend_show/:id", to: "users#friend_show", as: :friend_show
+  # resources :users, only: :show
 end

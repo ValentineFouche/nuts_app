@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  def show
+  def friend_show
     @user = User.find(params[:id])
     user_recommendations = Recommendation.where(user_id: current_user.id)
     @user_friend = user_recommendations.map{ |reco|reco.friend }

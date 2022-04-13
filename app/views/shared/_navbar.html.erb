@@ -8,7 +8,7 @@
     <div class="dropdown">
       <i class="fa-solid fa-user icon-navbar text-decoration-none button-navigation mx-1 py-3"></i>
       <div class="dropdown-content">
-        <%= link_to 'Mon profil',user_path(current_user), class:"text-decoration-none button-navigation mx-1" %>
+        <%= link_to 'Mon profil',friend_show_path(current_user), class:"text-decoration-none button-navigation mx-1" %>
         <%= link_to 'Log out', destroy_user_session_path, method: :delete, class:"text-decoration-none button-navigation mx-1" %>
       </div>
     </div>
