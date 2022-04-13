@@ -1,4 +1,4 @@
-<div class="search-podcast ps-3 py-3" data-search-podcasts-target="list">
+<div class="search-podcast ps-3 py-3 search-bar-text" data-search-podcasts-target="list">
   <% podcasts.each do |podcast| %>
   <div data-controller="select-podcasts"        data-select-podcasts-target="choix"
         data-action="click->select-podcasts#save" data-value=<%= podcast.id %>>
