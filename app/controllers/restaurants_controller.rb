@@ -3,7 +3,7 @@ class RestaurantsController < ApplicationController
     reco_not_sorted = Restaurant.where(user_id: current_user.id)
     reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.created_at }
     @restaurants = reco_sorted_asc.reverse
-    @markers = Restaurant.all.geocoded.map do |restaurant|
+    @markers = Restaurant.where(user_id: current_user.id).geocoded.map do |restaurant|
       {
         lat: restaurant.latitude,
         lng: restaurant.longitude,
@@ -58,6 +58,8 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new
     @restaurant.user = current_user
     @restaurant.title = friend_reco.title
+    @restaurant.latitude = friend_reco.latitude
+    @restaurant.longitude = friend_reco.longitude
     friend_nickname = User.find(friend_reco.user_id).nickname
     @restaurant.comment = "Trouvé sur la liste de #{friend_nickname} avec ce commentaire : #{friend_reco.comment}"
     @restaurant.friend = friend_nickname

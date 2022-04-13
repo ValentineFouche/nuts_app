@@ -147,11 +147,11 @@ Podcastrecom.create(friend: "alex", comment: "Philo", searched: false, viewed: f
 Podcastrecom.create(friend: "ing", comment: "Trop bien pour voyager juste avec ses écouteurs", searched: false, viewed: false, user_id: lulu.id, podcast_id: podcast8.id)
 
 puts "creating 5 restaurants"
-dipiu = Restaurant.create(title: "Di Piu", address: "87 quai des États-Unis, Nice, Alpes-Maritimes 06300, France", friend: "Ingo", comment: "Menu tres varie, il faut essayer", searched: false, viewed: false, user_id: valentine.id)
-lavoglia = Restaurant.create(title: "La Voglia", address: "2 rue Saint-François de Paule, Nice, Alpes-Maritimes 06300, France", friend: "Alex", comment: "Tres bonne cuisine, il ne faut pas rater", searched: false, viewed: false, user_id: valentine.id)
-loupistou = Restaurant.create(title: "Lou Pistou", address: "4 Rue Raoul Bosio, Nice, Alpes-Maritimes 06300, France", friend: "Eva", comment: "Prix eleves mais le menu merite", searched: false, viewed: false, user_id: valentine.id)
-lesafari = Restaurant.create(title: "Le Safari", address: "1 cours Saleya, Nice, Alpes-Maritimes 06300, France", friend: "George", comment: "Menu interessant et exotique", searched: false, viewed: false, user_id: ingo.id)
-lapetitemaison = Restaurant.create(title: "La Petite Maison", address: "11 rue Saint-Francois de Paule, Nice, Alpes-Maritimes 06300, France", friend: "Ingo", comment: "Restaurant tres connu dans le coeur de Nice", searched: false, viewed: false, user_id: ingo.id)
+dipiu = Restaurant.create(title: "Di Piu", address: "87 quai des États-Unis, Nice, Alpes-Maritimes 06300, France", friend: "Ingo", comment: "Menu tres varie, il faut essayer", latitude: 43.6951577, longitude: 7.2727178, searched: false, viewed: false, user_id: valentine.id)
+lavoglia = Restaurant.create(title: "La Voglia", address: "2 rue Saint-François de Paule, Nice, Alpes-Maritimes 06300, France", friend: "Alex", comment: "Tres bonne cuisine, il ne faut pas rater", latitude: 43.6956094, longitude: 7.2733957, searched: false, viewed: false, user_id: valentine.id)
+loupistou = Restaurant.create(title: "Lou Pistou", address: "4 Rue Raoul Bosio, Nice, Alpes-Maritimes 06300, France", friend: "Eva", comment: "Prix eleves mais le menu merite", latitude: 43.6965503, longitude: 7.273115, searched: false, viewed: false, user_id: valentine.id)
+lesafari = Restaurant.create(title: "Le Safari", address: "1 cours Saleya, Nice, Alpes-Maritimes 06300, France", friend: "George", comment: "Menu interessant et exotique", latitude: 43.6956889, longitude: 7.2760526, searched: false, viewed: false, user_id: ingo.id)
+lapetitemaison = Restaurant.create(title: "La Petite Maison", address: "11 rue Saint-Francois de Paule, Nice, Alpes-Maritimes 06300, France", friend: "Ingo", comment: "Restaurant tres connu dans le coeur de Nice", latitude: 43.6957805, longitude: 7.2705091, searched: false, viewed: false, user_id: ingo.id)
 
 #puts "creating restaurantrecoms alex"
 #Restaurantrecom.create(friend: "Ingo", comment: "Menu tres varie, il faut essayer", searched: false, viewed: false, user_id: valentine.id, restaurant_id: dipiu.id)
