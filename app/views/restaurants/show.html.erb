@@ -14,7 +14,7 @@
         </li>
         <li class="list-group-item"> <strong>Ajouté le :</strong> <%= @restaurant.created_at.strftime("%d/%m/%Y") %></li>
       </ul>
-        <%= link_to "Chercher sur internet", "https://www.google.fr/search?q=restaurant+#{@restaurant.title}", class: "buttons button-watch text-decoration-none text-center" %>
+        <%= link_to "Trouver sur internet", "https://www.google.fr/search?q=restaurant+#{@restaurant.title}", class: "buttons button-watch text-decoration-none text-center" %>
       <div class="d-flex justify-content-around ms-3">
         <%= simple_form_for @restaurant, html: { class: "form-show" }, method: :patch  do |f| %>
           <%= f.input :viewed, label: 'Vu'  %>
