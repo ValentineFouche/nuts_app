@@ -22,6 +22,11 @@ Rails.application.routes.draw do
       get :searched
       get :viewed
     end
+
+    member do
+      get :add_friend_book_reco
+    end
+
     get 'books_search', to: "bookrecoms#books_search", as: :books_search
   end
 
@@ -30,6 +35,11 @@ Rails.application.routes.draw do
       get :searched
       get :viewed
     end
+
+    member do
+      get :add_friend_podcast_reco
+    end
+
     get 'podcasts_search', to: "podcastrecoms#podcasts_search", as: :podcasts_search
   end
 

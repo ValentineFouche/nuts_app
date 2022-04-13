@@ -1,4 +1,4 @@
-<div class="search-restaurant ps-3 py-3" data-search-restaurants-target="list">
+<div class="search-restaurant ps-3 py-3 search-bar-text" data-search-restaurants-target="list">
   <% restaurants.each do |restaurant| %>
   <div data-controller="select-restaurants"        data-select-restaurants-target="choix"
         data-action="click->select-restaurants#save" data-value=<%= restaurant.id %>>

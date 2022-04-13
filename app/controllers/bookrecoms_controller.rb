@@ -31,6 +31,21 @@ class BookrecomsController < ApplicationController
     end
   end
 
+  def add_friend_book_reco
+    friend_reco = Bookrecom.find(params[:id])
+    @recommendation = Bookrecom.new
+    @recommendation.user = current_user
+    @recommendation.book = friend_reco.book
+    friend_nickname = User.find(friend_reco.user_id).nickname
+    @recommendation.comment = "Trouvé sur la liste de #{friend_nickname} avec ce commentaire : #{friend_reco.comment}"
+    @recommendation.friend = friend_nickname
+    if @recommendation.save
+      redirect_to bookrecoms_path
+    else
+      render :new
+    end
+  end
+
   def show
     @bookrecom = Bookrecom.find(params[:id])
   end
@@ -42,7 +57,7 @@ class BookrecomsController < ApplicationController
   def update
     @bookrecom = Bookrecom.find(params[:id])
     @bookrecom.update(params_bookrecoms)
-    redirect_to edit_bookrecom_path(@bookrecom)
+    redirect_to bookrecom_path(@bookrecom)
   end
 
   def searched

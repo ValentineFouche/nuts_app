@@ -12,7 +12,13 @@
             <%= image_tag podcastrecom.podcast.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
           <% end %>
           </div>
-            <%# <%= image_tag podcastrecom.podcast.image_url, alt: "Poster", class: "img-fluid" %>
+          <div>
+            <% if podcastrecom.feedback_rating != nil %>
+              <% podcastrecom.feedback_rating.times do %>
+                <i class="fa-solid fa-star"></i>
+              <% end %>
+            <% end %>
+          </div>
           <div>
             <h5 class="movies-card-text movies-card-header"><%=podcastrecom.podcast.title %></h5>
           </div>

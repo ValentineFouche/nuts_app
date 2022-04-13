@@ -2,26 +2,26 @@
   <div class="col-12 col-md-6">
     <div class="card card-show" style="width: 100%;">
       <% if current_user.id == params[:id].to_i %>
-        <h1>Salut <%= current_user.nickname %> !</h1>
+        <h1>Salut <%= current_user.nickname.capitalize %> !</h1>
         <h2>Mes listes :</h2>
         <% if @recommendations == [] && @bookrecoms == [] && @podcastrecoms == [] && @restaurantrecoms == [] %>
           <p>Vous n'avez pas encore de listes !</p>
         <% end %>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><%= link_to "mes films", recommendations_path, class:"text-decoration-none link-modify"%></li>
-          <li class="list-group-item"><%= link_to "mes livres", bookrecoms_path, class:"text-decoration-none link-modify" %></li>
-          <li class="list-group-item"><%= link_to "mes podcasts", podcastrecoms_path, class:"text-decoration-none link-modify" %></li>
-          <li class="list-group-item"><%= link_to "mes restaus", restaurants_path, class:"text-decoration-none link-modify" %></li>
+          <li class="list-group-item"><%= link_to "Mes films", recommendations_path, class:"text-decoration-none link-modify"%></li>
+          <li class="list-group-item"><%= link_to "Mes livres", bookrecoms_path, class:"text-decoration-none link-modify" %></li>
+          <li class="list-group-item"><%= link_to "Mes podcasts", podcastrecoms_path, class:"text-decoration-none link-modify" %></li>
+          <li class="list-group-item"><%= link_to "Mes restaus", restaurantrecoms_path, class:"text-decoration-none link-modify" %></li>
         </ul>
         <h2>Mes amis :</h2>
         <% if @friends == [] %>
           <p>Vous n'avez pas encore d'amis !</p>
         <% end %>
         <ul class="list-group list-group-flush">
-          <% @friends.each do |friend| %>
+          <% @user_friends.each do |friend| %>
           <% friend_user = User.where(nickname: friend).first %>
             <% if friend_user != nil %>
-            <li class="list-group-item"> <%= friend_user.nickname %> <%= link_to "- Voir profil -", user_path(friend_user), class:"text-decoration-none link-modify ms-2" %> </li>
+            <li class="list-group-item"> <%= friend_user.nickname.capitalize %> <%= link_to "- Voir profil -", user_path(friend_user), class:"text-decoration-none link-modify ms-2" %> </li>
             <% else %>
             <li class="list-group-item"> <%= Recommendation.where(friend: friend).first.friend %> (l'ami n'a pas l'app)</li>
             <% end %>

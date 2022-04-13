@@ -26,13 +26,13 @@ alexandru = User.create(nickname: "alex", email: "alexandru.rebenciuc@hotmail.fr
 ingo = User.create(nickname: "ing", email: "ingo.knorr@hotmail.fr", password: "qwerty")
 lulu = User.create(nickname: "lulu", email: "eva.lampin@hotmail.fr", password: "qwerty")
 
-puts "creating movies with API"
-url = "https://imdb-api.com/en/API/Top250Movies/#{ENV['IMDB_API_KEY']}"
-movies_serialized = URI.open(url).read
-movies = JSON.parse(movies_serialized)
-movies["items"].each do |movie|
-  Movie.create(title: movie["title"], director: movie["crew"], image_url: movie["image"], stream_options: "pas de stream pour l'instant" )
-end
+# puts "creating movies with API"
+# url = "https://imdb-api.com/en/API/Top250Movies/#{ENV['IMDB_API_KEY']}"
+# movies_serialized = URI.open(url).read
+# movies = JSON.parse(movies_serialized)
+# movies["items"].each do |movie|
+#   Movie.create(title: movie["title"], director: movie["crew"], image_url: movie["image"], stream_options: "pas de stream pour l'instant" )
+# end
 
 puts "creating 20 movies"
 les_evades = Movie.create(title: "Les évadés", director: "Frank Darabont", image_url: "les-evades.jpg", stream_options: "Stream")
@@ -57,7 +57,7 @@ peau_d_ane = Movie.create(title: "Peau d'Âne", image_url: "peau-d-ane.jpg")
 parapluies_cherbourg = Movie.create(title: "Les Parapluies de Cherbourg", image_url: "parapluies-cherbourg.jpg")
 
 puts "creating movie recommandations de valou"
-Recommendation.create(friend: "valou", comment: "une bande d'ados à Paris en mai 68", searched: false, viewed: true, user_id: valentine.id, movie_id: peril_jeune.id)
+Recommendation.create(friend: "ing", comment: "une bande d'ados à Paris en mai 68", searched: false, viewed: true, user_id: valentine.id, movie_id: peril_jeune.id)
 Recommendation.create(friend: "alex", comment: "le meilleur Hitchcock", searched: false, viewed: false, user_id: valentine.id, movie_id: les_oiseaux.id)
 Recommendation.create(friend: "alicechou", comment: "très drôle, beau casting français", searched: false, viewed: true, user_id: ingo.id, movie_id: le_sens_de_la_fete.id)
 Recommendation.create(friend: "alex", comment: "film culte, avec Jean-Paul Roove, sur une colonie de vacances", searched: false, viewed: false, user_id: valentine.id, movie_id: nos_jours_heureux.id)
