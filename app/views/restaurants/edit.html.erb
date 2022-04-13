@@ -1,7 +1,7 @@
 <div class="container">
   <div>
     <%= simple_form_for @restaurant do |f| %>
-      <%if @restaurant.viewed == false%>
+      <%if @restaurant.viewed != true%>
         <%= f.input :friend %>
         <%= f.input :comment %>
       <% else%>
