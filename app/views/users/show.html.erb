@@ -18,7 +18,7 @@
           <p>Vous n'avez pas encore d'amis !</p>
         <% end %>
         <ul class="list-group list-group-flush">
-          <% @friends.each do |friend| %>
+          <% @user_friends.each do |friend| %>
           <% friend_user = User.where(nickname: friend).first %>
             <% if friend_user != nil %>
             <li class="list-group-item"> <%= friend_user.nickname %> <%= link_to "- Voir profil -", user_path(friend_user), class:"text-decoration-none link-modify ms-2" %> </li>
