@@ -4,27 +4,32 @@
   <% else %>
     <% @user.recommendations.each do |recommendation|%>
       <div class="movies-cards" style="max-width: 540px;">
-        <%= link_to recommendation_path(recommendation), class:"text-decoration-none" do%>
-          <div class="movies-image-card">
-            <% if recommendation.movie.image_url.start_with?("http") %>
-              <%= image_tag recommendation.movie.image_url, alt: "Poster", class: "img-fluid img-index" %>
-            <% elsif recommendation.movie.image_url.start_with?("..//assets/images/") %>
-              <%= image_tag recommendation.movie.image_url.gsub("..//assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
-            <% else %>
-              <%= image_tag recommendation.movie.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
-            <% end %>
-          </div>
-          <div>
-            <h5 class="card-title card-profil"><%=recommendation.movie.title %></h5>
-          </div>
-          <% if @movies.include?(recommendation.movie) == true %>
-            <p>Ce film fait déjà partie de votre liste.</p>
+        <div class="movies-image-card">
+          <% if recommendation.movie.image_url.start_with?("http") %>
+            <%= image_tag recommendation.movie.image_url, alt: "Poster", class: "img-fluid img-index" %>
+          <% elsif recommendation.movie.image_url.start_with?("..//assets/images/") %>
+            <%= image_tag recommendation.movie.image_url.gsub("..//assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
           <% else %>
-            <div class="card-profil my-4">
-              <%= link_to "Ajouter à ma liste", add_friend_reco_recommendation_path(recommendation), class: 'buttons' %>
-            </div>
+            <%= image_tag recommendation.movie.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
           <% end %>
-        <%end %>
+        </div>
+        <div>
+        <% if recommendation.feedback_rating != nil %>
+          <% recommendation.feedback_rating.times do %>
+            <i class="fa-solid fa-star"></i>
+          <% end %>
+        <% end %>
+      </div>
+        <div>
+          <h5 class="card-title card-profil"><%=recommendation.movie.title %></h5>
+        </div>
+        <% if @movies.include?(recommendation.movie) == true %>
+          <p>Ce film fait déjà partie de votre liste.</p>
+        <% else %>
+          <div class="card-profil my-4">
+            <%= link_to "Ajouter à ma liste", add_friend_reco_recommendation_path(recommendation), class: 'buttons' %>
+          </div>
+        <% end %>
       </div>
     <%end%>
   <% end %>

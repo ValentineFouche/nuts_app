@@ -4,17 +4,22 @@
   <% else %>
     <%@user.restaurantrecoms.each do |restaurantrecom| %>
     <div class="movies-cards" style="max-width: 540px;">
-      <%= link_to restaurantrecom_path(restaurantrecom), class:"text-decoration-none" do%>
-        <div class="movies-image-card">
-          <%#= image_tag restaurantrecoms.restaurant.image_url, class: "img-fluid img-index" %>
-        </div>
-        <div>
-          <h5 class="card-title card-profil"><%=restaurantrecom.restaurant.title %></h5>
-        </div>
-        <div class="card-profil my-4">
-          <%= link_to "Ajouter à ma liste", "#", class: 'buttons' %>
-        </div>
-      <%end%>
+      <div class="movies-image-card">
+        <%#= image_tag restaurantrecoms.restaurant.image_url, class: "img-fluid img-index" %>
+      </div>
+      <div>
+        <% if restaurantrecom.feedback_rating != nil %>
+          <% restaurantrecom.feedback_rating.times do %>
+            <i class="fa-solid fa-star"></i>
+          <% end %>
+        <% end %>
+      </div>
+      <div>
+        <h5 class="card-title card-profil"><%=restaurantrecom.restaurant.title %></h5>
+      </div>
+      <div class="card-profil my-4">
+        <%= link_to "Ajouter à ma liste", "#", class: 'buttons' %>
+      </div>
     </div>
     <%end%>
   <% end %>
