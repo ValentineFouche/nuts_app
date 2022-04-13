@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :users, only: :show
   resources :recommendations, only: [ :show, :index, :edit, :update, :new, :create] do
     collection do
       get :searched
@@ -60,4 +59,7 @@ Rails.application.routes.draw do
       get :add_friend_reco
     end
   end
+
+  get "friend_show/:id", to: "users#friend_show", as: :friend_show
+  # resources :users, only: :show
 end
