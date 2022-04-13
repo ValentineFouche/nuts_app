@@ -14,6 +14,8 @@
 .navbar {
   background-image: linear-gradient(45deg, $home_nuts_light, $home_nuts_dark);
   color: $black_nuts;
+  width: 100%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
     .title-index {
       color: $black_nuts;
     }
@@ -45,5 +47,5 @@
   color: $black_nuts !important;
 }
  .img-navbar {
-   width: 10%;
+   width: 50px;
  }
