@@ -4,11 +4,11 @@ h2 {
 }
 
 .card-show {
-  background-color: #1F1F1F;
+  background-color: $black_nuts;
   color: $white_nuts;
   padding: 10px;
     li {
-      background-color: #1F1F1F;
+      background-color: $black_nuts;
       color: $white_nuts;
     }
 }
@@ -29,11 +29,11 @@ h2 {
   display: flex;
   align-items: center;
     .button-form {
-      background-color: #1f1f1f;
+      background-color: $black_nuts;
     }
 }
 
 .navbar-index {
-  background-color: #1F1F1F;
+  background-color: $black_nuts;
   padding: 1rem;
 }
