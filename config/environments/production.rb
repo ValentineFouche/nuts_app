@@ -4,6 +4,10 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: "http://TODO_PUT_YOUR_DOMAIN_HERE" }
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # ajout pour que background images passent sur heroku
+  config.serve_static_assets = true
+  config.assets.digest = true
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -29,7 +33,8 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  # changé à true par val
+  config.assets.compile = true
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = 'http://assets.example.com'
