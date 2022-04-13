@@ -3,7 +3,7 @@
     <%@podcastrecoms.select do |podcastrecom|%>
       <div class="movies-cards" style="max-width: 540px;">
         <%= link_to podcastrecom_path(podcastrecom), class:"text-decoration-none" do%>
-          <div class="movies-image-card">
+          <div>
           <% if podcastrecom.podcast.image_url.start_with?("http") %>
             <%= image_tag podcastrecom.podcats.image_url, alt: "Poster", class: "img-fluid img-index" %>
           <% elsif podcastrecom.podcast.image_url.start_with?("..//assets/images/") %>

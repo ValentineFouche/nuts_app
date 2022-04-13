@@ -4,7 +4,7 @@
   <% else %>
     <% @user.recommendations.each do |recommendation|%>
       <div class="movies-cards" style="max-width: 540px;">
-        <div class="movies-image-card">
+        <div>
           <% if recommendation.movie.image_url.start_with?("http") %>
             <%= image_tag recommendation.movie.image_url, alt: "Poster", class: "img-fluid img-index" %>
           <% elsif recommendation.movie.image_url.start_with?("..//assets/images/") %>
@@ -21,7 +21,7 @@
         <% end %>
       </div>
         <div>
-          <h5 class="card-title card-profil"><%=recommendation.movie.title %></h5>
+          <h5 class="movies-card-header"><%=recommendation.movie.title %></h5>
         </div>
         <% if @movies.include?(recommendation.movie) == true %>
           <p>Ce film fait déjà partie de votre liste.</p>
