@@ -4,7 +4,7 @@
   <% else %>
     <%@user.bookrecoms.each do |bookrecom| %>
     <div class="movies-cards" style="max-width: 540px;">
-      <div class="movies-image-card">
+      <div>
         <%= image_tag bookrecom.book.image_url, class: "img-fluid img-index" %>
       </div>
       <div>
@@ -15,7 +15,7 @@
         <% end %>
       </div>
       <div>
-        <h5 class="card-title card-profil"><%=bookrecom.book.title %></h5>
+        <h5 class="movies-card-header"><%=bookrecom.book.title %></h5>
       </div>
       <div class="card-profil my-4">
         <%= link_to "Ajouter à ma liste", add_friend_book_reco_bookrecom_path(bookrecom), class: 'buttons' %>

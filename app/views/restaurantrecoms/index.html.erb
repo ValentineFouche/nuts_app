@@ -3,7 +3,7 @@
     <%@restaurantrecoms.select do |restaurantrecom|%>
       <div class="movies-cards" style="max-width: 540px;">
         <%= link_to restaurantrecom_path(restaurantrecom), class:"text-decoration-none" do%>
-          <div class="movies-image-card">
+          <div>
           </div>
           <div>
             <h1 class="movies-card-text movies-card-header"><%=restaurantrecom.restaurant.title %></h1>

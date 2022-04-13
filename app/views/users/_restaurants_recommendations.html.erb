@@ -5,11 +5,11 @@
     <%@user.restaurants.each do |restaurant| %>
     <div class="movies-cards" style="max-width: 540px;">
       <%= link_to restaurant_path(restaurant), class:"text-decoration-none" do%>
-        <div class="movies-image-card">
+        <div>
           <%#= image_tag restaurantrecoms.restaurant.image_url, class: "img-fluid img-index" %>
         </div>
         <div>
-          <h5 class="card-title card-profil"><%=restaurant.title %></h5>
+          <h5 class="movies-card-header"><%=restaurant.title %></h5>
         </div>
         <div class="card-profil my-4">
           <%= link_to "Ajouter à ma liste", add_friend_reco_restaurant_path(restaurant), class: 'buttons' %>

@@ -3,7 +3,7 @@
     <%@bookrecoms.select do |bookrecom|%>
       <div class="movies-cards" style="max-width: 540px;">
         <%= link_to bookrecom_path(bookrecom), class:"text-decoration-none" do%>
-          <div class="movies-image-card">
+          <div>
           <% if bookrecom.book.image_url.start_with?("http") %>
             <%= image_tag bookrecom.podcats.image_url, alt: "Poster", class: "img-fluid img-index" %>
           <% elsif bookrecom.book.image_url.start_with?("..//assets/images/") %>
