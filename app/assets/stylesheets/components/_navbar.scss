@@ -12,8 +12,9 @@
 // }
 
 .navbar {
-  background-image: linear-gradient(45deg, $home_nuts_light, $home_nuts_dark);
-  color: $black_nuts;
+  // background-image: linear-gradient(45deg, $home_nuts_light, $home_nuts_dark);
+  background-color: $gray_val;
+  color: $gray_val;
     .title-index {
       color: $black_nuts;
     }
@@ -27,9 +28,9 @@
 //   width: 50px;
 // }
 
-.navbar-light .navbar-toggler {
-  // background-color: #1f1f1f;
-}
+// .navbar-light .navbar-toggler {
+//   // background-color: #1f1f1f;
+// }
 
 .navbar-light .navbar-nav .nav-link {
   color: #1f1f1f;
@@ -42,7 +43,8 @@
 }
 
 .icon-navbar {
-  color: $black_nuts !important;
+  // color: $black_nuts !important;
+  color: $red_val !important;
 }
  .img-navbar {
    width: 10%;
