@@ -9,6 +9,7 @@ class User < ApplicationRecord
   #             :latitude => :lat, :longitude => :lon
   # after_validation :geocode
   has_many :restaurantrecoms
+  has_many :restaurants
   has_many :podcastrecoms
   validates :nickname, uniqueness: true
 end
