@@ -60,6 +60,7 @@ class RestaurantsController < ApplicationController
     @restaurant.title = friend_reco.title
     @restaurant.latitude = friend_reco.latitude
     @restaurant.longitude = friend_reco.longitude
+    @restaurant.address = friend_reco.address
     friend_nickname = User.find(friend_reco.user_id).nickname
     @restaurant.comment = "Trouvé sur la liste de #{friend_nickname} avec ce commentaire : #{friend_reco.comment}"
     @restaurant.friend = friend_nickname
