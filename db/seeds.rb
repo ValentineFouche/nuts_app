@@ -56,7 +56,7 @@ peau_d_ane = Movie.create(title: "Peau d'Âne", image_url: "peau-d-ane.jpg")
 parapluies_cherbourg = Movie.create(title: "Les Parapluies de Cherbourg", image_url: "parapluies-cherbourg.jpg")
 
 puts "creating movie recommandations de valou"
-Recommendation.create(friend: "valou", comment: "une bande d'ados à Paris en mai 68", searched: false, viewed: true, user_id: valentine.id, movie_id: peril_jeune.id)
+Recommendation.create(friend: "ing", comment: "une bande d'ados à Paris en mai 68", searched: false, viewed: true, user_id: valentine.id, movie_id: peril_jeune.id)
 Recommendation.create(friend: "alex", comment: "le meilleur Hitchcock", searched: false, viewed: false, user_id: valentine.id, movie_id: les_oiseaux.id)
 Recommendation.create(friend: "alicechou", comment: "très drôle, beau casting français", searched: false, viewed: true, user_id: ingo.id, movie_id: le_sens_de_la_fete.id)
 Recommendation.create(friend: "alex", comment: "film culte, avec Jean-Paul Roove, sur une colonie de vacances", searched: false, viewed: false, user_id: valentine.id, movie_id: nos_jours_heureux.id)
