@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="wrapper">
+    <%@restaurants.select do |restaurant|%>
+      <div class="movies-cards" style="max-width: 540px;">
+        <%= link_to restaurant_path(restaurant), class:"text-decoration-none" do%>
+          <div>
+          </div>
+          <div>
+            <h1><%=restaurant.title %></h1>
+          </div>
+          <div>
+          <% if restaurant.friend != nil %>
+            <p class="movies-card-text"><i class="fa-solid fa-user"></i>  <%=restaurant.friend%></p>
+          <% end %>
+          </div>
+        <%end %>
+      </div>
+    <%end%>
+  </div>
+</div>

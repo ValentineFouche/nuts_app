@@ -5,7 +5,7 @@
       <%= form_with url: new_bookrecom_path, method: :get, html: { data: { search_books_target: 'form' } } do |f| %>
         <%= f.text_field :query,
                         class: "form-control",
-                        placeholder: 'Type a book title',
+                        placeholder: 'Entrez un titre de livre',
                         value: params[:query],
                         data: {
                             search_books_target: 'input',
@@ -17,8 +17,8 @@
     <div data-action="pick-book@window->search-books#createbook form-reco">
       <%= simple_form_for @bookrecom do |f| %>
       <%= f.input :book_id, label: false, input_html: { class: "d-none", data: { search_books_target: 'book' }} %>
-      <%= f.input :friend %>
-      <%= f.input :comment %>
+      <%= f.input :friend, label: "Ami" %>
+      <%= f.input :comment, label: "Commentaire" %>
       <%= f.submit "Ajouter à ma list", class: "btn-submit" %>
       <% end %>
     </div>

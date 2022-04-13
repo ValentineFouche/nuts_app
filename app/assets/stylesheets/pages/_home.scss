@@ -3,12 +3,13 @@
 //   height: 100%;
 // }
 body {
-  background-color: #1F1F1F;
+  background-color: $gray_val;
 }
 
 .home {
   height: 100vh;
-  background-image: linear-gradient(to right, $home_nuts_light, $home_nuts_dark);
+  // background-color: $gray_val;
+  // background-image: linear-gradient(45deg, $home_nuts_light, $home_nuts_dark);
   background-repeat: no-repeat;
   padding-bottom: 150px;
 }
@@ -27,13 +28,16 @@ li {
 
 h4 {
   font-family: $header-nuts-notes;
-  color: #3A2D27;
+  // color: #3A2D27;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .icon {
   font-size: 80px;
   padding: 20px;
-  color: #1f1f1f;
+  color: white;
+  // color: #1f1f1f;
   padding-top: 10px;
   filter:drop-shadow(2px 2px 3px rgba(0,0,0,0.4))
 }
@@ -49,4 +53,17 @@ h4 {
       list-style: none;
       font-family: $header-nuts-notes;
     }
+}
+
+.card-home {
+  height: 130px;
+  width: 130px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+  margin: 20px;
 }

@@ -1,37 +1,28 @@
 <div class="container">
-  <h1>Livres à lire</h1>
-  <%@bookrecoms.select do |bookrecom| if bookrecom.viewed != true%>
-  <div class="card shadow mb-5 bg-body" style="max-width: 540px;">
-    <%= link_to bookrecom_path(bookrecom), class:"text-decoration-none" do%>
-      <div class="cards g-0 d-flex">
-        <div class="card-body card-body-index d-flex flex-column">
+  <div class="wrapper">
+    <%@bookrecoms.select do |bookrecom|%>
+      <div class="movies-cards" style="max-width: 540px;">
+        <%= link_to bookrecom_path(bookrecom), class:"text-decoration-none" do%>
           <div>
-            <h5 class="card-title"><%=bookrecom.book.title %></h5>
+          <% if bookrecom.book.image_url.start_with?("http") %>
+            <%= image_tag bookrecom.podcats.image_url, alt: "Poster", class: "img-fluid img-index" %>
+          <% elsif bookrecom.book.image_url.start_with?("..//assets/images/") %>
+            <%= image_tag bookrecom.book.image_url.gsub("..//assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
+          <% else %>
+            <%= image_tag bookrecom.book.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
+          <% end %>
+          </div>
+            <%# <%= image_tag bookrecom.book.image_url, alt: "Poster", class: "img-fluid" %>
+          <div>
+            <h5 class="movies-card-text movies-card-header"><%=bookrecom.book.title %></h5>
           </div>
           <div>
-            <p class="card-text">Recommandé par: <%=bookrecom.friend%></p>
+          <% if bookrecom.friend != nil %>
+            <p class="movies-card-text"><i class="fa-solid fa-user"></i>  <%=bookrecom.friend%></p>
+          <% end %>
           </div>
-          <div>
-            <p class="card-text">Recommandé par: <%=bookrecom.comment%></p>
-          </div>
-          <div>
-            <p class="card-text">Ajouté le: <%=bookrecom.created_at.strftime("%d/%m/%Y")%></p>
-          </div>
-        </div>
+        <%end %>
       </div>
-    <% end %>
-  </div>
-  <%end%>
-  <%end%>
-  <div class="d-flex justify-content-around my-4">
-    <div>
-      <%= link_to "Retour", root_path, class:"text-decoration-none buttons" %>
-    </div>
-    <div>
-      <%= link_to "Ajoutez un livre", new_bookrecom_path, class:"text-decoration-none buttons" %>
-    </div>
-    <div>
-      <%= link_to "Livres déjà lus", viewed_bookrecoms_path, class:"text-decoration-none buttons" %>
-    </div>
+    <%end%>
   </div>
 </div>

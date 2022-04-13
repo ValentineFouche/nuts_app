@@ -16,7 +16,7 @@
 }
 
 h1 {
-  color: $brown_nuts;
+  color: $red_nuts;
   font-family: $header-nuts-notes;
   padding: 30px;
   text-align: center;
@@ -38,14 +38,14 @@ h1 {
 }
 
 .link-modify {
-  color: #edc57b;
+  color: $white_nuts;
     &:hover {
       color: $white_nuts;
     }
 }
 
 .titre-index {
-  color: $brown_nuts;
+  color: $white_nuts;
   font-family: $header-nuts-notes;
   text-align: center;
   font-size: 26px;
@@ -70,6 +70,6 @@ h1 {
 
 .card-body-reco {
   color: $black_nuts;
-  background-color: $brown_nuts;
+  background-color: $red_nuts;
   border: none;
 }

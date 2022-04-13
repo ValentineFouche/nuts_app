@@ -1,52 +1,40 @@
 <div class="home">
   <%= render 'shared/banner' %>
-  <div class="container fill-height">
+  <div class="container fill-height pt-4">
     <div class="row">
       <div class="col-6 col-md-6 col-lg-3">
-        <div class="icons film">
+        <div class="d-flex justify-content-center">
           <%= link_to recommendations_path, class: "link-icons text-decoration-none" do %>
-            <div class="icon-film">
-              <p class="mb-0"><i class="fas fa-film icon"></i></p>
-            </div>
-            <div class="header-icon">
-              <h4>Films</h4>
-            </div>
+          <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(assets/film2.jpg)">
+            <h4>Films</h4>
+          </div>
           <% end %>
         </div>
       </div>
       <div class="col-6 col-md-6 col-lg-3">
-        <div class="icons book">
+        <div class="d-flex justify-content-center">
           <%= link_to bookrecoms_path, class: "link-icons text-decoration-none" do %>
-            <div class="icon-book">
-              <p class="mb-0"><i class="fas fa-book icon"></i></p>
-            </div>
-            <div class="header-icon">
-              <h4>Livres</h4>
-            </div>
+          <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(assets/book1.jpg)">
+            <h4>Livres</h4>
+          </div>
           <% end %>
         </div>
       </div>
       <div class="col-6 col-md-6 col-lg-3">
-        <div class="icons podcast">
+        <div class="d-flex justify-content-center">
           <%= link_to podcastrecoms_path, class: "link-icons text-decoration-none" do %>
-            <div class="icon-podcast">
-              <p class="mb-0"><i class="fas fa-podcast icon"></i></p>
-            </div>
-            <div class="header-icon">
-              <h4>Podcasts</h4>
-            </div>
+          <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(assets/home1.jpg)">
+            <h4>Podcasts</h4>
+          </div>
           <% end %>
         </div>
       </div>
       <div class="col-6 col-md-6 col-lg-3">
-        <div class="icons restaurant">
+        <div class="d-flex justify-content-center">
           <%= link_to restaurants_path, class: "link-icons text-decoration-none" do %>
-            <div class="icon-restaurant">
-              <p class="mb-0"><i class="fas fa-utensils icon"></i></p>
-            </div>
-            <div class="header-icon">
-              <h4>Restaurants</h4>
-            </div>
+          <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(assets/restaurant.jpg)">
+            <h4>Restos</h4>
+          </div>
           <% end %>
         </div>
       </div>

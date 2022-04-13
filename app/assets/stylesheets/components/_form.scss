@@ -5,8 +5,8 @@
 .form-login {
   margin-top: 50px;
   .btn {
-    color: $brown_nuts;
-    border: solid 2px $brown_nuts;
+    color: $red_nuts;
+    border: solid 2px $red_nuts;
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 15px;
@@ -14,11 +14,15 @@
 }
 
 .btn:hover {
-  background-color: $brown_nuts;
+  background-color: $red_nuts;
   color: black;
   font-weight: bold;
 }
 
 .input-login {
   color: $white_nuts;
+}
+
+.search-bar-text {
+  color: white;
 }

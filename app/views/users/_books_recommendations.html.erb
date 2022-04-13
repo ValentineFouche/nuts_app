@@ -1,19 +1,25 @@
-<div class="container">
+<div class="wrapper">
   <% if @user.bookrecoms == [] %>
     <p><%= @user.nickname %> n'a pas encore de livres dans sa liste.</p>
   <% else %>
     <%@user.bookrecoms.each do |bookrecom| %>
     <div class="movies-cards" style="max-width: 540px;">
-      <%= link_to bookrecom_path(bookrecom), class:"text-decoration-none" do%>
-      <div class="movie-images-card">
+      <div>
+        <%= image_tag bookrecom.book.image_url, class: "img-fluid img-index" %>
       </div>
       <div>
-        <h5 class="card-title card-profil"><%=bookrecom.book.title %></h5>
+        <% if bookrecom.feedback_rating != nil %>
+          <% bookrecom.feedback_rating.times do %>
+            <i class="fa-solid fa-star"></i>
+          <% end %>
+        <% end %>
+      </div>
+      <div>
+        <h5 class="movies-card-header"><%=bookrecom.book.title %></h5>
       </div>
       <div class="card-profil my-4">
-          <%= link_to "Ajouter à ma liste", "#", class: 'buttons' %>
-        </div>
-      <%end%>
+        <%= link_to "Ajouter à ma liste", add_friend_book_reco_bookrecom_path(bookrecom), class: 'buttons' %>
+      </div>
     </div>
     <% end %>
   <% end %>

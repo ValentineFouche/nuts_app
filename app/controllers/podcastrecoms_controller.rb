@@ -31,6 +31,21 @@ class PodcastrecomsController < ApplicationController
     end
   end
 
+  def add_friend_podcast_reco
+    friend_reco = Podcastrecom.find(params[:id])
+    @recommendation = Podcastrecom.new
+    @recommendation.user = current_user
+    @recommendation.podcast = friend_reco.podcast
+    friend_nickname = User.find(friend_reco.user_id).nickname
+    @recommendation.comment = "Trouvé sur la liste de #{friend_nickname} avec ce commentaire : #{friend_reco.comment}"
+    @recommendation.friend = friend_nickname
+    if @recommendation.save
+      redirect_to podcastrecoms_path
+    else
+      render :new
+    end
+  end
+
   def show
     @podcastrecom = Podcastrecom.find(params[:id])
   end
@@ -42,7 +57,7 @@ class PodcastrecomsController < ApplicationController
   def update
     @podcastrecom = Podcastrecom.find(params[:id])
     @podcastrecom.update(params_podcastrecoms)
-    redirect_to edit_podcastrecom_path(@podcastrecom)
+    redirect_to podcastrecom_path(@podcastrecom)
   end
 
   def searched
