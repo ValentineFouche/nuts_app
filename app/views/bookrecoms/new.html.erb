@@ -17,7 +17,7 @@
     <div data-action="pick-book@window->search-books#createbook form-reco">
       <%= simple_form_for @bookrecom do |f| %>
       <%= f.input :book_id, label: false, input_html: { class: "d-none", data: { search_books_target: 'book' }} %>
-      <%= f.input :friend, label: "Amis" %>
+      <%= f.input :friend, label: "Ami" %>
       <%= f.input :comment, label: "Commentaire" %>
       <%= f.submit "Ajouter à ma list", class: "btn-submit" %>
       <% end %>

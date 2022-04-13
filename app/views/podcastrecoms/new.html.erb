@@ -17,7 +17,7 @@
     <div data-action="pick-podcast@window->search-podcasts#createpodcast form-reco">
       <%= simple_form_for @podcastrecom do |f| %>
       <%= f.input :podcast_id, label: false, input_html: { class: "d-none", data: { search_podcasts_target: 'podcast' }} %>
-      <%= f.input :friend, label: "Amis" %>
+      <%= f.input :friend, label: "Ami" %>
       <%= f.input :comment, label: "Commentaire" %>
       <%= f.submit "Ajouter à ma list", class: "btn-submit" %>
       <% end %>
