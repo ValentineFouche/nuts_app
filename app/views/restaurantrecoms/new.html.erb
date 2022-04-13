@@ -17,7 +17,7 @@
     <div data-action="pick-restaurant@window->search-restaurants#createrestaurant form-reco">
       <%= simple_form_for @restaurantrecom do |f| %>
       <%= f.input :restaurant_id, label: false, input_html: { class: "d-none", data: { search_restaurants_target: 'restaurant' }} %>
-      <%= f.input :friend, label: "Amis" %>
+      <%= f.input :friend, label: "Ami" %>
       <%= f.input :comment, label: "Commentaire" %>
       <%= f.submit "Ajouter à ma list", class: "btn-submit" %>
       <% end %>
