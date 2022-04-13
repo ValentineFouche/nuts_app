@@ -21,7 +21,7 @@
           <% @user_friends.each do |friend| %>
           <% friend_user = User.where(nickname: friend).first %>
             <% if friend_user != nil %>
-            <li class="list-group-item"> <%= friend_user.nickname.capitalize %> <%= link_to "- Voir profil -", user_path(friend_user), class:"text-decoration-none link-modify ms-2" %> </li>
+            <li class="list-group-item"> <%= friend_user.nickname.capitalize %> <%= link_to "- Voir profil -", friend_show_path(friend_user), class:"text-decoration-none link-modify ms-2" %> </li>
             <% else %>
             <li class="list-group-item"> <%= Recommendation.where(friend: friend).first.friend %> (l'ami n'a pas l'app)</li>
             <% end %>

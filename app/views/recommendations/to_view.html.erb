@@ -3,7 +3,7 @@
     <%@recommendations.select do |recommendation|%>
       <div class="movies-cards" style="max-width: 540px;">
         <%= link_to recommendation_path(recommendation), class:"text-decoration-none" do%>
-          <div class="movies-image-card">
+          <div>
           <% if recommendation.movie.image_url.start_with?("http") %>
             <%= image_tag recommendation.movie.image_url, alt: "Poster", class: "img-fluid img-index" %>
           <% elsif recommendation.movie.image_url.start_with?("..//assets/images/") %>
