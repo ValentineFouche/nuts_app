@@ -4,14 +4,14 @@
       <% if current_user.id == params[:id].to_i %>
         <h1>Salut <%= current_user.nickname.capitalize %> !</h1>
         <h2>Mes listes :</h2>
-        <% if @recommendations == [] && @bookrecoms == [] && @podcastrecoms == [] && @restaurantrecoms == [] %>
+        <% if @recommendations == [] && @bookrecoms == [] && @podcastrecoms == [] && @restaurants == [] %>
           <p>Vous n'avez pas encore de listes !</p>
         <% end %>
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><%= link_to "Mes films", recommendations_path, class:"text-decoration-none link-modify"%></li>
           <li class="list-group-item"><%= link_to "Mes livres", bookrecoms_path, class:"text-decoration-none link-modify" %></li>
           <li class="list-group-item"><%= link_to "Mes podcasts", podcastrecoms_path, class:"text-decoration-none link-modify" %></li>
-          <li class="list-group-item"><%= link_to "Mes restos", restaurantrecoms_path, class:"text-decoration-none link-modify" %></li>
+          <li class="list-group-item"><%= link_to "Mes restos", restaurants_path, class:"text-decoration-none link-modify" %></li>
         </ul>
         <h2>Mes amis :</h2>
         <% if @friends == [] %>

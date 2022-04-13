@@ -1,5 +1,4 @@
 <div class="container">
-  <h1>Ajouter une reco</h1>
   <div data-controller="search-books">
     <div class="search-target">
       <%= form_with url: new_bookrecom_path, method: :get, html: { data: { search_books_target: 'form' } } do |f| %>
@@ -24,7 +23,6 @@
     </div>
   </div>
   <div class="my-4">
-    <%= link_to "Retour", bookrecoms_path, class:"text-decoration-none buttons" %>
-  </div>
+    </div>
   <%= render 'book_list', books: @books %>
 </div>

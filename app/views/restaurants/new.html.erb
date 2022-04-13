@@ -1,11 +1,10 @@
 <div class="container">
-  <h1>Ajouter un resto</h1>
     <div>
       <%= simple_form_for @restaurant do |f| %>
-      <%= f.input :title, label: 'Nom du restaurant' %>
-      <%= f.input :address %>
-      <%= f.input :friend %>
-      <%= f.input :comment %>
+      <%= f.input :title, label: false, placeholder: "Entrez le nom d'un restaurant" %>
+      <%= f.input :address, label: "Adresse" %>
+      <%= f.input :friend, label: "Ami" %>
+      <%= f.input :comment, label: "Commentaire"%>
       <%= f.submit "Ajouter à ma list", class: "btn-submit" %>
       <% end %>
     </div>
