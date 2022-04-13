@@ -16,8 +16,9 @@ Book.destroy_all
 Podcastrecom.destroy_all
 Podcast.destroy_all
 Restaurantrecom.destroy_all
-User.destroy_all
 Restaurant.destroy_all
+User.destroy_all
+
 
 puts "creating users"
 valentine = User.create(nickname: "valou", email: "valentine.fouche@hotmail.fr", password: "qwerty")
@@ -146,17 +147,17 @@ Podcastrecom.create(friend: "alex", comment: "Philo", searched: false, viewed: f
 Podcastrecom.create(friend: "ing", comment: "Trop bien pour voyager juste avec ses écouteurs", searched: false, viewed: false, user_id: lulu.id, podcast_id: podcast8.id)
 
 puts "creating 5 restaurants"
-dipiu = Restaurant.create(title: "Di Piu", address: "87 quai des États-Unis, Nice, Alpes-Maritimes 06300, France")
-lavoglia = Restaurant.create(title: "La Voglia", address: "2 rue Saint-François de Paule, Nice, Alpes-Maritimes 06300, France")
-loupistou = Restaurant.create(title: "Lou Pistou", address: "4 Rue Raoul Bosio, Nice, Alpes-Maritimes 06300, France")
-lesafari = Restaurant.create(title: "Le Safari", address: "1 cours Saleya, Nice, Alpes-Maritimes 06300, France")
-lapetitemaison = Restaurant.create(title: "La Petite Maison", address: "11 rue Saint-Francois de Paule, Nice, Alpes-Maritimes 06300, France")
+dipiu = Restaurant.create(title: "Di Piu", address: "87 quai des États-Unis, Nice, Alpes-Maritimes 06300, France", friend: "Ingo", comment: "Menu tres varie, il faut essayer", searched: false, viewed: false, user_id: valentine.id)
+lavoglia = Restaurant.create(title: "La Voglia", address: "2 rue Saint-François de Paule, Nice, Alpes-Maritimes 06300, France", friend: "Alex", comment: "Tres bonne cuisine, il ne faut pas rater", searched: false, viewed: false, user_id: valentine.id)
+loupistou = Restaurant.create(title: "Lou Pistou", address: "4 Rue Raoul Bosio, Nice, Alpes-Maritimes 06300, France", friend: "Eva", comment: "Prix eleves mais le menu merite", searched: false, viewed: false, user_id: valentine.id)
+lesafari = Restaurant.create(title: "Le Safari", address: "1 cours Saleya, Nice, Alpes-Maritimes 06300, France", friend: "George", comment: "Menu interessant et exotique", searched: false, viewed: false, user_id: ingo.id)
+lapetitemaison = Restaurant.create(title: "La Petite Maison", address: "11 rue Saint-Francois de Paule, Nice, Alpes-Maritimes 06300, France", friend: "Ingo", comment: "Restaurant tres connu dans le coeur de Nice", searched: false, viewed: false, user_id: ingo.id)
 
-puts "creating restaurantrecoms alex"
-Restaurantrecom.create(friend: "Ingo", comment: "Menu tres varie, il faut essayer", searched: false, viewed: false, user_id: valentine.id, restaurant_id: dipiu.id)
-Restaurantrecom.create(friend: "Alex", comment: "Tres bonne cuisine, il ne faut pas rater", searched: false, viewed: false, user_id: valentine.id, restaurant_id: lavoglia.id)
-Restaurantrecom.create(friend: "Eva", comment: "Prix eleves mais le menu merite", searched: false, viewed: false, user_id: valentine.id, restaurant_id: loupistou.id)
-Restaurantrecom.create(friend: "George", comment: "Menu interessant et exotique", searched: false, viewed: false, user_id: ingo.id, restaurant_id: lesafari.id)
-Restaurantrecom.create(friend: "Ingo", comment: "Restaurant tres connu dans le coeur de Nice", searched: false, viewed: false, user_id: ingo.id, restaurant_id: lapetitemaison.id)
+#puts "creating restaurantrecoms alex"
+#Restaurantrecom.create(friend: "Ingo", comment: "Menu tres varie, il faut essayer", searched: false, viewed: false, user_id: valentine.id, restaurant_id: dipiu.id)
+#Restaurantrecom.create(friend: "Alex", comment: "Tres bonne cuisine, il ne faut pas rater", searched: false, viewed: false, user_id: valentine.id, restaurant_id: lavoglia.id)
+#Restaurantrecom.create(friend: "Eva", comment: "Prix eleves mais le menu merite", searched: false, viewed: false, user_id: valentine.id, restaurant_id: loupistou.id)
+#Restaurantrecom.create(friend: "George", comment: "Menu interessant et exotique", searched: false, viewed: false, user_id: ingo.id, restaurant_id: lesafari.id)
+#Restaurantrecom.create(friend: "Ingo", comment: "Restaurant tres connu dans le coeur de Nice", searched: false, viewed: false, user_id: ingo.id, restaurant_id: lapetitemaison.id)
 
 puts "done"

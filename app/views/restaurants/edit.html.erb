@@ -1,0 +1,14 @@
+<div class="container">
+  <div>
+    <%= simple_form_for @restaurant do |f| %>
+      <%if @restaurant.viewed == false%>
+        <%= f.input :friend %>
+        <%= f.input :comment %>
+      <% else%>
+        <%= f.input :feedback_content, label: "Feedback" %>
+        <%= f.input :feedback_rating, collection: (1..5).to_a, label: "Évaluer votre expérience" %>
+      <% end %>
+        <%= f.submit "Enregistrer", class: "btn-submit" %>
+    <% end %>
+  </div>
+</div>
