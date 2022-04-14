@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     collection do
       get :searched
       get :viewed
+      get :to_view
     end
 
     member do

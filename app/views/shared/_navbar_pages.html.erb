@@ -78,6 +78,7 @@
       <%= link_to 'Podcast écoutés', viewed_podcastrecoms_path, class:"text-decoration-none button-navigation mx-1" %>
       <%= link_to 'Tous mes podcasts', podcastrecoms_path, class:"text-decoration-none button-navigation mx-1" %>
     <% elsif params[:controller] == 'bookrecoms'%>
+      <%= link_to 'À lire', to_view_bookrecoms_path, class:"text-decoration-none button-navigation mx-1" %>
       <%= link_to 'Livres lus', viewed_bookrecoms_path, class:"text-decoration-none button-navigation mx-1" %>
       <%= link_to 'Tous mes livres', bookrecoms_path, class:"text-decoration-none button-navigation mx-1" %>
     <% elsif params[:controller] == 'restaurants'%>
