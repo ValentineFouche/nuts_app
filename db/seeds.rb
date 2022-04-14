@@ -57,29 +57,29 @@ peau_d_ane = Movie.create(title: "Peau d'Âne", image_url: "peau-d-ane.jpg")
 parapluies_cherbourg = Movie.create(title: "Les Parapluies de Cherbourg", image_url: "parapluies-cherbourg.jpg")
 
 puts "creating movie recommandations de valou"
-Recommendation.create(friend: "ing", comment: "une bande d'ados à Paris en mai 68", searched: false, viewed: true, user_id: valentine.id, movie_id: peril_jeune.id)
+Recommendation.create(friend: "ing", comment: "une bande d'ados à Paris en mai 68", searched: false, viewed: true, feedback_rating: 5, user_id: valentine.id, movie_id: peril_jeune.id)
 Recommendation.create(friend: "alex", comment: "le meilleur Hitchcock", searched: false, viewed: false, user_id: valentine.id, movie_id: les_oiseaux.id)
-Recommendation.create(friend: "clem", comment: "très drôle, beau casting français", searched: false, viewed: true, user_id: valentine.id, movie_id: le_sens_de_la_fete.id)
+Recommendation.create(friend: "clem", comment: "très drôle, beau casting français", searched: false, viewed: true, feedback_rating: 4, user_id: valentine.id, movie_id: le_sens_de_la_fete.id)
 Recommendation.create(friend: "alex", comment: "film culte, avec Jean-Paul Roove, sur une colonie de vacances", searched: false, viewed: false, user_id: valentine.id, movie_id: nos_jours_heureux.id)
-Recommendation.create(friend: "lulu", comment: "Un truc de mangeurs de graines :)", searched: false, viewed: true, user_id: valentine.id, movie_id: la_belle_verte.id)
+Recommendation.create(friend: "lulu", comment: "Un truc de mangeurs de graines :)", searched: false, viewed: true, feedback_rating: 5, user_id: valentine.id, movie_id: la_belle_verte.id)
 # Recommendation.create(friend: "lulu", comment: "Scènes de natures à couper le souffle", searched: false, viewed: false, user_id: valentine.id, movie_id: la_panthere_des_neiges.id)
+Recommendation.create(friend: "ing", comment: "à voir absolument", searched: false, viewed: false, user_id: valentine.id, movie_id: mr_nobody.id)
 
 puts "creating movie recommandations de ingo"
 Recommendation.create(friend: "alex", comment: "film conseillé quand nous avons mangé de la socca à nice, film d'action plein de suspense", searched: false, viewed: true, user_id: ingo.id, movie_id: dark_knight.id)
 Recommendation.create(friend: "alicechou", comment: "film sur la seconde guerre mondiale, attention un peu triste donc à ne pas regarder en cas de coup de blues", searched: false, viewed: false, user_id: ingo.id, movie_id: schindler.id)
 Recommendation.create(friend: "lulu", comment: "film avec plein de mafieux, action garantie ! Ne pas regarder avec les enfants", searched: false, viewed: false, user_id: ingo.id, movie_id: le_parrain.id)
 Recommendation.create(friend: "alex", comment: "Un grand classique qu'Alexandru m'a dit de ne pas louper !!!", searched: false, viewed: false, user_id: ingo.id, movie_id: les_evades.id)
-Recommendation.create(friend: "valou", comment: "film d'epoque super top", searched: false, viewed: true, user_id: ingo.id, movie_id: douze_hommes.id)
+Recommendation.create(friend: "valou", comment: "film d'epoque super top", searched: false, viewed: true, feedback_rating: 3, user_id: ingo.id, movie_id: douze_hommes.id)
 
 puts "creating movie recommandations de lulu"
 Recommendation.create(friend: "ing", comment: "Une belle leçon de vie", searched: false, viewed: false, user_id: lulu.id, movie_id: intouchables.id)
-Recommendation.create(friend: "ing", comment: "ça parle de grands hommes bleus...", searched: false, viewed: true, user_id: lulu.id, movie_id: avatar.id)
+Recommendation.create(friend: "ing", comment: "ça parle de grands hommes bleus...", searched: false, viewed: true, feedback_rating: 3, user_id: lulu.id, movie_id: avatar.id)
 Recommendation.create(friend: "doudou", comment: "Tiré du roman de Gavalda, avec le beau Guillaume Canet", searched: false, viewed: false, user_id: lulu.id, movie_id: ensemble_cest_tout.id)
 # Recommendation.create(friend: "alex", comment: "Scènes de natures à couper le souffle", searched: false, viewed: false, user_id: lulu.id, movie_id: la_panthere_des_neiges.id)
 Recommendation.create(friend: "clem", comment: "Suspense insoutenable, avec DiCaprio et Matt Damon", searched: false, viewed: false, user_id: lulu.id, movie_id: les_infiltres.id)
 
 puts "creating movie recommandations d'alex"
-Recommendation.create(friend: "ing", comment: "à voir absolument", searched: false, viewed: true, user_id: alexandru.id, movie_id: mr_nobody.id, feedback_rating: 5)
 Recommendation.create(friend: "ing", comment: "film dont on a parlé à la pause café, tiré de Jane Austeen", searched: false, viewed: false, user_id: alexandru.id, movie_id: orgueil_prejuges.id, feedback_rating: 4)
 Recommendation.create(friend: "doudou", comment: "régression garantie", searched: false, viewed: true, user_id: alexandru.id, movie_id: lol.id, feedback_rating: 3)
 Recommendation.create(friend: "lulu", comment: "à voir rien que pour les costumes", searched: false, viewed: false, user_id: alexandru.id, movie_id: peau_d_ane.id)
@@ -110,17 +110,17 @@ Bookrecom.create(friend: "ing", comment: "Une histoire d'amour avec une fin trag
 puts "creating bookrecoms valou"
 Bookrecom.create(friend: "lulu", comment: "La plus belle histoire d'amour, la plus belle littérature", searched: false, viewed: false, user_id: valentine.id, book_id: belle_du_seigneur.id)
 Bookrecom.create(friend: "lulu", comment: "Super triste mais magnifique", searched: false, viewed: false, user_id: valentine.id, book_id: autres_vies.id)
-Bookrecom.create(friend: "eva", comment: "Un monument. Dissection de l'âme humaine.", searched: false, viewed: true, user_id: valentine.id, book_id: la_recherche.id)
+Bookrecom.create(friend: "eva", comment: "Un monument. Dissection de l'âme humaine.", searched: false, viewed: true, user_id: valentine.id, book_id: la_recherche.id, feedback_rating: 5)
 Bookrecom.create(friend: "ing", comment: "Mi-suspense, mi-chelou", searched: false, viewed: false, user_id: valentine.id, book_id: trilogie.id)
 
 puts "creating bookrecoms lulu"
 Bookrecom.create(friend: "alex", comment: "Un écrivain et un photographe à l'affût de la panthère des neiges", searched: true, viewed: false, user_id: lulu.id, book_id: panthere.id)
-Bookrecom.create(friend: "ing", comment: "Tesson traverse la France sur les chemins oubliés", searched: false, viewed: true, user_id: lulu.id, book_id: chemins_noirs.id)
+Bookrecom.create(friend: "ing", comment: "Tesson traverse la France sur les chemins oubliés", searched: false, viewed: true, user_id: lulu.id, book_id: chemins_noirs.id, feedback_rating: 4)
 Bookrecom.create(friend: "eva", comment: "Je vais aimer, plein de nature", searched: false, viewed: false, user_id: lulu.id, book_id: usage_monde.id)
 
 puts "creating bookrecoms ingo"
 Bookrecom.create(friend: "valou", comment: "Super fun, à lire à la plage", searched: false, viewed: false, user_id: ingo.id, book_id: faust.id)
-Bookrecom.create(friend: "valou", comment: "Un peu compliqué, à lire à tête reposée", searched: false, viewed: true, user_id: ingo.id, book_id: tintin.id)
+Bookrecom.create(friend: "valou", comment: "Un peu compliqué, à lire à tête reposée", searched: false, viewed: true, user_id: ingo.id, book_id: tintin.id, feedback_rating: 5)
 Bookrecom.create(friend: "alicechou", comment: "Le livre qui a révélé Carrère", searched: false, viewed: false, user_id: ingo.id, book_id: la_moustache.id)
 
 puts "creating 8 podcasts"
@@ -136,15 +136,15 @@ podcast8 = Podcast.create(title: "Les baladeurs", image_url: "podcast.jpg")
 puts "creating podcastrecoms alex"
 Podcastrecom.create(friend: "ing", comment: "Des plats classiques et modernes", searched: false, viewed: false, user_id: alexandru.id, podcast_id: podcast1.id)
 Podcastrecom.create(friend: "valou", comment: "Des nouvelles perspectives sur des événements anciens", searched: false, viewed: false, user_id: alexandru.id, podcast_id: podcast2.id)
-Podcastrecom.create(friend: "lulu", comment: "Du bruit ou de la vraie musique", searched: false, viewed: true, user_id: alexandru.id, podcast_id: podcast3.id)
+Podcastrecom.create(friend: "lulu", comment: "Du bruit ou de la vraie musique", searched: false, viewed: true, user_id: alexandru.id, podcast_id: podcast3.id, feedback_rating: 3)
 Podcastrecom.create(friend: "ing", comment: "Les gens sont influencés vraiment par les vêtements portés", searched: false, viewed: false, user_id: alexandru.id, podcast_id: podcast4.id)
 
 puts "creating podcastrecoms valou"
-Podcastrecom.create(friend: "alex", comment: "Pour méditer au quotidien", searched: false, viewed: true, user_id: valentine.id, podcast_id: podcast5.id)
+Podcastrecom.create(friend: "alex", comment: "Pour méditer au quotidien", searched: false, viewed: true, feedback_rating: 5, user_id: valentine.id, podcast_id: podcast5.id)
 Podcastrecom.create(friend: "lulu", comment: "Émission littéraire", searched: false, viewed: false, user_id: valentine.id, podcast_id: podcast6.id)
 
 puts "creating podcastrecoms lulu"
-Podcastrecom.create(friend: "alex", comment: "Philo", searched: false, viewed: true, user_id: lulu.id, podcast_id: podcast7.id)
+Podcastrecom.create(friend: "alex", comment: "Philo", searched: false, viewed: true, feedback_rating: 4, user_id: lulu.id, podcast_id: podcast7.id)
 Podcastrecom.create(friend: "ing", comment: "Trop bien pour voyager juste avec ses écouteurs", searched: false, viewed: false, user_id: lulu.id, podcast_id: podcast8.id)
 
 puts "creating 5 restaurants"
@@ -161,5 +161,7 @@ Restaurant.create(title: "Au Moulin Enchanté", address: "1 Rue Barberis, 06300 
 Restaurant.create(title: "Le Chabrol", address: "12 Rue Bavastro, 06300 Nice, France", friend: "lulu", comment: "Top pour un resto en amoureux", latitude: 43.699872138109214, longitude: 7.285227055540523, searched: false, viewed: false, user_id: valentine.id)
 Restaurant.create(title: "La Cave de Papa", address: "9 Rue Bonaparte, 06300 Nice, France", friend: "lulu", comment: "Planches et bon vin", latitude: 43.70098769483074, longitude: 7.282368186505601, searched: false, viewed: false, user_id: valentine.id)
 Restaurant.create(title: "Comme un Dimanche", address: "10 Rue Lascaris, 06300 Nice, France", friend: "alex", comment: "Super brunch, super déco", latitude: 43.699959941485346, longitude: 7.284981755540511, searched: false, viewed: false, user_id: valentine.id)
+Restaurant.create(title: "Le Rendez-Vous du Vendredi", address: "1 rue de Belgique, 06000 Nice, France", friend: "ing", comment: "Best falafel ever", latitude: 43.70525998451972, longitude: 7.265140976703968, searched: false, viewed: false, user_id: valentine.id)
+Restaurant.create(title: "Startway Super Miam", address: "21 Av. Thiers, 06000 Nice, France", friend: "caro", comment: "Équipe au top, parfait pour célébrer la fin du Démo Day !", latitude: 43.70323094855701, longitude: 7.260490815343912, searched: false, viewed: false, user_id: valentine.id)
 
 puts "done"
