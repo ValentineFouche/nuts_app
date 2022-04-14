@@ -7,11 +7,11 @@
         <% if @recommendations == [] && @bookrecoms == [] && @podcastrecoms == [] && @restaurants == [] %>
           <p>Vous n'avez pas encore de listes !</p>
         <% end %>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><%= link_to "Mes films", recommendations_path, class:"text-decoration-none link-modify"%></li>
-          <li class="list-group-item"><%= link_to "Mes livres", bookrecoms_path, class:"text-decoration-none link-modify" %></li>
-          <li class="list-group-item"><%= link_to "Mes podcasts", podcastrecoms_path, class:"text-decoration-none link-modify" %></li>
-          <li class="list-group-item"><%= link_to "Mes restos", restaurants_path, class:"text-decoration-none link-modify" %></li>
+        <ul class="list-group list-group-flush ms-2">
+          <li class="list-group-item"><%= link_to "Mes films", recommendations_path, class:" link-modify"%></li>
+          <li class="list-group-item"><%= link_to "Mes livres", bookrecoms_path, class:" link-modify" %></li>
+          <li class="list-group-item"><%= link_to "Mes podcasts", podcastrecoms_path, class:" link-modify" %></li>
+          <li class="list-group-item"><%= link_to "Mes restos", restaurantrecoms_path, class:" link-modify" %></li>
         </ul>
         <h2>Mes amis :</h2>
         <% if @friends == [] %>
@@ -21,9 +21,11 @@
           <% @user_friends.each do |friend| %>
           <% friend_user = User.where(nickname: friend).first %>
             <% if friend_user != nil %>
-            <li class="list-group-item"> <%= friend_user.nickname.capitalize %> <%= link_to "- Voir profil -", friend_show_path(friend_user), class:"text-decoration-none link-modify ms-2" %> </li>
+              <%= link_to friend_show_path(friend_user), class:" link-modify ms-2" do %>
+                <li class="list-group-item list-link-friend"> <%= friend_user.nickname.capitalize %></li>
+              <% end %>
             <% else %>
-            <li class="list-group-item"> <%= Recommendation.where(friend: friend).first.friend %> (l'ami n'a pas l'app)</li>
+              <li class="list-group-item ms-2"><%= Recommendation.where(friend: friend).first.friend.capitalize %> (l'ami n'a pas l'app)</li>
             <% end %>
           <% end %>
         </ul>
