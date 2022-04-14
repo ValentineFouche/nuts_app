@@ -18,7 +18,7 @@
           <%= link_to "Trouver sur internet", "https://www.google.fr/search?q=restaurant+#{@restaurant.title}", class: "buttons button-watch text-decoration-none text-center" %>
         <div class="d-flex justify-content-around ms-3">
           <%= simple_form_for @restaurant, html: { class: "form-show" }, method: :patch  do |f| %>
-            <%= f.input :viewed, label: 'Vu'  %>
+            <%= f.input :viewed, label: 'Testé'  %>
             <%= f.submit "Sauvegarder", class: "buttons submit-button-form" %>
           <% end %>
           <% if @restaurant.viewed ==true && @restaurant.feedback_content == nil && @restaurant.feedback_rating == nil %>
