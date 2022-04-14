@@ -83,6 +83,11 @@
     <% elsif params[:controller] == 'restaurants'%>
       <%= link_to 'Restos visités', viewed_restaurants_path, class:"text-decoration-none button-navigation mx-1" %>
       <%= link_to 'Tous mes restos', restaurants_path, class:"text-decoration-none button-navigation mx-1" %>
+    <% elsif params[:controller] == 'users'%>
+      <%= link_to 'Mes films', recommendations_path, class:"text-decoration-none button-navigation mx-1" %>
+      <%= link_to 'Mes livres', bookrecoms_path, class:"text-decoration-none button-navigation mx-1" %>
+      <%= link_to 'Mes podcasts', podcastrecoms_path, class:"text-decoration-none button-navigation mx-1" %>
+      <%= link_to 'Mes restos', restaurantrecoms_path, class:"text-decoration-none button-navigation mx-1" %>
     <%end%>
     </div>
   </div>
