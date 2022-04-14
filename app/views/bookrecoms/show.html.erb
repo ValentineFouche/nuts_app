@@ -1,7 +1,7 @@
 <%# nouvelle version %>
 
 <div class="container">
-  <div class="col-12 col-md-6">
+  <div class="col-12 col-md-8 col-lg-6">
     <div class="card card-show" style="width: 100%;">
       <% if @bookrecom.book.image_url.start_with?("http") %>
         <%= image_tag @bookrecom.book.image_url, alt: "Poster", class: "img-fluid"  %>
