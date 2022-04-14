@@ -1,50 +1,49 @@
 <div class="container">
-  <div class="col-12 col-md-8 col-lg-6">
-    <div class="card card-show" style="width: 100%;">
-      <% if @podcastrecom.podcast.image_url.start_with?("http") %>
-        <%= image_tag @podcastrecom.podcast.image_url, alt: "Poster", class: "img-fluid"  %>
-      <% elsif @podcastrecom.podcast.image_url.start_with?("..//assets/images/") %>
-        <%= image_tag @podcastrecom.podcast.image_url.gsub("..//assets/images/", ""), alt: "Poster", class: "img-fluid" %>
-      <% else %>
-        <%= image_tag @podcastrecom.podcast.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid" %>
-      <% end %>
-      <h2><%= @podcastrecom.podcast.title %></h2>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"> <strong>Recommandé par :</strong> <%= @podcastrecom.friend.capitalize %></li>
-        <li class="list-group-item"> <strong>Mon commentaire :</strong> <%= @podcastrecom.comment %>  <%= link_to edit_podcastrecom_path, class:"text-decoration-none link-modify ms-2" do %>
-          <i class="fa-solid fa-pencil"></i>
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="card card-show" style="width: 100%;">
+        <% if @podcastrecom.podcast.image_url.start_with?("http") %>
+          <%= image_tag @podcastrecom.podcast.image_url, alt: "Poster", class: "img-fluid"  %>
+        <% elsif @podcastrecom.podcast.image_url.start_with?("..//assets/images/") %>
+          <%= image_tag @podcastrecom.podcast.image_url.gsub("..//assets/images/", ""), alt: "Poster", class: "img-fluid" %>
+        <% else %>
+          <%= image_tag @podcastrecom.podcast.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid" %>
         <% end %>
-        </li>
-        <li class="list-group-item"> <strong>Ajouté le :</strong> <%= @podcastrecom.created_at.strftime("%d/%m/%Y") %></li>
-      </ul>
-        <%= link_to "Écouter le podcast", podcastrecom_podcasts_search_path(@podcastrecom), class: "buttons button-watch text-decoration-none text-center" %>
-      <div class="d-flex justify-content-around ms-3">
-        <%= simple_form_for @podcastrecom, html: { class: "form-show" }, method: :patch  do |f| %>
-          <%= f.input :viewed, label: 'Écouté'  %>
-          <%= f.submit "Sauvegarder", class: "buttons submit-button-form" %>
-        <% end %>
-        <% if @podcastrecom.viewed ==true && @podcastrecom.feedback_content == nil && @podcastrecom.feedback_rating == nil %>
-        <%= link_to "Ajouter un feedback", edit_podcastrecom_path(@podcastrecom), class:"text-decoration-none link-modify ms-3 mt-2" %>
-        <% end %>
-      </div>
-      <div class="d-flex">
-
-      </div>
-      <div class="d-flex">
-        <% if @podcastrecom.feedback_content != nil || @podcastrecom.feedback_rating != nil %>
+        <h2><%= @podcastrecom.podcast.title %></h2>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-          <strong>Mon feedback :</strong>
-          <% @podcastrecom.feedback_rating.times do %>
-          <i class="fa-solid fa-star"></i>
-          <% end %> <%= @podcastrecom.feedback_content %>
-          <%= link_to edit_podcastrecom_path, class:"text-decoration-none link-modify ms-2" do %>
+          <li class="list-group-item"> <strong>Recommandé par :</strong> <%= @podcastrecom.friend.capitalize %></li>
+          <li class="list-group-item"> <strong>Mon commentaire :</strong> <%= @podcastrecom.comment %>  <%= link_to edit_podcastrecom_path, class:"text-decoration-none link-modify ms-2" do %>
             <i class="fa-solid fa-pencil"></i>
           <% end %>
-
           </li>
+          <li class="list-group-item"> <strong>Ajouté le :</strong> <%= @podcastrecom.created_at.strftime("%d/%m/%Y") %></li>
         </ul>
-        <% end %>
+          <%= link_to "Écouter le podcast", podcastrecom_podcasts_search_path(@podcastrecom), class: "buttons button-watch text-decoration-none text-center" %>
+        <div class="d-flex justify-content-around ms-3">
+          <%= simple_form_for @podcastrecom, html: { class: "form-show" }, method: :patch  do |f| %>
+            <%= f.input :viewed, label: 'Écouté'  %>
+            <%= f.submit "Sauvegarder", class: "buttons submit-button-form" %>
+          <% end %>
+          <% if @podcastrecom.viewed ==true && @podcastrecom.feedback_content == nil && @podcastrecom.feedback_rating == nil %>
+          <%= link_to "Ajouter un feedback", edit_podcastrecom_path(@podcastrecom), class:"text-decoration-none link-modify ms-3 mt-2" %>
+          <% end %>
+        </div>
+        <div class="d-flex">
+          <% if @podcastrecom.feedback_content != nil || @podcastrecom.feedback_rating != nil %>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <strong>Mon feedback :</strong>
+            <% @podcastrecom.feedback_rating.times do %>
+            <i class="fa-solid fa-star"></i>
+            <% end %> <%= @podcastrecom.feedback_content %>
+            <%= link_to edit_podcastrecom_path, class:"text-decoration-none link-modify ms-2" do %>
+              <i class="fa-solid fa-pencil"></i>
+            <% end %>
+
+            </li>
+          </ul>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

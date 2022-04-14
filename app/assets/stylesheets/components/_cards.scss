@@ -1,18 +1,32 @@
-// @media(max-width: 500px) {
-//   .cards {
-//     font-size: 12px;
-//   }
-// }
+@media(min-width: 1000px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media(max-width: 992px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media(max-width: 500px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
+  grid-gap: 20px;
 }
 
 .movies-cards {
   border-radius: 30px;
   margin-top: 4px;
+    img {
+
+    }
 }
 
 h1 {

@@ -1,52 +1,54 @@
 <%# nouvelle version %>
 
 <div class="container">
-  <div class="col-12 col-md-8 col-lg-6">
-    <div class="card card-show" style="width: 100%;">
-      <% if @bookrecom.book.image_url.start_with?("http") %>
-        <%= image_tag @bookrecom.book.image_url, alt: "Poster", class: "img-fluid"  %>
-      <% elsif @bookrecom.book.image_url.start_with?("..//assets/images/") %>
-        <%= image_tag @bookrecom.book.image_url.gsub("..//assets/images/", ""), alt: "Poster", class: "img-fluid" %>
-      <% else %>
-        <%= image_tag @bookrecom.book.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid" %>
-      <% end %>
-      <h2><%= @bookrecom.book.title %></h2>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"> <strong>Recommandé par :</strong> <%= @bookrecom.friend.capitalize %></li>
-        <li class="list-group-item"> <strong>Mon commentaire :</strong> <%= @bookrecom.comment %>  <%= link_to edit_bookrecom_path, class:"text-decoration-none link-modify ms-2" do %>
-          <i class="fa-solid fa-pencil"></i>
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="card card-show" style="width: 100%;">
+        <% if @bookrecom.book.image_url.start_with?("http") %>
+          <%= image_tag @bookrecom.book.image_url, alt: "Poster", class: "img-fluid"  %>
+        <% elsif @bookrecom.book.image_url.start_with?("..//assets/images/") %>
+          <%= image_tag @bookrecom.book.image_url.gsub("..//assets/images/", ""), alt: "Poster", class: "img-fluid" %>
+        <% else %>
+          <%= image_tag @bookrecom.book.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid" %>
         <% end %>
-        </li>
-        <li class="list-group-item"> <strong>Ajouté le :</strong> <%= @bookrecom.created_at.strftime("%d/%m/%Y") %></li>
-      </ul>
-        <%= link_to "Trouver le livre en ligne", bookrecom_books_search_path(@bookrecom), class: "buttons button-watch text-decoration-none text-center" %>
-      <div class="d-flex justify-content-around ms-3">
-        <%= simple_form_for @bookrecom, html: { class: "form-show" }, method: :patch  do |f| %>
-          <%= f.input :viewed, label: 'Lu'  %>
-          <%= f.submit "Sauvegarder", class: "buttons submit-button-form" %>
-        <% end %>
-        <% if @bookrecom.viewed ==true && @bookrecom.feedback_content == nil && @bookrecom.feedback_rating == nil %>
-        <%= link_to "Ajouter un feedback", edit_bookrecom_path(@bookrecom), class:"text-decoration-none link-modify ms-3" %>
-        <% end %>
-      </div>
-      <div class="d-flex">
-
-      </div>
-      <div class="d-flex">
-        <% if @bookrecom.feedback_content != nil || @bookrecom.feedback_rating != nil %>
+        <h2><%= @bookrecom.book.title %></h2>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-          <strong>Mon feedback :</strong>
-          <% @bookrecom.feedback_rating.times do %>
-          <i class="fa-solid fa-star"></i>
-          <% end %> <%= @bookrecom.feedback_content %>
-          <%= link_to edit_bookrecom_path, class:"text-decoration-none link-modify ms-2" do %>
+          <li class="list-group-item"> <strong>Recommandé par :</strong> <%= @bookrecom.friend.capitalize %></li>
+          <li class="list-group-item"> <strong>Mon commentaire :</strong> <%= @bookrecom.comment %>  <%= link_to edit_bookrecom_path, class:"text-decoration-none link-modify ms-2" do %>
             <i class="fa-solid fa-pencil"></i>
           <% end %>
-
           </li>
+          <li class="list-group-item"> <strong>Ajouté le :</strong> <%= @bookrecom.created_at.strftime("%d/%m/%Y") %></li>
         </ul>
-        <% end %>
+          <%= link_to "Trouver le livre en ligne", bookrecom_books_search_path(@bookrecom), class: "buttons button-watch text-decoration-none text-center" %>
+        <div class="d-flex justify-content-around ms-3">
+          <%= simple_form_for @bookrecom, html: { class: "form-show" }, method: :patch  do |f| %>
+            <%= f.input :viewed, label: 'Lu'  %>
+            <%= f.submit "Sauvegarder", class: "buttons submit-button-form" %>
+          <% end %>
+          <% if @bookrecom.viewed ==true && @bookrecom.feedback_content == nil && @bookrecom.feedback_rating == nil %>
+          <%= link_to "Ajouter un feedback", edit_bookrecom_path(@bookrecom), class:"text-decoration-none link-modify ms-3" %>
+          <% end %>
+        </div>
+        <div class="d-flex">
+
+        </div>
+        <div class="d-flex">
+          <% if @bookrecom.feedback_content != nil || @bookrecom.feedback_rating != nil %>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <strong>Mon feedback :</strong>
+            <% @bookrecom.feedback_rating.times do %>
+            <i class="fa-solid fa-star"></i>
+            <% end %> <%= @bookrecom.feedback_content %>
+            <%= link_to edit_bookrecom_path, class:"text-decoration-none link-modify ms-2" do %>
+              <i class="fa-solid fa-pencil"></i>
+            <% end %>
+
+            </li>
+          </ul>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
