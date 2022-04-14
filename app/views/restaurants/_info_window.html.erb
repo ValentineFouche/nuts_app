@@ -1,2 +1,2 @@
-<h3><%= link_to restaurant.title,  "https://www.google.fr/search?q=restaurant+#{restaurant.title}", class: "btn btn-flat" %></h3>
+<h3><%= link_to restaurant.title,  restaurant_path(restaurant), class: "btn btn-flat" %></h3>
 <p><%= restaurant.address %></p>
