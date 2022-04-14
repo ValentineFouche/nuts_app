@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="wrapper">
+    <%@podcastrecoms.select do |recommendation|%>
+      <div class="movies-cards" style="max-width: 540px;">
+        <%= link_to podcastrecom_path(recommendation), class:"text-decoration-none" do%>
+          <div>
+          <% if recommendation.podcast.image_url.start_with?("http") %>
+            <%= image_tag recommendation.podcast.image_url, alt: "Poster", class: "img-fluid img-index" %>
+          <% elsif recommendation.podcast.image_url.start_with?("..//assets/images/") %>
+            <%= image_tag recommendation.podcast.image_url.gsub("..//assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
+          <% else %>
+            <%= image_tag recommendation.podcast.image_url.gsub("../assets/images/", ""), alt: "Poster", class: "img-fluid img-index" %>
+          <% end %>
+          </div>
+            <%# <%= image_tag recommendation.movie.image_url, alt: "Poster", class: "img-fluid" %>
+          <div>
+            <h5 class="movies-card-header"><%=recommendation.podcast.title %></h5>
+          </div>
+          <div>
+          <% if recommendation.friend != nil %>
+            <p class="movies-card-text"><i class="fa-solid fa-user"></i>  <%=recommendation.friend%></p>
+          <% end %>
+          </div>
+        <%end %>
+      </div>
+    <%end%>
+  </div>
+</div>

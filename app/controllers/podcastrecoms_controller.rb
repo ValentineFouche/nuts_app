@@ -72,6 +72,12 @@ class PodcastrecomsController < ApplicationController
     @podcastrecoms = reco_sorted_asc.reverse
   end
 
+  def to_view
+    reco_not_sorted = Podcastrecom.where(viewed: false, user_id: current_user.id)
+    reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.updated_at }
+    @podcastrecoms = reco_sorted_asc.reverse
+  end
+
   def podcasts_search
     @podcastrecom = Podcastrecom.find(params[:podcastrecom_id])
     @podcastrecom.searched = true

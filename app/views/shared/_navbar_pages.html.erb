@@ -75,6 +75,7 @@
       <%= link_to 'Film vus', viewed_recommendations_path, class:"text-decoration-none button-navigation mx-1" %>
       <%= link_to 'Tous mes films', recommendations_path, class:"text-decoration-none button-navigation mx-1" %>
     <% elsif params[:controller] == 'podcastrecoms'%>
+      <%= link_to 'Podcast à écouter', to_view_podcastrecoms_path, class:"text-decoration-none button-navigation mx-1" %>
       <%= link_to 'Podcast écoutés', viewed_podcastrecoms_path, class:"text-decoration-none button-navigation mx-1" %>
       <%= link_to 'Tous mes podcasts', podcastrecoms_path, class:"text-decoration-none button-navigation mx-1" %>
     <% elsif params[:controller] == 'bookrecoms'%>
