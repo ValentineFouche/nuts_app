@@ -1,5 +1,4 @@
 <div class="container">
-  <h1>Ajouter une reco</h1>
   <div data-controller="search-podcasts">
     <div class="search-target">
       <%= form_with url: new_podcastrecom_path, method: :get, html: { data: { search_podcasts_target: 'form' } } do |f| %>
@@ -24,7 +23,6 @@
     </div>
   </div>
   <div class="my-4">
-    <%= link_to "Retour", podcastrecoms_path, class:"text-decoration-none buttons" %>
   </div>
   <%= render 'podcast_list', podcasts: @podcasts %>
 </div>
