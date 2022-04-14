@@ -72,6 +72,12 @@ class BookrecomsController < ApplicationController
     @bookrecoms = reco_sorted_asc.reverse
   end
 
+  def to_view
+    reco_not_sorted = Bookrecom.where(viewed: false, user_id: current_user.id)
+    reco_sorted_asc = reco_not_sorted.sort_by {|reco| reco.updated_at }
+    @bookrecoms = reco_sorted_asc.reverse
+  end
+
   def books_search
     @bookrecom = Bookrecom.find(params[:bookrecom_id])
     @bookrecom.searched = true
