@@ -79,10 +79,10 @@ Recommendation.create(friend: "doudou", comment: "Tiré du roman de Gavalda, ave
 Recommendation.create(friend: "clem", comment: "Suspense insoutenable, avec DiCaprio et Matt Damon", searched: false, viewed: false, user_id: lulu.id, movie_id: les_infiltres.id)
 
 puts "creating movie recommandations d'alex"
-Recommendation.create(friend: "ing", comment: "à voir absolument", searched: false, viewed: false, user_id: alexandru.id, movie_id: mr_nobody.id)
-Recommendation.create(friend: "ing", comment: "film dont on a parlé à la pause café, tiré de Jane Austeen", searched: false, viewed: false, user_id: alexandru.id, movie_id: orgueil_prejuges.id)
-Recommendation.create(friend: "doudou", comment: "régression garantie", searched: false, viewed: false, user_id: alexandru.id, movie_id: lol.id)
-Recommendation.create(friend: "lulu", comment: "à voir rien que pour les costumes", searched: false, viewed: true, user_id: alexandru.id, movie_id: peau_d_ane.id)
+Recommendation.create(friend: "ing", comment: "à voir absolument", searched: false, viewed: true, user_id: alexandru.id, movie_id: mr_nobody.id, feedback_rating: 5)
+Recommendation.create(friend: "ing", comment: "film dont on a parlé à la pause café, tiré de Jane Austeen", searched: false, viewed: false, user_id: alexandru.id, movie_id: orgueil_prejuges.id, feedback_rating: 4)
+Recommendation.create(friend: "doudou", comment: "régression garantie", searched: false, viewed: true, user_id: alexandru.id, movie_id: lol.id, feedback_rating: 3)
+Recommendation.create(friend: "lulu", comment: "à voir rien que pour les costumes", searched: false, viewed: false, user_id: alexandru.id, movie_id: peau_d_ane.id)
 Recommendation.create(friend: "clem", comment: "un classique apparemment...", searched: false, viewed: false, user_id: alexandru.id, movie_id: parapluies_cherbourg.id)
 
 puts "creating 14 books"
@@ -102,10 +102,10 @@ tintin = Book.create(title: "Tintin au Tibet", image_url: "tintin.jpg")
 la_moustache = Book.create(title: "La Moustache", image_url: "la-moustache.jpg")
 
 puts "creating bookrecoms alex"
-Bookrecom.create(friend: "valou", comment: "Le livre le plus connu de l'écrivain Antoine de Saint-Exupery", searched: false, viewed: true, user_id: alexandru.id, book_id: book1.id)
+Bookrecom.create(friend: "valou", comment: "Le livre le plus connu de l'écrivain Antoine de Saint-Exupery", searched: false, viewed: true, user_id: alexandru.id, book_id: book1.id, feedback_rating: 4)
 Bookrecom.create(friend: "valou", comment: "Un roman qui raconte une enfance dure", searched: false, viewed: false, user_id: alexandru.id, book_id: book2.id)
 Bookrecom.create(friend: "lulu", comment: "Un livre classique russe", searched: false, viewed: false, user_id: alexandru.id, book_id: book3.id)
-Bookrecom.create(friend: "ing", comment: "Une histoire d'amour avec une fin tragique", searched: false, viewed: true, user_id: alexandru.id, book_id: book4.id)
+Bookrecom.create(friend: "ing", comment: "Une histoire d'amour avec une fin tragique", searched: false, viewed: true, user_id: alexandru.id, book_id: book4.id, feedback_rating: 5)
 
 puts "creating bookrecoms valou"
 Bookrecom.create(friend: "lulu", comment: "La plus belle histoire d'amour, la plus belle littérature", searched: false, viewed: false, user_id: valentine.id, book_id: belle_du_seigneur.id)
