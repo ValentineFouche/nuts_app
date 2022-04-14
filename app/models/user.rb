@@ -11,5 +11,5 @@ class User < ApplicationRecord
   has_many :restaurantrecoms
   has_many :restaurants
   has_many :podcastrecoms
-  validates :nickname, uniqueness: true
+  # validates :nickname, uniqueness: true
 end
