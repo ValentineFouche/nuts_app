@@ -57,13 +57,14 @@ peau_d_ane = Movie.create(title: "Peau d'Âne", image_url: "peau-d-ane.jpg")
 parapluies_cherbourg = Movie.create(title: "Les Parapluies de Cherbourg", image_url: "parapluies-cherbourg.jpg")
 
 puts "creating movie recommandations de valou"
-Recommendation.create(friend: "ing", comment: "une bande d'ados à Paris en mai 68", searched: false, viewed: true, feedback_rating: 5, user_id: valentine.id, movie_id: peril_jeune.id)
+Recommendation.create(friend: "ing", comment: "à voir absolument", searched: false, viewed: false, user_id: valentine.id, movie_id: mr_nobody.id)
 Recommendation.create(friend: "alex", comment: "le meilleur Hitchcock", searched: false, viewed: false, user_id: valentine.id, movie_id: les_oiseaux.id)
 Recommendation.create(friend: "clem", comment: "très drôle, beau casting français", searched: false, viewed: true, feedback_rating: 4, user_id: valentine.id, movie_id: le_sens_de_la_fete.id)
 Recommendation.create(friend: "alex", comment: "film culte, avec Jean-Paul Roove, sur une colonie de vacances", searched: false, viewed: false, user_id: valentine.id, movie_id: nos_jours_heureux.id)
 Recommendation.create(friend: "lulu", comment: "Un truc de mangeurs de graines :)", searched: false, viewed: true, feedback_rating: 5, user_id: valentine.id, movie_id: la_belle_verte.id)
 # Recommendation.create(friend: "lulu", comment: "Scènes de natures à couper le souffle", searched: false, viewed: false, user_id: valentine.id, movie_id: la_panthere_des_neiges.id)
-Recommendation.create(friend: "ing", comment: "à voir absolument", searched: false, viewed: false, user_id: valentine.id, movie_id: mr_nobody.id)
+Recommendation.create(friend: "ing", comment: "une bande d'ados à Paris en mai 68", searched: false, viewed: true, feedback_rating: 5, user_id: valentine.id, movie_id: peril_jeune.id)
+
 
 puts "creating movie recommandations de ingo"
 Recommendation.create(friend: "alex", comment: "film conseillé quand nous avons mangé de la socca à nice, film d'action plein de suspense", searched: false, viewed: true, user_id: ingo.id, movie_id: dark_knight.id)
@@ -86,10 +87,10 @@ Recommendation.create(friend: "lulu", comment: "à voir rien que pour les costum
 Recommendation.create(friend: "clem", comment: "un classique apparemment...", searched: false, viewed: false, user_id: alexandru.id, movie_id: parapluies_cherbourg.id)
 
 puts "creating 14 books"
-book1 = Book.create(title: "Le petit prince", image_url: "petit-prince.jpg")
+book1 = Book.create(title: "Le Petit Prince", image_url: "petit-prince.jpg")
 book2 = Book.create(title: "David Copperfield", image_url: "david-copperfield.jpg")
-book3 = Book.create(title: "Guerre et paix", image_url: "guerre-et-paix.jpg")
-book4 = Book.create(title: "Anna Karenina", image_url: "anna-karenina.jpg")
+book3 = Book.create(title: "Guerre et Paix", image_url: "guerre-et-paix.jpg")
+book4 = Book.create(title: "Anna Karénine", image_url: "anna-karenina.jpg")
 belle_du_seigneur = Book.create(title: "Belle du Seigneur", image_url: "belle-du-seigneur.jpg")
 autres_vies = Book.create(title: "D'autres vies que la mienne", image_url: "autres-vies.jpg")
 la_recherche = Book.create(title: "À la recherche du temps perdu", image_url: "la-recherche.jpg")
@@ -110,13 +111,13 @@ Bookrecom.create(friend: "ing", comment: "Une histoire d'amour avec une fin trag
 puts "creating bookrecoms valou"
 Bookrecom.create(friend: "lulu", comment: "La plus belle histoire d'amour, la plus belle littérature", searched: false, viewed: false, user_id: valentine.id, book_id: belle_du_seigneur.id)
 Bookrecom.create(friend: "lulu", comment: "Super triste mais magnifique", searched: false, viewed: false, user_id: valentine.id, book_id: autres_vies.id)
-Bookrecom.create(friend: "eva", comment: "Un monument. Dissection de l'âme humaine.", searched: false, viewed: true, user_id: valentine.id, book_id: la_recherche.id, feedback_rating: 5)
-Bookrecom.create(friend: "ing", comment: "Mi-suspense, mi-chelou", searched: false, viewed: false, user_id: valentine.id, book_id: trilogie.id)
+Bookrecom.create(friend: "alex", comment: "Un monument. Dissection de l'âme humaine.", searched: false, viewed: true, user_id: valentine.id, book_id: la_recherche.id, feedback_rating: 5)
+Bookrecom.create(friend: "ing", comment: "Mi-suspense, mi-étrange", searched: false, viewed: false, user_id: valentine.id, book_id: trilogie.id)
 
 puts "creating bookrecoms lulu"
 Bookrecom.create(friend: "alex", comment: "Un écrivain et un photographe à l'affût de la panthère des neiges", searched: true, viewed: false, user_id: lulu.id, book_id: panthere.id)
 Bookrecom.create(friend: "ing", comment: "Tesson traverse la France sur les chemins oubliés", searched: false, viewed: true, user_id: lulu.id, book_id: chemins_noirs.id, feedback_rating: 4)
-Bookrecom.create(friend: "eva", comment: "Je vais aimer, plein de nature", searched: false, viewed: false, user_id: lulu.id, book_id: usage_monde.id)
+Bookrecom.create(friend: "ing", comment: "Je vais aimer, plein de nature", searched: false, viewed: false, user_id: lulu.id, book_id: usage_monde.id)
 
 puts "creating bookrecoms ingo"
 Bookrecom.create(friend: "valou", comment: "Super fun, à lire à la plage", searched: false, viewed: false, user_id: ingo.id, book_id: faust.id)
@@ -125,7 +126,7 @@ Bookrecom.create(friend: "alicechou", comment: "Le livre qui a révélé Carrèr
 
 puts "creating 8 podcasts"
 podcast1 = Podcast.create(title: "La cuisine italienne", image_url: "podcast.jpg")
-podcast2 = Podcast.create(title: "Une histoire de la France", image_url: "podcast.jpg")
+podcast2 = Podcast.create(title: "Une histoire de France", image_url: "podcast.jpg")
 podcast3 = Podcast.create(title: "La musique des jeunes", image_url: "podcast.jpg")
 podcast4 = Podcast.create(title: "La mode et les temps", image_url: "podcast.jpg")
 podcast5 = Podcast.create(title: "Petit Bambou", image_url: "podcast.jpg")
@@ -152,16 +153,16 @@ Restaurant.create(title: "Di Piu", address: "87 quai des États-Unis, Nice, Alpe
 Restaurant.create(title: "La Voglia", address: "2 rue Saint-François de Paule, Nice, Alpes-Maritimes 06300, France", friend: "alex", comment: "Tres bonne cuisine, il ne faut pas rater", latitude: 43.6956094, longitude: 7.2733957, searched: false, viewed: false, user_id: lulu.id)
 Restaurant.create(title: "Lou Pistou", address: "4 Rue Raoul Bosio, Nice, Alpes-Maritimes 06300, France", friend: "lulu", comment: "Prix eleves mais le menu merite", latitude: 43.6965503, longitude: 7.273115, searched: false, viewed: false, user_id: valentine.id)
 Restaurant.create(title: "Le Safari", address: "1 cours Saleya, Nice, Alpes-Maritimes 06300, France", friend: "George", comment: "Menu interessant et exotique", latitude: 43.6956889, longitude: 7.2760526, searched: false, viewed: false, user_id: ingo.id)
-Restaurant.create(title: "La Petite Maison", address: "11 rue Saint-Francois de Paule, Nice, Alpes-Maritimes 06300, France", friend: "Eva", comment: "Restaurant tres connu dans le coeur de Nice", latitude: 43.6957805, longitude: 7.2705091, searched: false, viewed: false, user_id: ingo.id)
+Restaurant.create(title: "La Petite Maison", address: "11 rue Saint-Francois de Paule, Nice, Alpes-Maritimes 06300, France", friend: "lulu", comment: "Restaurant tres connu dans le coeur de Nice", latitude: 43.6957805, longitude: 7.2705091, searched: false, viewed: false, user_id: ingo.id)
 
 puts "creating more restos"
 
 Restaurant.create(title: "La Socca d'or", address: "45 Rue Bonaparte, 06300 Nice, France", friend: "ing", comment: "Meilleure socca de Nice !", latitude: 43.70069810074462, longitude: 7.285658926705328, searched: false, viewed: false, user_id: valentine.id)
-Restaurant.create(title: "Au Moulin Enchanté", address: "1 Rue Barberis, 06300 Nice, France", friend: "Evachou", comment: "Bon menu du midi, proprio très sympa", latitude: 43.705634164327165, longitude: 7.282543513211083, searched: false, viewed: false, user_id: valentine.id)
+Restaurant.create(title: "Au Moulin Enchanté", address: "1 Rue Barberis, 06300 Nice, France", friend: "arnochou", comment: "Bon menu du midi, proprio très sympa", latitude: 43.705634164327165, longitude: 7.282543513211083, searched: false, viewed: false, user_id: valentine.id)
 Restaurant.create(title: "Le Chabrol", address: "12 Rue Bavastro, 06300 Nice, France", friend: "lulu", comment: "Top pour un resto en amoureux", latitude: 43.699872138109214, longitude: 7.285227055540523, searched: false, viewed: false, user_id: valentine.id)
 Restaurant.create(title: "La Cave de Papa", address: "9 Rue Bonaparte, 06300 Nice, France", friend: "lulu", comment: "Planches et bon vin", latitude: 43.70098769483074, longitude: 7.282368186505601, searched: false, viewed: false, user_id: valentine.id)
 Restaurant.create(title: "Comme un Dimanche", address: "10 Rue Lascaris, 06300 Nice, France", friend: "alex", comment: "Super brunch, super déco", latitude: 43.699959941485346, longitude: 7.284981755540511, searched: false, viewed: false, user_id: valentine.id)
-Restaurant.create(title: "Le Rendez-Vous du Vendredi", address: "1 rue de Belgique, 06000 Nice, France", friend: "ing", comment: "Best falafel ever", latitude: 43.70525998451972, longitude: 7.265140976703968, searched: false, viewed: false, user_id: valentine.id)
+Restaurant.create(title: "Le Rendez-Vous du Vendredi", address: "8 rue d'Angleterre, 06000 Nice, France", friend: "ing", comment: "Best falafel ever", latitude: 43.70187736644628, longitude: 7.264931369044579, searched: false, viewed: false, user_id: valentine.id)
 Restaurant.create(title: "Startway Super Miam", address: "21 Av. Thiers, 06000 Nice, France", friend: "caro", comment: "Équipe au top, parfait pour célébrer la fin du Démo Day !", latitude: 43.70323094855701, longitude: 7.260490815343912, searched: false, viewed: false, user_id: valentine.id)
 
 puts "done"
