@@ -57,14 +57,14 @@ peau_d_ane = Movie.create(title: "Peau d'Âne", image_url: "peau-d-ane.jpg")
 parapluies_cherbourg = Movie.create(title: "Les Parapluies de Cherbourg", image_url: "parapluies-cherbourg.jpg")
 
 puts "creating movie recommandations de valou"
-Recommendation.create(friend: "ing", comment: "à voir absolument", searched: false, viewed: false, user_id: valentine.id, movie_id: mr_nobody.id)
+# Recommendation.create(friend: "ing", comment: "à voir absolument", searched: false, viewed: false, user_id: valentine.id, movie_id: mr_nobody.id)
 Recommendation.create(friend: "alex", comment: "le meilleur Hitchcock", searched: false, viewed: false, user_id: valentine.id, movie_id: les_oiseaux.id)
 Recommendation.create(friend: "clem", comment: "très drôle, beau casting français", searched: false, viewed: true, feedback_rating: 4, user_id: valentine.id, movie_id: le_sens_de_la_fete.id)
 Recommendation.create(friend: "alex", comment: "film culte, avec Jean-Paul Roove, sur une colonie de vacances", searched: false, viewed: false, user_id: valentine.id, movie_id: nos_jours_heureux.id)
 Recommendation.create(friend: "lulu", comment: "Un truc de mangeurs de graines :)", searched: false, viewed: true, feedback_rating: 5, user_id: valentine.id, movie_id: la_belle_verte.id)
 # Recommendation.create(friend: "lulu", comment: "Scènes de natures à couper le souffle", searched: false, viewed: false, user_id: valentine.id, movie_id: la_panthere_des_neiges.id)
 Recommendation.create(friend: "ing", comment: "une bande d'ados à Paris en mai 68", searched: false, viewed: true, feedback_rating: 5, user_id: valentine.id, movie_id: peril_jeune.id)
-
+Recommendation.create(friend: "alex", comment: "un classique apparemment...", searched: false, viewed: false, user_id: valentine.id, movie_id: parapluies_cherbourg.id)
 
 puts "creating movie recommandations de ingo"
 Recommendation.create(friend: "alex", comment: "film conseillé quand nous avons mangé de la socca à nice, film d'action plein de suspense", searched: false, viewed: true, user_id: ingo.id, movie_id: dark_knight.id)
@@ -162,7 +162,7 @@ Restaurant.create(title: "Au Moulin Enchanté", address: "1 Rue Barberis, 06300 
 Restaurant.create(title: "Le Chabrol", address: "12 Rue Bavastro, 06300 Nice, France", friend: "lulu", comment: "Top pour un resto en amoureux", latitude: 43.699872138109214, longitude: 7.285227055540523, searched: false, viewed: false, user_id: valentine.id)
 Restaurant.create(title: "La Cave de Papa", address: "9 Rue Bonaparte, 06300 Nice, France", friend: "lulu", comment: "Planches et bon vin", latitude: 43.70098769483074, longitude: 7.282368186505601, searched: false, viewed: false, user_id: valentine.id)
 Restaurant.create(title: "Comme un Dimanche", address: "10 Rue Lascaris, 06300 Nice, France", friend: "alex", comment: "Super brunch, super déco", latitude: 43.699959941485346, longitude: 7.284981755540511, searched: false, viewed: false, user_id: valentine.id)
-Restaurant.create(title: "Le Rendez-Vous du Vendredi", address: "8 rue d'Angleterre, 06000 Nice, France", friend: "ing", comment: "Best falafel ever", latitude: 43.70187736644628, longitude: 7.264931369044579, searched: false, viewed: false, user_id: valentine.id)
+Restaurant.create(title: "Comme un Vendredi", address: "8 rue d'Angleterre, 06000 Nice, France", friend: "ing", comment: "Super brunch !", latitude: 43.70187736644628, longitude: 7.264931369044579, searched: false, viewed: false, user_id: valentine.id)
 Restaurant.create(title: "Startway Super Miam", address: "21 Av. Thiers, 06000 Nice, France", friend: "caro", comment: "Équipe au top, parfait pour célébrer la fin du Démo Day !", latitude: 43.70323094855701, longitude: 7.260490815343912, searched: false, viewed: false, user_id: valentine.id)
 
 puts "done"
